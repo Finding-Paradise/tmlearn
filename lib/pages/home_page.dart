@@ -7,6 +7,8 @@ class HomePage extends StatelessWidget {
 
   final String appDescription = 'Русско-Туркменский\nсловарь и разговорник';
   final Color primaryColor = const Color.fromARGB(255, 235, 200, 17);
+  final Color secondaryColor = const Color.fromARGB(255, 71, 58, 99);
+  final Color backgroundColor = const Color.fromARGB(255, 25, 16, 52);
   final List<String> homePageNavButtonsRus = [
     'Разделы\n',
     'Словарь\n',
@@ -70,7 +72,9 @@ class HomePage extends StatelessWidget {
             padding: const EdgeInsets.all(37.0),
             itemCount: homePageNavButtonsRus.length,
             separatorBuilder: (BuildContext context, int index) {
-              return const Divider(height: 26.0,);
+              return const Divider(
+                height: 26.0,
+              );
             },
             itemBuilder: (BuildContext context, int index) {
               return Row(
@@ -99,13 +103,14 @@ class HomePage extends StatelessWidget {
                         padding: MaterialStateProperty.all<EdgeInsets>(
                           const EdgeInsets.symmetric(vertical: 16.0),
                         ),
-                        shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                        shape:
+                            MaterialStateProperty.all<RoundedRectangleBorder>(
                           RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(10.0),
                           ),
                         ),
                         backgroundColor: MaterialStateProperty.all<Color>(
-                          const Color.fromARGB(255, 71, 58, 99),
+                          secondaryColor,
                         ),
                       ),
                     ),
@@ -117,7 +122,7 @@ class HomePage extends StatelessWidget {
           ),
         ],
       ),
-      backgroundColor: const Color.fromARGB(255, 25, 16, 52),
+      backgroundColor: backgroundColor,
     );
   }
 }
