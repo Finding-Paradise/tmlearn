@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tmlearn/pages/favorite_page.dart';
 import 'package:tmlearn/pages/home_page.dart';
 
 void main() {
@@ -15,7 +16,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.deepPurple,
       ),
-      home: HomePage(),
+      home: FavoritePage(),
     );
   }
 }
