@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:tmlearn/global_variables.dart';
 import 'package:tmlearn/pages/categories/greeting_category/greeting_category_nav_page.dart';
+import 'package:tmlearn/widgets/ariet_transparent_app_bar.dart';
 
 class CategoryNavPage extends StatelessWidget {
   CategoryNavPage({Key? key}) : super(key: key);
@@ -25,9 +26,7 @@ class CategoryNavPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('TmLearn'),
-      ),
+      appBar: const ArietTransparentBar(titleRus: 'Разделы\n',titleTurk: 'Bölümler',),
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.only(top: 20.0),
@@ -47,7 +46,7 @@ class CategoryNavPage extends StatelessWidget {
                       onPressed: () {
                         Navigator.push(context, MaterialPageRoute(
                           builder: (context) {
-                            return const GreetingNavPage();
+                            return GreetingNavPage();
                           },
                         ));
                       },

@@ -2,9 +2,73 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:tmlearn/global_variables.dart';
+import 'package:tmlearn/widgets/ariet_transparent_app_bar.dart';
 
-class GreetingNavPageText extends StatelessWidget {
-  const GreetingNavPageText({Key? key, this.greetingItemsRus = '', this.greetingItemsTurk = ''})
+class GreetingNavPage extends StatelessWidget {
+  GreetingNavPage({Key? key}) : super(key: key);
+
+  final List<String> greetingNavPageIcons = [
+    'assets/icons/greeting_nav_page_learn_icon.svg',
+    'assets/icons/greeting_nav_page_cards_icon.svg',
+    'assets/icons/greeting_nav_page_test_icon.svg',
+    'assets/icons/greeting_nav_page_test_icon.svg'
+  ];
+  final List<String> greetingNavPageTextEntriesRus = [
+    'Учить\n',
+    'Карты\n',
+    'Тест 1\n',
+    'Тест 2\n'
+  ];
+  final List<String> greetingNavPageTextEntriesTurk = [
+    'Okamak',
+    'Söz oýuny',
+    'Test 1',
+    'Test 2'
+  ];
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: const ArietTransparentBar(titleRus: 'Обращение\n',titleTurk: 'Ýüzlenme',),
+      body: SafeArea(
+        child: Column(children: [
+          Row(
+            children: [GreetingNavPageButton(buttonIndex: 0), GreetingNavPageButton(buttonIndex: 1,)],
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          ),
+          const Divider(height: 40.0,),
+          Row(
+            children: [GreetingNavPageButton(buttonIndex: 2,), GreetingNavPageButton(buttonIndex: 3,)],
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          ),
+        ], mainAxisAlignment: MainAxisAlignment.center),
+      ),
+      backgroundColor: backgroundColor,
+    );
+  }
+}
+
+class GreetingNavPageButton extends GreetingNavPage {
+  GreetingNavPageButton({Key? key, this.buttonIndex = 0}) : super(key: key);
+  final int buttonIndex;
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      child: Column(
+        children: [
+          IconButton(onPressed: null, icon: SvgPicture.asset(greetingNavPageIcons[buttonIndex]), iconSize: 172.0,),
+          GreetingNavPageText(
+              greetingItemsRus: greetingNavPageTextEntriesRus[buttonIndex],
+              greetingItemsTurk: greetingNavPageTextEntriesTurk[buttonIndex])
+        ],
+      ),
+      width: 172.0,
+    );
+  }
+}
+
+class GreetingNavPageText extends GreetingNavPageButton {
+  GreetingNavPageText(
+      {Key? key, this.greetingItemsRus = '', this.greetingItemsTurk = ''})
       : super(key: key);
 
   final String greetingItemsRus;
@@ -31,77 +95,6 @@ class GreetingNavPageText extends StatelessWidget {
           ),
         ],
       ),
-    );
-  }
-}
-
-class GreetingNavPage extends StatelessWidget {
-  const GreetingNavPage({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: const Text('TmLearn')),
-      body: Column(
-        children: [
-          Row(
-            children: [
-              Container(
-                child: Column(
-                  children: [
-                    SvgPicture.asset('icons/greeting_nav_page_learn_icon.svg'),
-                    const GreetingNavPageText(greetingItemsRus: 'Учить\n', greetingItemsTurk: 'Okamak')
-                  ],
-                ),
-                width: 152.0,
-                decoration: BoxDecoration(
-                    border: Border.all(color: Colors.green, width: 2)),
-              ),
-              Container(
-                child: Column(
-                  children: [
-                    SvgPicture.asset('icons/greeting_nav_page_cards_icon.svg'),
-                    const GreetingNavPageText(greetingItemsRus: 'Карты\n', greetingItemsTurk: 'Söz oýuny')
-                  ],
-                ),
-                width: 152.0,
-                decoration: BoxDecoration(
-                    border: Border.all(color: Colors.green, width: 2)),
-              ),
-            ],
-            mainAxisAlignment: MainAxisAlignment.center,
-          ),
-          Row(
-            children: [
-              Container(
-                child: Column(
-                  children: [
-                    SvgPicture.asset('icons/greeting_nav_page_test_icon.svg'),
-                    const GreetingNavPageText(greetingItemsRus: 'Тест 1\n', greetingItemsTurk: 'Test 1')
-                  ],
-                ),
-                width: 152.0,
-                decoration: BoxDecoration(
-                    border: Border.all(color: Colors.green, width: 2)),
-              ),
-              Container(
-                child: Column(
-                  children: [
-                    SvgPicture.asset('icons/greeting_nav_page_test_icon.svg'),
-                    const GreetingNavPageText(greetingItemsRus: 'Тест 2\n', greetingItemsTurk: 'Test 2')
-                  ],
-                ),
-                width: 152.0,
-                decoration: BoxDecoration(
-                    border: Border.all(color: Colors.green, width: 2)),
-              ),
-            ],
-            mainAxisAlignment: MainAxisAlignment.center,
-          ),
-        ],
-        mainAxisAlignment: MainAxisAlignment.center,
-      ),
-      backgroundColor: backgroundColor,
     );
   }
 }
