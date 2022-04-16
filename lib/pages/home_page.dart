@@ -29,7 +29,7 @@ class HomePage extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.only(top: 11.0),
             child: SafeArea(
-              child: SvgPicture.asset('icons/logo.svg'),
+              child: SvgPicture.asset('assets/icons/logo.svg'),
             ),
           ),
           Center(
