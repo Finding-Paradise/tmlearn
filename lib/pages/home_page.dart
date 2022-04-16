@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:tmlearn/global_variables.dart';
+import 'package:tmlearn/pages/categories/categories_nav_page.dart';
 
 class HomePage extends StatelessWidget {
   HomePage({Key? key}) : super(key: key);
 
   final String appDescription = 'Русско-Туркменский\nсловарь и разговорник';
-  final Color primaryColor = const Color.fromARGB(255, 235, 200, 17);
-  final Color secondaryColor = const Color.fromARGB(255, 71, 58, 99);
-  final Color backgroundColor = const Color.fromARGB(255, 25, 16, 52);
+
   final List<String> homePageNavButtonsRus = [
     'Разделы\n',
     'Словарь\n',
@@ -29,7 +29,7 @@ class HomePage extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.only(top: 11.0),
             child: SafeArea(
-              child: SvgPicture.asset('assets/logo.svg'),
+              child: SvgPicture.asset('icons/logo.svg'),
             ),
           ),
           Center(
@@ -82,7 +82,13 @@ class HomePage extends StatelessWidget {
                   SizedBox(
                     width: 317.0,
                     child: TextButton(
-                      onPressed: null,
+                      onPressed: () {
+                        Navigator.push(context, MaterialPageRoute(
+                          builder: (context) {
+                            return CategoryNavPage();
+                          },
+                        ));
+                      },
                       child: RichText(
                         textAlign: TextAlign.center,
                         text: TextSpan(
