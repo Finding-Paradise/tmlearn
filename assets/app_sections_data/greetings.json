@@ -1,0 +1,44 @@
+{
+    "items": [
+        {
+            "nameRus": "Господин...",
+            "nameTurk": "Jenap..."
+        },
+        {
+            "nameRus": "Госпожа...",
+            "nameTurk": "Hanum..."
+        },
+        {
+            "nameRus": "Брат...",
+            "nameTurk": "Dogan..."
+        },
+        {
+            "nameRus": "Сестра...",
+            "nameTurk": "Aýal-dogan, dogan..."
+        },
+        {
+            "nameRus": "Девушка...",
+            "nameTurk": "Gyz..."
+        },
+        {
+            "nameRus": "Молодой человек...",
+            "nameTurk": "Ýigit..."
+        },
+        {
+            "nameRus": "Мальчик...",
+            "nameTurk": "Oglan..."
+        },
+        {
+            "nameRus": "Дорогие друзья!",
+            "nameTurk": "Gadyrly dostlar!"
+        },
+        {
+            "nameRus": "Уважаемые коллеги!",
+            "nameTurk": "Hormatly kärdeşler!"
+        },
+        {
+            "nameRus": "Дети!",
+            "nameTurk": "Çagalar!"
+        }
+    ]
+}
