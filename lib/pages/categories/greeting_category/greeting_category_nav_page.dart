@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:tmlearn/global_variables.dart';
+import 'package:tmlearn/pages/categories/greeting_category/greeting_learn_page.dart';
 import 'package:tmlearn/widgets/ariet_transparent_app_bar.dart';
 
 class GreetingNavPage extends StatelessWidget {
@@ -28,16 +29,25 @@ class GreetingNavPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const ArietTransparentBar(titleRus: 'Обращение\n',titleTurk: 'Ýüzlenme',),
+      appBar: const ArietTransparentBar(
+          titleRus: 'Обращение\n', titleTurk: 'Ýüzlenme'),
       body: SafeArea(
         child: Column(children: [
           Row(
-            children: [GreetingNavPageButton(buttonIndex: 0), GreetingNavPageButton(buttonIndex: 1,)],
+            children: [
+              GreetingNavPageButton(buttonIndex: 0),
+              GreetingNavPageButton(buttonIndex: 1)
+            ],
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           ),
-          const Divider(height: 40.0,),
+          const Divider(
+            height: 40.0,
+          ),
           Row(
-            children: [GreetingNavPageButton(buttonIndex: 2,), GreetingNavPageButton(buttonIndex: 3,)],
+            children: [
+              GreetingNavPageButton(buttonIndex: 2),
+              GreetingNavPageButton(buttonIndex: 3)
+            ],
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           ),
         ], mainAxisAlignment: MainAxisAlignment.center),
@@ -55,7 +65,15 @@ class GreetingNavPageButton extends GreetingNavPage {
     return SizedBox(
       child: Column(
         children: [
-          IconButton(onPressed: null, icon: SvgPicture.asset(greetingNavPageIcons[buttonIndex]), iconSize: 172.0,),
+          IconButton(
+            onPressed: () {
+              Navigator.push(context, MaterialPageRoute(builder: (context) {
+                return const GreetingLearnPage();
+              }));
+            },
+            icon: SvgPicture.asset(greetingNavPageIcons[buttonIndex]),
+            iconSize: 172.0,
+          ),
           GreetingNavPageText(
               greetingItemsRus: greetingNavPageTextEntriesRus[buttonIndex],
               greetingItemsTurk: greetingNavPageTextEntriesTurk[buttonIndex])
@@ -80,14 +98,12 @@ class GreetingNavPageText extends GreetingNavPageButton {
       textAlign: TextAlign.center,
       text: TextSpan(
         style: GoogleFonts.lato(
-          textStyle: const TextStyle(
-            fontSize: 25.0,
-          ),
+          textStyle: const TextStyle(fontSize: 25.0),
         ),
         children: [
           TextSpan(
             text: greetingItemsRus,
-            style: TextStyle(color: primaryColor),
+            style: TextStyle(color: primaryColor)
           ),
           TextSpan(
             text: greetingItemsTurk,
