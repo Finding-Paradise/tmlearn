@@ -3,10 +3,9 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:tmlearn/global_variables.dart';
 
 class ArietTransparentBar extends StatelessWidget implements PreferredSizeWidget {
-  const ArietTransparentBar({Key? key, this.titleRus, this.titleTurk})
+  const ArietTransparentBar({Key? key, @required this.titleRus, @required this.titleTurk})
       : super(key: key);
-  final String? titleRus;
-  final String? titleTurk;
+  final String? titleRus, titleTurk;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -22,11 +21,11 @@ class ArietTransparentBar extends StatelessWidget implements PreferredSizeWidget
             onPressed: () {
               Navigator.pop(context);
             },
-            child: const Padding(
+            child: Padding(
               padding: EdgeInsets.only(right: 3.0),
               child: Icon(
                 Icons.arrow_back_ios_rounded,
-                color: Color(0xFFEBC811),
+                color: primaryColor,
               ),
             ),
           ),
@@ -51,11 +50,11 @@ class ArietTransparentBar extends StatelessWidget implements PreferredSizeWidget
             ),
             children: [
               TextSpan(
-                text: titleRus ?? 'Title',
+                text: titleRus ?? '',
                 style: TextStyle(color: primaryColor),
               ),
               TextSpan(
-                text: titleTurk ?? 'Title',
+                text: titleTurk ?? '',
                 style: const TextStyle(color: Colors.white),
               ),
             ],

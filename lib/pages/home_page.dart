@@ -3,9 +3,19 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:tmlearn/global_variables.dart';
 import 'package:tmlearn/pages/categories/categories_nav_page.dart';
+import 'package:tmlearn/pages/dictionary_page.dart';
+import 'package:tmlearn/pages/favorite_page.dart';
+import 'package:tmlearn/pages/history_page.dart';
 
 class HomePage extends StatelessWidget {
   HomePage({Key? key}) : super(key: key);
+
+  final List pagesList = [
+    CategoryNavPage(),
+    const DictionaryPage(),
+    const FavoritePage(),
+    const HistoryPage()
+  ];
 
   final String appDescription = 'Русско-Туркменский\nсловарь и разговорник';
 
@@ -85,7 +95,7 @@ class HomePage extends StatelessWidget {
                       onPressed: () {
                         Navigator.push(context, MaterialPageRoute(
                           builder: (context) {
-                            return CategoryNavPage();
+                            return pagesList[index];
                           },
                         ));
                       },
