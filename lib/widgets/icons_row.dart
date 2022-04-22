@@ -6,7 +6,7 @@ class IconRow extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(Copied succesfully!
+    return Row(
       children: [
         // Icon(Icons.share, color: primaryColor, size: 30.0),
         // Icon(Icons.content_copy, color: primaryColor, size: 25.0),

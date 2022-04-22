@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:tmlearn/global_variables.dart';
+import 'package:tmlearn/pages/categories/acquaintance_category/acquaintance_learn_page.dart';
 import 'package:tmlearn/pages/categories/common_phrases_category/common_phrases_learn_page.dart';
 import 'package:tmlearn/pages/categories/greeting_category/greeting_learn_page.dart';
+import 'package:tmlearn/pages/categories/questions_category/questions_learn_page.dart';
 import 'package:tmlearn/pages/dictionary_test/dictionary_test_page.dart';
 import 'package:tmlearn/widgets/ariet_transparent_app_bar.dart';
 import 'package:tmlearn/widgets/specific_category_card.dart';
@@ -160,7 +162,7 @@ class SpecificCategoryNavWidgetButtonTest2 extends SpecificCategoryNavWidgetFiel
 }
 
 class SpecificCategoryNavWidgetFields extends StatelessWidget {
-  final List routeToPage = [CommonPhrasesLearn(), GreetingLearnPage()];
+  final List routeToPage = [CommonPhrasesLearn(), GreetingLearnPage(), AcquaintanceLearnPage(), QuestionsLearnPage()];
   final List tempName = [DictionaryTestPage()];
 
   final List<String> _navPageIcons = [

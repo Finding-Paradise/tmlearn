@@ -87,52 +87,47 @@ class HomePage extends StatelessWidget {
               );
             },
             itemBuilder: (BuildContext context, int index) {
-              return Row(
-                children: [
-                  SizedBox(
-                    width: 317.0,
-                    child: TextButton(
-                      onPressed: () {
-                        Navigator.push(context, MaterialPageRoute(
-                          builder: (context) {
-                            return pagesList[index];
-                          },
-                        ));
+              return Container(
+                width: double.infinity,
+                child: TextButton(
+                  onPressed: () {
+                    Navigator.push(context, MaterialPageRoute(
+                      builder: (context) {
+                        return pagesList[index];
                       },
-                      child: RichText(
-                        textAlign: TextAlign.center,
-                        text: TextSpan(
-                          style: GoogleFonts.nunito(fontSize: 25.0),
-                          children: [
-                            TextSpan(
-                              text: homePageNavButtonsRus[index],
-                              style: TextStyle(color: primaryColor),
-                            ),
-                            TextSpan(
-                              text: homePageNavButtonsTurk[index],
-                              style: const TextStyle(color: Colors.white),
-                            ),
-                          ],
+                    ));
+                  },
+                  child: RichText(
+                    textAlign: TextAlign.center,
+                    text: TextSpan(
+                      style: GoogleFonts.nunito(fontSize: 25.0),
+                      children: [
+                        TextSpan(
+                          text: homePageNavButtonsRus[index],
+                          style: TextStyle(color: primaryColor),
                         ),
-                      ),
-                      style: ButtonStyle(
-                        padding: MaterialStateProperty.all<EdgeInsets>(
-                          const EdgeInsets.symmetric(vertical: 16.0),
+                        TextSpan(
+                          text: homePageNavButtonsTurk[index],
+                          style: const TextStyle(color: Colors.white),
                         ),
-                        shape:
-                            MaterialStateProperty.all<RoundedRectangleBorder>(
-                          RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(10.0),
-                          ),
-                        ),
-                        backgroundColor: MaterialStateProperty.all<Color>(
-                          secondaryColor,
-                        ),
-                      ),
+                      ],
                     ),
                   ),
-                ],
-                mainAxisAlignment: MainAxisAlignment.center,
+                  style: ButtonStyle(
+                    padding: MaterialStateProperty.all<EdgeInsets>(
+                      const EdgeInsets.symmetric(vertical: 16.0),
+                    ),
+                    shape:
+                        MaterialStateProperty.all<RoundedRectangleBorder>(
+                      RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10.0),
+                      ),
+                    ),
+                    backgroundColor: MaterialStateProperty.all<Color>(
+                      secondaryColor,
+                    ),
+                  ),
+                ),
               );
             },
           ),

@@ -1,0 +1,128 @@
+{
+    "items": [
+        {
+            "nameRus": "Что?",
+            "nameTurk": "Näme?"
+        },
+        {
+            "nameRus": "Что это?",
+            "nameTurk": "Bu näme?"
+        },
+        {
+            "nameRus": "Что случилось?",
+            "nameTurk": "Näme boldy?"
+        },
+        {
+            "nameRus": "Что это за город?",
+            "nameTurk": "Bu haýsy şäher?"
+        },
+        {
+            "nameRus": "Кто?",
+            "nameTurk": "Kim?"
+        },
+        {
+            "nameRus": "Кто это?",
+            "nameTurk": "Bu kim?"
+        },
+        {
+            "nameRus": "Кто там?",
+            "nameTurk": "ol ýerde kim bar?"
+        },
+        {
+            "nameRus": "Для кого это?",
+            "nameTurk": "Bu kim üçin?"
+        },
+        {
+            "nameRus": "Чье это?",
+            "nameTurk": "Bu kimiňki?"
+        },
+        {
+            "nameRus": "С кем вы разговариваете?",
+            "nameTurk": "Siz kim bilen gürleşýärsiňiz?"
+        },
+        {
+            "nameRus": "Где?",
+            "nameTurk": "Nirede?"
+        },
+        {
+            "nameRus": "Где это?",
+            "nameTurk": "Bu nirede?"
+        },
+        {
+            "nameRus": "Где находиться?",
+            "nameTurk": "Bu nirede ýerleşýär?"
+        },
+        {
+            "nameRus": "Куда вы идете?",
+            "nameTurk": "Siz nrä gidýärsiňiz?"
+        },
+        {
+            "nameRus": "Как пройти к ...?",
+            "nameTurk": "... nädip barmaly?"
+        },
+        {
+            "nameRus": "Как?",
+            "nameTurk": "Nädip?"
+        },
+        {
+            "nameRus": "Как вас зовут?",
+            "nameTurk": "Siziň adyňyz kim?"
+        },
+        {
+            "nameRus": "Как сказать по-туркменски ...?",
+            "nameTurk": "Türkmenç ... nädip aýdylýar?"
+        },
+        {
+            "nameRus": "Какой?",
+            "nameTurk": "Nähili?"
+        },
+        {
+            "nameRus": "Какого цвета?",
+            "nameTurk": "Nähili reňk?"
+        },
+        {
+            "nameRus": "Когда?",
+            "nameTurk": "Haçan?"
+        },
+        {
+            "nameRus": "Когда прибывает поезд?",
+            "nameTurk": "Otly haçan gelýär?"
+        },
+        {
+            "nameRus": "Когда отходит поезд?",
+            "nameTurk": "Otly haçan ugraýar?"
+        },
+        {
+            "nameRus": "Куда?",
+            "nameTurk": "Nirä?"
+        },
+        {
+            "nameRus": "Куда вы идете?",
+            "nameTurk": "Siz nirä barýaňyz?"
+        },
+        {
+            "nameRus": "Откуда вы?",
+            "nameTurk": "Siz nireden?"
+        },
+        {
+            "nameRus": "Откуда вы приехали?",
+            "nameTurk": "Siz nireden gelýäňiz?"
+        },
+        {
+            "nameRus": "Сколько?",
+            "nameTurk": "Näçe?"
+        },
+        {
+            "nameRus": "Сколько вам лет?",
+            "nameTurk": "Siz näçe ýaşyňyzda?"
+        },
+        {
+            "nameRus": "Сколько это стоит?",
+            "nameTurk": "Bunuň bahasy näçe?"
+        },
+        {
+            "nameRus": "Сколько времени?",
+            "nameTurk": "Sagat näçe?"
+        }
+    ]
+}

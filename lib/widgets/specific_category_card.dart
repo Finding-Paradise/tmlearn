@@ -21,8 +21,9 @@ class _SpecificCategoryCardWidgetState
         child: Column(
           children: [
             Center(
-              child: SizedBox(
-                width: 355.0,
+              child: Container(
+                padding: EdgeInsets.symmetric(horizontal: 20),
+                width: double.infinity,
                 height: 271.0,
                 child: Card(
                   color: secondaryColor,

@@ -1,29 +1,31 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:tmlearn/global_variables.dart';
+import 'package:tmlearn/pages/categories/acquaintance_category/acquaintance_page.dart';
 import 'package:tmlearn/pages/categories/common_phrases_category/common_phrases_page.dart';
 import 'package:tmlearn/pages/categories/greeting_category/greeting_page.dart';
+import 'package:tmlearn/pages/categories/questions_category/questions_page.dart';
 import 'package:tmlearn/widgets/ariet_transparent_app_bar.dart';
 
 class CategoryNavPage extends StatelessWidget {
   CategoryNavPage({Key? key}) : super(key: key);
 
-  final List _categoriesList = const [CommonPhrasesPage(), GreetingPage()];
+  final List _categoriesList = const [CommonPhrasesPage(), GreetingPage(), AcquaintancePage(), QuestionsPage()];
 
   final List<String> categoryNavButtonsRus = [
     'Общие фразы\n',
     'Обращение\n',
     'Знакомство\n',
-    'Аэрпорт\n',
     'Вопросы\n',
+    'Аэрпорт\n',
     'Транспорт\n'
   ];
   final List<String> categoryNavButtonsTurk = [
     'Umumy jümleler',
     'Ýüzlenme',
     'Tanyşlyk',
-    'Howa menzili',
     'Soraglar',
+    'Howa menzili',
     'Transport'
   ];
   @override
@@ -44,55 +46,51 @@ class CategoryNavPage extends StatelessWidget {
               );
             },
             itemBuilder: (BuildContext context, int index) {
-              return Row(
-                children: [
-                  SizedBox(
-                    width: 361.0,
-                    child: TextButton(
-                      onPressed: () {
-                        Navigator.push(context, MaterialPageRoute(
-                          builder: (context) {
-                            return _categoriesList[index];
-                          },
-                        ));
+              return Container(
+                padding: EdgeInsets.symmetric(horizontal: 20),
+                width: double.infinity,
+                child: TextButton(
+                  onPressed: () {
+                    Navigator.push(context, MaterialPageRoute(
+                      builder: (context) {
+                        return _categoriesList[index];
                       },
-                      child: Align(
-                        alignment: Alignment.centerLeft,
-                        child: RichText(
-                          text: TextSpan(
-                            style: GoogleFonts.nunito(fontSize: 25.0),
-                            children: [
-                              TextSpan(
-                                text: categoryNavButtonsRus[index],
-                                style: TextStyle(color: primaryColor),
-                              ),
-                              TextSpan(
-                                text: categoryNavButtonsTurk[index],
-                                style: const TextStyle(color: Colors.white),
-                              ),
-                            ],
+                    ));
+                  },
+                  child: Align(
+                    alignment: Alignment.centerLeft,
+                    child: RichText(
+                      text: TextSpan(
+                        style: GoogleFonts.nunito(fontSize: 25.0),
+                        children: [
+                          TextSpan(
+                            text: categoryNavButtonsRus[index],
+                            style: TextStyle(color: primaryColor),
                           ),
-                        ),
-                      ),
-                      style: ButtonStyle(
-                        padding: MaterialStateProperty.all<EdgeInsets>(
-                          const EdgeInsets.only(
-                              left: 21.0, top: 21.0, bottom: 21.0),
-                        ),
-                        shape:
-                            MaterialStateProperty.all<RoundedRectangleBorder>(
-                          RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(10.0),
+                          TextSpan(
+                            text: categoryNavButtonsTurk[index],
+                            style: const TextStyle(color: Colors.white),
                           ),
-                        ),
-                        backgroundColor: MaterialStateProperty.all<Color>(
-                          secondaryColor,
-                        ),
+                        ],
                       ),
                     ),
                   ),
-                ],
-                mainAxisAlignment: MainAxisAlignment.center,
+                  style: ButtonStyle(
+                    padding: MaterialStateProperty.all<EdgeInsets>(
+                      const EdgeInsets.only(
+                          left: 21.0, top: 21.0, bottom: 21.0),
+                    ),
+                    shape:
+                        MaterialStateProperty.all<RoundedRectangleBorder>(
+                      RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10.0),
+                      ),
+                    ),
+                    backgroundColor: MaterialStateProperty.all<Color>(
+                      secondaryColor,
+                    ),
+                  ),
+                ),
               );
             },
           ),

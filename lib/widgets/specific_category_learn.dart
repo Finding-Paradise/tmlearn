@@ -50,48 +50,44 @@ class _SpecificCategoryLearnWidgetState extends State<SpecificCategoryLearnWidge
             return const Divider(height: 13.0);
           },
           itemBuilder: (BuildContext context, int index) {
-            return Row(
-              children: [
-                SizedBox(
-                  width: 361.0,
-                  child: TextButton(
-                    onPressed: null,
-                    child: Padding(
-                      padding: const EdgeInsets.only(top: 5.0),
-                      child: Column(
-                        children: [
-                          Text(
-                            _items[index]["nameRus"],
-                            style: GoogleFonts.lato(
-                              fontSize: 20.0,
-                              textStyle: TextStyle(color: primaryColor),
-                            ),
-                          ),
-                          Text(
-                            _items[index]["nameTurk"],
-                            style: GoogleFonts.lato(
-                              fontSize: 20.0,
-                              textStyle: const TextStyle(color: Colors.white),
-                            ),
-                          ),
-                          const Divider(height: 10),
-                          const IconRow(),
-                        ],
-                        mainAxisAlignment: MainAxisAlignment.center,
+            return Container(
+              padding: EdgeInsets.symmetric(horizontal: 20),
+              width: double.infinity,
+              child: TextButton(
+                onPressed: null,
+                child: Padding(
+                  padding: const EdgeInsets.only(top: 5.0),
+                  child: Column(
+                    children: [
+                      Text(
+                        _items[index]["nameRus"],
+                        style: GoogleFonts.lato(
+                          fontSize: 20.0,
+                          textStyle: TextStyle(color: primaryColor),
+                        ),
                       ),
-                    ),
-                    style: ButtonStyle(
-                        backgroundColor:
-                            MaterialStateProperty.all<Color>(secondaryColor),
-                        shape:
-                            MaterialStateProperty.all<RoundedRectangleBorder>(
-                                RoundedRectangleBorder(
-                                    borderRadius:
-                                        BorderRadius.circular(11.0)))),
+                      Text(
+                        _items[index]["nameTurk"],
+                        style: GoogleFonts.lato(
+                          fontSize: 20.0,
+                          textStyle: const TextStyle(color: Colors.white),
+                        ),
+                      ),
+                      const Divider(height: 10),
+                      const IconRow(),
+                    ],
+                    mainAxisAlignment: MainAxisAlignment.center,
                   ),
-                )
-              ],
-              mainAxisAlignment: MainAxisAlignment.center,
+                ),
+                style: ButtonStyle(
+                    backgroundColor:
+                        MaterialStateProperty.all<Color>(secondaryColor),
+                    shape:
+                        MaterialStateProperty.all<RoundedRectangleBorder>(
+                            RoundedRectangleBorder(
+                                borderRadius:
+                                    BorderRadius.circular(11.0)))),
+              ),
             );
           },
         ),

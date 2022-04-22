@@ -1,0 +1,84 @@
+{
+    "items": [
+        {
+            "nameRus": "Я...",
+            "nameTurk": "Men..."
+        },
+        {
+            "nameRus": "Меня зовут...",
+            "nameTurk": "Meniň adym..."
+        },
+        {
+            "nameRus": "Как вас зовут?",
+            "nameTurk": "Siziň adyňyz kim?"
+        },
+        {
+            "nameRus": "Моя фамилия...",
+            "nameTurk": "Meniň familiýam..."
+        },
+        {
+            "nameRus": "Разрешите представить вам...",
+            "nameTurk": "...siziň bilen tanyşdyrmaga rugsat beriň"
+        },
+        {
+            "nameRus": "Приятно",
+            "nameTurk": "Ýakymly"
+        },
+        {
+            "nameRus": "Очень приятно",
+            "nameTurk": "Örän ýakymly"
+        },
+        {
+            "nameRus": "Приятно с вами познакомится",
+            "nameTurk": "Siz bilen tanyşmak örän ýakymly"
+        },
+        {
+            "nameRus": "Мне тоже очень приятно",
+            "nameTurk": "Manada örän yakymly"
+        },
+        {
+            "nameRus": "Прошу прощения я вас знаю",
+            "nameTurk": "Bagyşlaň, men sizi tanaýaryn"
+        },
+        {
+            "nameRus": "Вы меня не узнаете?",
+            "nameTurk": "Siz meni tanamadyňyzmy?"
+        },
+        {
+            "nameRus": "Да, это я",
+            "nameTurk": "Hawa, bu men"
+        },
+        {
+            "nameRus": "Я из Ашхабада",
+            "nameTurk": "Men Aşgabatdan"
+        },
+        {
+            "nameRus": "Я здесь по",
+            "nameTurk": "Men bu ýerde iş bilen"
+        },
+        {
+            "nameRus": "Вы здесь впервые?",
+            "nameTurk": "Siz bu ýerde birinji gezekmi?"
+        },
+        {
+            "nameRus": "Вам нравится Ашхабад?",
+            "nameTurk": "Aşgabat siziň göwnüňize ýaraýamy?"
+        },
+        {
+            "nameRus": "Да очень",
+            "nameTurk": "Hawa"
+        },
+        {
+            "nameRus": "Это красивый город",
+            "nameTurk": "Bu owadan şäher"
+        },
+        {
+            "nameRus": "Это мой приятель",
+            "nameTurk": "Bu meniň dostum/kärdeşim"
+        },
+        {
+            "nameRus": "Вы не знакомы?",
+            "nameTurk": "Siz tanyş dälmi?"
+        }
+    ]
+}
