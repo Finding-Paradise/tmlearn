@@ -6,7 +6,7 @@ class GreetingPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SpecificCategoryNavWidget(
+    return const SpecificCategoryNavWidget(
       learnPageIndex: 1,
       categoryTitleRus: 'Обращение\n',
       categoryTitleTurk: 'Ýüzlenme',

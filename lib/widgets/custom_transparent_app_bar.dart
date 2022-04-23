@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:tmlearn/global_variables.dart';
 
-class ArietTransparentBar extends StatelessWidget implements PreferredSizeWidget {
-  const ArietTransparentBar({Key? key, @required this.titleRus, @required this.titleTurk})
+class CustomTransparentAppBar extends StatelessWidget implements PreferredSizeWidget {
+  const CustomTransparentAppBar({Key? key, @required this.titleRus, @required this.titleTurk})
       : super(key: key);
   final String? titleRus, titleTurk;
   @override
@@ -22,7 +22,7 @@ class ArietTransparentBar extends StatelessWidget implements PreferredSizeWidget
               Navigator.pop(context);
             },
             child: Padding(
-              padding: EdgeInsets.only(right: 3.0),
+              padding: const EdgeInsets.only(right: 3.0),
               child: Icon(
                 Icons.arrow_back_ios_rounded,
                 color: primaryColor,
@@ -45,7 +45,7 @@ class ArietTransparentBar extends StatelessWidget implements PreferredSizeWidget
         title: RichText(
           textAlign: TextAlign.center,
           text: TextSpan(
-            style: GoogleFonts.lato(
+            style: GoogleFonts.nunito(
               textStyle: const TextStyle(fontSize: 25.0),
             ),
             children: [

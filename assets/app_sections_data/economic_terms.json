@@ -1,0 +1,68 @@
+{
+    "items": [
+        {
+            "nameRus": "Автоматизация",
+            "nameTurk": "Awtomatlaşdyrmak"
+        },
+        {
+            "nameRus": "Абонент",
+            "nameTurk": "Abonent"
+        },
+        {
+            "nameRus": "Абонентская задолженность",
+            "nameTurk": "Abonent karzy"
+        },
+        {
+            "nameRus": "Абонентская плата",
+            "nameTurk": "Abunalyk tölegi"
+        },
+        {
+            "nameRus": "Автоматизация банковских операций",
+            "nameTurk": "Bank amallaryny awtomatlaşdyrmak"
+        },
+        {
+            "nameRus": "База данных",
+            "nameTurk": "Maglumatlar bazasy"
+        },
+        {
+            "nameRus": "Банковский кредит",
+            "nameTurk": "Bank karzy"
+        },
+        {
+            "nameRus": "Баланс",
+            "nameTurk": "Balans"
+        },
+        {
+            "nameRus": "Безбумажные расчеты",
+            "nameTurk": "Kagyzsyz tölegler"
+        },
+        {
+            "nameRus": "Безналичные деньги",
+            "nameTurk": "Nagt däl pul"
+        },
+        {
+            "nameRus": "Безналичные расчеты",
+            "nameTurk": "Nagt däl tölegler"
+        },
+        {
+            "nameRus": "Баланс: актив и пассив баланса",
+            "nameTurk": "Balans: aktiw we jogapkärçilik balansy"
+        },
+        {
+            "nameRus": "Бизнес",
+            "nameTurk": "Işewürlik"
+        },
+        {
+            "nameRus": "Бизнес-план",
+            "nameTurk": "Iş meýilnamasy"
+        },
+        {
+            "nameRus": "Капитализация",
+            "nameTurk": "Kapitalizasiýasy"
+        },
+        {
+            "nameRus": "Капитализация дохода, прибыли",
+            "nameTurk": "Girdejiniň, girdejiniň kapitalizasiýasy"
+        }
+    ]
+}

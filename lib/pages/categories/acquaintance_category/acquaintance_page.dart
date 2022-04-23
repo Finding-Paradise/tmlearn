@@ -6,7 +6,7 @@ class AcquaintancePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SpecificCategoryNavWidget(
+    return const SpecificCategoryNavWidget(
       learnPageIndex: 2,
       categoryTitleRus: 'Знакомство\n',
       categoryTitleTurk: 'Tanyşlyk',

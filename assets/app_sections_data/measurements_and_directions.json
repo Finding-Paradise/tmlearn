@@ -1,0 +1,132 @@
+{
+    "items": [
+        {
+            "nameRus": "Впереди",
+            "nameTurk": "Öňde, öňünde"
+        },
+        {
+            "nameRus": "Позади",
+            "nameTurk": "Yzda"
+        },
+        {
+            "nameRus": "Левый",
+            "nameTurk": "Çep, sol"
+        },
+        {
+            "nameRus": "Правый",
+            "nameTurk": "Sag"
+        },
+        {
+            "nameRus": "Вверх",
+            "nameTurk": "Ýokary"
+        },
+        {
+            "nameRus": "Вниз",
+            "nameTurk": "Aşak"
+        },
+        {
+            "nameRus": "Горизонтальный",
+            "nameTurk": "Gorizontal, kese"
+        },
+        {
+            "nameRus": "Вертикальный",
+            "nameTurk": "Dik, dikligine"
+        },
+        {
+            "nameRus": "Верх (чего-либо)",
+            "nameTurk": "Depe, ýokary"
+        },
+        {
+            "nameRus": "Низ (дно)",
+            "nameTurk": "Aşak, aşagy"
+        },
+        {
+            "nameRus": "Внизу (чего-либо)",
+            "nameTurk": "Aşakda, pesde"
+        },
+        {
+            "nameRus": "Длинный",
+            "nameTurk": "Uzyn"
+        },
+        {
+            "nameRus": "Короткий",
+            "nameTurk": "Gysga"
+        },
+        {
+            "nameRus": "Квадрат",
+            "nameTurk": "Kwadrat, inedördül"
+        },
+        {
+            "nameRus": "Треугольный",
+            "nameTurk": "Üç burçly"
+        },
+        {
+            "nameRus": "Круглый (круг)",
+            "nameTurk": "Tegelek"
+        },
+        {
+            "nameRus": "Кубический",
+            "nameTurk": "Kub, kub görnüşli"
+        },
+        {
+            "nameRus": "Прямоугольный",
+            "nameTurk": "Gönüburçly"
+        },
+        {
+            "nameRus": "Толстый",
+            "nameTurk": "Ýogyn, galyň, semiz"
+        },
+        {
+            "nameRus": "Тонкий",
+            "nameTurk": "Inçe, ýuka, ýukajyk"
+        },
+        {
+            "nameRus": "Большой",
+            "nameTurk": "Uly"
+        },
+        {
+            "nameRus": "Маленький",
+            "nameTurk": "Kiçi"
+        },
+        {
+            "nameRus": "Центр",
+            "nameTurk": "Merkez"
+        },
+        {
+            "nameRus": "Рядом со столом",
+            "nameTurk": "Stoluň ýanynda"
+        },
+        {
+            "nameRus": "Над крышей",
+            "nameTurk": "Tamyň üstünde"
+        },
+        {
+            "nameRus": "Под капотом",
+            "nameTurk": "Kapotyň aşagynda"
+        },
+        {
+            "nameRus": "Перед тобой",
+            "nameTurk": "Seniň öňüňde"
+        },
+        {
+            "nameRus": "16 килограмм",
+            "nameTurk": "16 kilogram"
+        },
+        {
+            "nameRus": "225 миллиметров",
+            "nameTurk": "225 millimetr"
+        },
+        {
+            "nameRus": "5 тонн",
+            "nameTurk": "5 tonna"
+        },
+        {
+            "nameRus": "7 метров",
+            "nameTurk": "7 metr"
+        },
+        {
+            "nameRus": "8 сантиметров",
+            "nameTurk": "8 santimetr"
+        }
+    ]
+}

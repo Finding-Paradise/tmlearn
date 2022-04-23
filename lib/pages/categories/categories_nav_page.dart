@@ -3,43 +3,60 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:tmlearn/global_variables.dart';
 import 'package:tmlearn/pages/categories/acquaintance_category/acquaintance_page.dart';
 import 'package:tmlearn/pages/categories/common_phrases_category/common_phrases_page.dart';
+import 'package:tmlearn/pages/categories/economic_terms_category/economic_terms_page.dart';
 import 'package:tmlearn/pages/categories/greeting_category/greeting_page.dart';
+import 'package:tmlearn/pages/categories/measurements_category/measurements_page.dart';
+import 'package:tmlearn/pages/categories/personal_data_category/personal_data_page.dart';
 import 'package:tmlearn/pages/categories/questions_category/questions_page.dart';
-import 'package:tmlearn/widgets/ariet_transparent_app_bar.dart';
+import 'package:tmlearn/pages/categories/time_and_date_category/time_and_date_page.dart';
+import 'package:tmlearn/widgets/custom_transparent_app_bar.dart';
 
 class CategoryNavPage extends StatelessWidget {
   CategoryNavPage({Key? key}) : super(key: key);
 
-  final List _categoriesList = const [CommonPhrasesPage(), GreetingPage(), AcquaintancePage(), QuestionsPage()];
+  final List _categoriesList = const [
+    CommonPhrasesPage(),
+    GreetingPage(),
+    AcquaintancePage(),
+    QuestionsPage(),
+    PersonalDataPage(),
+    MeasurementsPage(),
+    TimeAndDatePage(),
+    EconomicTermsPage()
+  ];
 
   final List<String> categoryNavButtonsRus = [
     'Общие фразы\n',
     'Обращение\n',
     'Знакомство\n',
     'Вопросы\n',
-    'Аэрпорт\n',
-    'Транспорт\n'
+    'Анкетные данные\n',
+    'Форма, размер\n',
+    'Время, даты\n',
+    'Экономические термины\n'
   ];
   final List<String> categoryNavButtonsTurk = [
     'Umumy jümleler',
     'Ýüzlenme',
     'Tanyşlyk',
     'Soraglar',
-    'Howa menzili',
-    'Transport'
+    'Anket maglumatlary',
+    'Görnüş, ölçeg',
+    'Wagt, seneler',
+    'Ykdysady şertler'
   ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const ArietTransparentBar(
+      appBar: const CustomTransparentAppBar(
         titleRus: 'Разделы\n',
         titleTurk: 'Bölümler',
       ),
       body: SafeArea(
         child: Padding(
-          padding: const EdgeInsets.only(top: 20.0),
+          padding: const EdgeInsets.only(top: 20.0, bottom: 20.0),
           child: ListView.separated(
-            itemCount: categoryNavButtonsRus.length,
+            itemCount: _categoriesList.length,
             separatorBuilder: (BuildContext context, int index) {
               return const Divider(
                 height: 11.0,
@@ -47,7 +64,7 @@ class CategoryNavPage extends StatelessWidget {
             },
             itemBuilder: (BuildContext context, int index) {
               return Container(
-                padding: EdgeInsets.symmetric(horizontal: 20),
+                padding: const EdgeInsets.symmetric(horizontal: 20),
                 width: double.infinity,
                 child: TextButton(
                   onPressed: () {
@@ -80,8 +97,7 @@ class CategoryNavPage extends StatelessWidget {
                       const EdgeInsets.only(
                           left: 21.0, top: 21.0, bottom: 21.0),
                     ),
-                    shape:
-                        MaterialStateProperty.all<RoundedRectangleBorder>(
+                    shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                       RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(10.0),
                       ),

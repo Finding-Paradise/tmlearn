@@ -4,14 +4,18 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:tmlearn/global_variables.dart';
 import 'package:tmlearn/pages/categories/acquaintance_category/acquaintance_learn_page.dart';
 import 'package:tmlearn/pages/categories/common_phrases_category/common_phrases_learn_page.dart';
+import 'package:tmlearn/pages/categories/economic_terms_category/economic_terms_learn_page.dart';
 import 'package:tmlearn/pages/categories/greeting_category/greeting_learn_page.dart';
+import 'package:tmlearn/pages/categories/measurements_category/measurements_learn_page.dart';
+import 'package:tmlearn/pages/categories/personal_data_category/personal_data_learn_page.dart';
 import 'package:tmlearn/pages/categories/questions_category/questions_learn_page.dart';
+import 'package:tmlearn/pages/categories/time_and_date_category/time_and_date_learn_page.dart';
 import 'package:tmlearn/pages/dictionary_test/dictionary_test_page.dart';
-import 'package:tmlearn/widgets/ariet_transparent_app_bar.dart';
+import 'package:tmlearn/widgets/custom_transparent_app_bar.dart';
 import 'package:tmlearn/widgets/specific_category_card.dart';
 
 class SpecificCategoryNavWidget extends StatelessWidget {
-  SpecificCategoryNavWidget({
+  const SpecificCategoryNavWidget({
     Key? key,
     this.categoryTitleRus,
     this.categoryTitleTurk,
@@ -19,11 +23,11 @@ class SpecificCategoryNavWidget extends StatelessWidget {
   }) : super(key: key);
 
   final String? categoryTitleRus, categoryTitleTurk;
-  int learnPageIndex;
+  final int learnPageIndex;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: ArietTransparentBar(
+      appBar: CustomTransparentAppBar(
         titleRus: categoryTitleRus,
         titleTurk: categoryTitleTurk,
       ),
@@ -54,14 +58,15 @@ class SpecificCategoryNavWidget extends StatelessWidget {
   }
 }
 
-class SpecificCategoryNavWidgetButtonLearn extends SpecificCategoryNavWidgetFields {
+class SpecificCategoryNavWidgetButtonLearn
+    extends SpecificCategoryNavWidgetFields {
   int buttonIndex;
   int routeToPageIndex;
   SpecificCategoryNavWidgetButtonLearn(
       {Key? key, required this.buttonIndex, required this.routeToPageIndex});
 
   Widget build(BuildContext context) {
-    return SizedBox(
+    return Container(
       child: Column(
         children: [
           IconButton(
@@ -83,17 +88,18 @@ class SpecificCategoryNavWidgetButtonLearn extends SpecificCategoryNavWidgetFiel
   }
 }
 
-class SpecificCategoryNavWidgetButtonCards extends SpecificCategoryNavWidgetFields {
+class SpecificCategoryNavWidgetButtonCards
+    extends SpecificCategoryNavWidgetFields {
   SpecificCategoryNavWidgetButtonCards({Key? key, required this.buttonIndex});
-  int buttonIndex;
+  final int buttonIndex;
   Widget build(BuildContext context) {
-    return SizedBox(
+    return Container(
       child: Column(
         children: [
           IconButton(
             onPressed: () {
               Navigator.push(context, MaterialPageRoute(builder: (context) {
-                return SpecificCategoryCardWidget();
+                return const SpecificCategoryCardWidget();
               }));
             },
             icon: SvgPicture.asset(_navPageIcons[buttonIndex]),
@@ -111,9 +117,9 @@ class SpecificCategoryNavWidgetButtonCards extends SpecificCategoryNavWidgetFiel
 
 class SpecificCategoryNavWidgetButtonTest1 extends SpecificCategoryNavWidgetFields {
   SpecificCategoryNavWidgetButtonTest1({Key? key, required this.buttonIndex});
-  int buttonIndex;
+  final int buttonIndex;
   Widget build(BuildContext context) {
-    return SizedBox(
+    return Container(
       child: Column(
         children: [
           IconButton(
@@ -137,9 +143,10 @@ class SpecificCategoryNavWidgetButtonTest1 extends SpecificCategoryNavWidgetFiel
 
 class SpecificCategoryNavWidgetButtonTest2 extends SpecificCategoryNavWidgetFields {
   SpecificCategoryNavWidgetButtonTest2({Key? key, required this.buttonIndex});
-  int buttonIndex;
+  final int buttonIndex;
+  @override
   Widget build(BuildContext context) {
-    return SizedBox(
+    return Container(
       child: Column(
         children: [
           IconButton(
@@ -162,14 +169,23 @@ class SpecificCategoryNavWidgetButtonTest2 extends SpecificCategoryNavWidgetFiel
 }
 
 class SpecificCategoryNavWidgetFields extends StatelessWidget {
-  final List routeToPage = [CommonPhrasesLearn(), GreetingLearnPage(), AcquaintanceLearnPage(), QuestionsLearnPage()];
+  final List routeToPage = [
+    const CommonPhrasesLearnPage(),
+    const GreetingLearnPage(),
+    const AcquaintanceLearnPage(),
+    const QuestionsLearnPage(),
+    const PersonalDataLearnPage(),
+    const MeasurementsLearnPage(),
+    const TimeAndDateLearnPage(),
+    const EconomicTermsLearnPage(),
+  ];
   final List tempName = [DictionaryTestPage()];
 
   final List<String> _navPageIcons = [
-    'assets/icons/greeting_nav_page_learn_icon.svg',
-    'assets/icons/greeting_nav_page_cards_icon.svg',
-    'assets/icons/greeting_nav_page_test_icon.svg',
-    'assets/icons/greeting_nav_page_test_icon.svg'
+    'assets/icons/specific_category_nav_page_learn_icon.svg',
+    'assets/icons/specific_category_nav_page_cards_icon.svg',
+    'assets/icons/specific_category_nav_page_test_icon.svg',
+    'assets/icons/specific_category_nav_page_test_icon.svg',
   ];
 
   final List<String> _navPageTextEntriesRus = [
@@ -194,9 +210,7 @@ class SpecificCategoryNavWidgetFields extends StatelessWidget {
 }
 
 class SpecificCategoryNavWidgetText extends StatelessWidget {
-  SpecificCategoryNavWidgetText(
-      {Key? key, this.navItemsRus = '', this.navItemsTurk = ''})
-      : super(key: key);
+  const SpecificCategoryNavWidgetText({Key? key, this.navItemsRus = '', this.navItemsTurk = ''}): super(key: key);
 
   final String navItemsRus;
   final String navItemsTurk;
@@ -206,7 +220,7 @@ class SpecificCategoryNavWidgetText extends StatelessWidget {
     return RichText(
       textAlign: TextAlign.center,
       text: TextSpan(
-        style: GoogleFonts.lato(
+        style: GoogleFonts.nunito(
           textStyle: const TextStyle(fontSize: 25.0),
         ),
         children: [

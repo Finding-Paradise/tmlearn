@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:tmlearn/global_variables.dart';
-import 'package:tmlearn/widgets/ariet_transparent_app_bar.dart';
+import 'package:tmlearn/widgets/custom_transparent_app_bar.dart';
 
 import './widgets/option_card.dart';
 
 class DictionaryTestPage extends StatelessWidget {
   DictionaryTestPage({Key? key}) : super(key: key);
 
-  var options = [
+  final options = [
     {
       "text": "Hanym",
       "isCorrect": false,
@@ -30,16 +30,16 @@ class DictionaryTestPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color(0xFF191034),
-      appBar: ArietTransparentBar(),
+      appBar: const CustomTransparentAppBar(titleRus: '', titleTurk: '',),
       body: Padding(
         padding:
-            EdgeInsets.symmetric(horizontal: 18) + EdgeInsets.only(top: 40),
+            const EdgeInsets.symmetric(horizontal: 18) + const EdgeInsets.only(top: 40),
         child: SizedBox(
           height: MediaQuery.of(context).size.height,
           child: Column(
             children: [
               Padding(
-                padding: EdgeInsets.symmetric(horizontal: 19),
+                padding: const EdgeInsets.symmetric(horizontal: 19),
                 child: Row(
                   children: [
                     CircleAvatar(
@@ -51,23 +51,23 @@ class DictionaryTestPage extends StatelessWidget {
                         color: backgroundColor,
                       ),
                     ),
-                    SizedBox(width: 14),
-                    Text(
+                    const SizedBox(width: 14),
+                    const Text(
                       "0",
                       style: TextStyle(
                         color: Colors.green,
                         fontSize: 35,
                       ),
                     ),
-                    Spacer(),
-                    Text(
+                    const Spacer(),
+                    const Text(
                       "0",
                       style: TextStyle(
                         color: Colors.red,
                         fontSize: 35,
                       ),
                     ),
-                    SizedBox(width: 14),
+                    const SizedBox(width: 14),
                     CircleAvatar(
                       radius: 25,
                       backgroundColor: Colors.red,
@@ -80,7 +80,7 @@ class DictionaryTestPage extends StatelessWidget {
                   ],
                 ),
               ),
-              SizedBox(height: 38),
+              const SizedBox(height: 38),
               Container(
                 width: double.infinity,
                 height: 271.0,
@@ -98,7 +98,7 @@ class DictionaryTestPage extends StatelessWidget {
                       ),
                     ),
                     IconButton(
-                      padding: EdgeInsets.only(right: 45),
+                      padding: const EdgeInsets.only(right: 45),
                       onPressed: () {},
                       icon: Icon(
                         Icons.volume_up,
@@ -110,7 +110,7 @@ class DictionaryTestPage extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                 ),
               ),
-              Divider(height: 50),
+              const Divider(height: 50),
               Expanded(
                 child: ListView.separated(
                   itemCount: options.length,
@@ -120,7 +120,7 @@ class DictionaryTestPage extends StatelessWidget {
                     isCorrect: options[index]["isCorrect"] as bool,
                     onTap: (int) {},
                   ),
-                  separatorBuilder: (context, index) => SizedBox(height: 18),
+                  separatorBuilder: (context, index) => const SizedBox(height: 18),
                 ),
               ),
             ],
