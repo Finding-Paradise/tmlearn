@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:tmlearn/global_variables.dart';
+import 'package:tmlearn/widgets/ariet_transparent_app_bar.dart';
 
 import './widgets/option_card.dart';
-import '../../../widgets/transparent_app_bar.dart';
 
 class DictionaryTestPage extends StatelessWidget {
   DictionaryTestPage({Key? key}) : super(key: key);
@@ -29,7 +30,7 @@ class DictionaryTestPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color(0xFF191034),
-      appBar: TransparentAppBar(title: ""),
+      appBar: ArietTransparentBar(),
       body: Padding(
         padding:
             EdgeInsets.symmetric(horizontal: 18) + EdgeInsets.only(top: 40),
@@ -47,7 +48,7 @@ class DictionaryTestPage extends StatelessWidget {
                       child: Icon(
                         Icons.check,
                         size: 32.5,
-                        color: const Color(0xFF191034),
+                        color: backgroundColor,
                       ),
                     ),
                     SizedBox(width: 14),
@@ -73,7 +74,7 @@ class DictionaryTestPage extends StatelessWidget {
                       child: Icon(
                         Icons.close,
                         size: 32.5,
-                        color: const Color(0xFF191034),
+                        color: backgroundColor,
                       ),
                     ),
                   ],
@@ -82,35 +83,34 @@ class DictionaryTestPage extends StatelessWidget {
               SizedBox(height: 38),
               Container(
                 width: double.infinity,
+                height: 271.0,
                 decoration: BoxDecoration(
-                  color: Color(0xFF473A63),
-                  borderRadius: BorderRadius.circular(11.39),
+                  color: secondaryColor,
+                  borderRadius: BorderRadius.circular(12),
                 ),
                 child: Column(
                   children: [
-                    SizedBox(height: 63),
                     Text(
                       "Господин...",
                       style: TextStyle(
                         fontSize: 30,
-                        color: Color(0xFFEBC811),
+                        color: primaryColor
                       ),
                     ),
-                    SizedBox(height: 74),
                     IconButton(
-                      padding: EdgeInsets.zero,
+                      padding: EdgeInsets.only(right: 45),
                       onPressed: () {},
                       icon: Icon(
-                        Icons.play_arrow,
-                        color: Color(0xFFEBC811),
+                        Icons.volume_up,
+                        color: primaryColor,
                         size: 74,
                       ),
                     ),
-                    SizedBox(height: 19.5),
                   ],
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
                 ),
               ),
-              Spacer(),
+              Divider(height: 50),
               Expanded(
                 child: ListView.separated(
                   itemCount: options.length,

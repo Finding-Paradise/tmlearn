@@ -1,0 +1,56 @@
+{
+    "items": [
+        {
+            "nameRus": "Здравствуйте!",
+            "nameTurk": "Salam aleykum! Aleykum salam!"
+        },
+        {
+            "nameRus": "Доброе утро!",
+            "nameTurk": "Ertiriňiz haýyr!"
+        },
+        {
+            "nameRus": "Добрый день!",
+            "nameTurk": "Gündiziňiz haýyr!"
+        },
+        {
+            "nameRus": "Добрый вечер!",
+            "nameTurk": "Agşamyňyz haýyr!"
+        },
+        {
+            "nameRus": "Спокойной ночи!",
+            "nameTurk": "Gijäňiz rahat bolsun!"
+        },
+        {
+            "nameRus": "Привет!",
+            "nameTurk": "Salam!"
+        },
+        {
+            "nameRus": "Рад вас видеть!",
+            "nameTurk": "Sizi gorenime şat!"
+        },
+        {
+            "nameRus": "Добро пожаловать!",
+            "nameTurk": "Hoş geldiňiz!"
+        },
+        {
+            "nameRus": "Как поживаешь?",
+            "nameTurk": "Ýagdaýyň nähili?"
+        },
+        {
+            "nameRus": "Как дела?",
+            "nameTurk": "Işler nähili?"
+        },
+        {
+            "nameRus": "Как твои дела?",
+            "nameTurk": "Işleriň nähili?"
+        },
+        {
+            "nameRus": "Как вы поживаете?",
+            "nameTurk": "Ýagdaýyňyz nähili?"
+        },
+        {
+            "nameRus": "Спасибо хорошо!",
+            "nameTurk": "Sagboluň, oňat!"
+        }
+    ]
+}

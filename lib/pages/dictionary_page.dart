@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:tmlearn/widgets/transparent_app_bar.dart';
+import 'package:tmlearn/global_variables.dart';
+import 'package:tmlearn/pages/dictionary_info_page.dart';
+import 'package:tmlearn/widgets/ariet_transparent_app_bar.dart';
 
 class DictionaryPage extends StatelessWidget {
   const DictionaryPage({Key? key}) : super(key: key);
@@ -7,8 +9,8 @@ class DictionaryPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFF191034),
-      appBar: TransparentAppBar(title: "Словарь"),
+      backgroundColor: backgroundColor,
+      appBar: ArietTransparentBar(titleRus: 'Словарь\n', titleTurk: 'Sözlük',),
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: 17) +
             EdgeInsets.only(top: 20, bottom: 32),
@@ -19,7 +21,7 @@ class DictionaryPage extends StatelessWidget {
               padding: EdgeInsets.only(left: 25, right: 8) +
                   EdgeInsets.symmetric(vertical: 8),
               decoration: BoxDecoration(
-                  color: Color(0xFF473A63),
+                  color: secondaryColor,
                   borderRadius: BorderRadius.circular(11.4)),
               child: Row(children: [
                 Expanded(child: TextFormField()),
@@ -29,7 +31,7 @@ class DictionaryPage extends StatelessWidget {
                   onPressed: () {},
                   child: Icon(
                     Icons.search,
-                    color: Color(0xFFEBC811),
+                    color: primaryColor,
                   ),
                 )
               ]),
@@ -39,16 +41,27 @@ class DictionaryPage extends StatelessWidget {
               child: Container(
                 padding: EdgeInsets.only(top: 7),
                 decoration: BoxDecoration(
-                    color: Color(0xFF473A63),
+                    color: secondaryColor,
                     borderRadius: BorderRadius.circular(11.4)),
                 child: ListView.separated(
                     itemBuilder: (context, index) => Padding(
                           padding: EdgeInsets.only(left: 31),
-                          child: Text(
-                            "Heelo",
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 24,
+                          child: Align(
+                            alignment: Alignment.centerLeft,
+                            child: TextButton(
+                              onPressed: () {
+                                Navigator.push(context,
+                                    MaterialPageRoute(builder: (context) {
+                                  return DictionaryInfoPage();
+                                }));
+                              },
+                              child: Text(
+                                "School",
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 24,
+                                ),
+                              ),
                             ),
                           ),
                         ),

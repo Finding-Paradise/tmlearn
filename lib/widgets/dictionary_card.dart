@@ -29,7 +29,7 @@ class DictionaryCard extends StatelessWidget {
         child: Row(
           children: [
             Padding(
-              padding: const EdgeInsets.only(left: 30, top: 13, bottom: 12),
+              padding: const EdgeInsets.only(left: 30, top: 12, bottom: 12),
               child: Text(
                 name ?? "Dictionary",
                 style: const TextStyle(
@@ -39,10 +39,7 @@ class DictionaryCard extends StatelessWidget {
               ),
             ),
             const Spacer(),
-            Padding(
-              padding: const EdgeInsets.symmetric(vertical: 13),
-              child: actionButton(cardType),
-            ),
+            actionButton(cardType),
           ],
         ),
       ),
@@ -59,10 +56,13 @@ class DictionaryCard extends StatelessWidget {
             return false;
           },
           likeBuilder: (bool isLiked) {
-            return Icon(
-              Icons.favorite_rounded,
-              color: isLiked ? Colors.redAccent : Colors.grey,
-              size: 25,
+            return Padding(
+              padding: const EdgeInsets.only(right: 12.0),
+              child: Icon(
+                Icons.favorite_rounded,
+                color: isLiked ? Colors.redAccent : Colors.grey,
+                size: 25,
+              ),
             );
           },
         );
@@ -74,7 +74,7 @@ class DictionaryCard extends StatelessWidget {
           },
           icon: const Icon(
             Icons.history,
-            size: 18,
+            size: 25,
             color: const Color(0xFFEBC811),
           ),
         );

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:tmlearn/widgets/transparent_app_bar.dart';
+import 'package:tmlearn/global_variables.dart';
+import 'package:tmlearn/widgets/ariet_transparent_app_bar.dart';
+import 'package:tmlearn/widgets/icons_row.dart';
 
 class DictionaryInfoPage extends StatelessWidget {
   const DictionaryInfoPage({Key? key}) : super(key: key);
@@ -7,8 +9,8 @@ class DictionaryInfoPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFF191034),
-      appBar: TransparentAppBar(title: "Словарь"),
+      backgroundColor: backgroundColor,
+      appBar: ArietTransparentBar(titleRus: 'Словарь\n', titleTurk: 'Sözlük',),
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: 17) +
             EdgeInsets.only(top: 20, bottom: 32),
@@ -19,7 +21,7 @@ class DictionaryInfoPage extends StatelessWidget {
               padding: EdgeInsets.only(left: 25, right: 8) +
                   EdgeInsets.symmetric(vertical: 8),
               decoration: BoxDecoration(
-                  color: Color(0xFF473A63),
+                  color: secondaryColor,
                   borderRadius: BorderRadius.circular(11.4)),
               child: Row(children: [
                 Expanded(child: TextFormField()),
@@ -29,7 +31,7 @@ class DictionaryInfoPage extends StatelessWidget {
                   onPressed: () {},
                   child: Icon(
                     Icons.search,
-                    color: Color(0xFFEBC811),
+                    color: primaryColor,
                   ),
                 )
               ]),
@@ -39,7 +41,7 @@ class DictionaryInfoPage extends StatelessWidget {
               child: Container(
                   padding: EdgeInsets.only(top: 17),
                   decoration: BoxDecoration(
-                      color: Color(0xFF473A63),
+                      color: secondaryColor,
                       borderRadius: BorderRadius.circular(11.4)),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -47,7 +49,7 @@ class DictionaryInfoPage extends StatelessWidget {
                       Padding(
                         padding: EdgeInsets.only(left: 38),
                         child: Text(
-                          "Shool",
+                          "School",
                           style: TextStyle(
                             color: Colors.white,
                             fontSize: 30,
@@ -61,7 +63,7 @@ class DictionaryInfoPage extends StatelessWidget {
                       Padding(
                         padding: EdgeInsets.only(left: 38, top: 21),
                         child: Text(
-                          "Shool",
+                          "Mekdep",
                           style: TextStyle(
                             color: Color(0xFFEBC811),
                             fontSize: 30,
@@ -70,37 +72,8 @@ class DictionaryInfoPage extends StatelessWidget {
                       ),
                       Spacer(),
                       Padding(
-                        padding: EdgeInsets.symmetric(horizontal: 44) +
-                            EdgeInsets.only(bottom: 35),
-                        child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              IconButton(
-                                  onPressed: () {},
-                                  icon: Icon(
-                                    Icons.play_arrow,
-                                    size: 30,
-                                    color: Color(0xFFEBC811),
-                                  )),IconButton(
-                                  onPressed: () {},
-                                  icon: Icon(
-                                    Icons.play_arrow,
-                                    size: 30,
-                                    color: Color(0xFFEBC811),
-                                  )),IconButton(
-                                  onPressed: () {},
-                                  icon: Icon(
-                                    Icons.play_arrow,
-                                    size: 30,
-                                    color: Color(0xFFEBC811),
-                                  )),IconButton(
-                                  onPressed: () {},
-                                  icon: Icon(
-                                    Icons.play_arrow,
-                                    size: 30,
-                                    color: Color(0xFFEBC811),
-                                  )),
-                            ]),
+                        padding: const EdgeInsets.only(bottom: 35.0),
+                        child: IconRow(),
                       )
                     ],
                   )),
