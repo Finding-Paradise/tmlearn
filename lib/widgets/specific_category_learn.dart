@@ -10,7 +10,7 @@ import 'package:tmlearn/widgets/icons_row.dart';
 class SpecificCategoryLearnWidget extends StatefulWidget {
 
   final String? categoryTitleRus, categoryTitleTurk;
-  final filePath;
+  final String filePath;
 
   const SpecificCategoryLearnWidget({Key? key, required this.filePath, required this.categoryTitleRus, required this.categoryTitleTurk}) : super(key: key);
 
@@ -51,7 +51,7 @@ class _SpecificCategoryLearnWidgetState extends State<SpecificCategoryLearnWidge
           },
           itemBuilder: (BuildContext context, int index) {
             return Container(
-              padding: EdgeInsets.symmetric(horizontal: 20),
+              padding: const EdgeInsets.symmetric(horizontal: 20),
               width: double.infinity,
               child: TextButton(
                 onPressed: null,

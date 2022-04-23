@@ -60,15 +60,9 @@ class _SpecificCategoryCardWidgetState
               padding: const EdgeInsets.all(50),
               child: Row(
                 children: [
-                  Container(
-                    child: FloatingActionButton(onPressed: () {},backgroundColor: Colors.black, child: Icon(Icons.arrow_back, color: primaryColor, size: 40,)),
-                  ),
-                  Container(
-                    child: FloatingActionButton(onPressed: () {},backgroundColor: Colors.black, child: Icon(Icons.restart_alt_outlined, color: primaryColor, size: 40,)),
-                  ),
-                  Container(
-                    child: FloatingActionButton(onPressed: () {},backgroundColor: Colors.black, child: Icon(Icons.arrow_forward, color: primaryColor, size: 40,)),
-                  ),
+                  FloatingActionButton(onPressed: () {},backgroundColor: Colors.black, child: Icon(Icons.arrow_back, color: primaryColor, size: 40,)),
+                  FloatingActionButton(onPressed: () {},backgroundColor: Colors.black, child: Icon(Icons.restart_alt_outlined, color: primaryColor, size: 40,)),
+                  FloatingActionButton(onPressed: () {},backgroundColor: Colors.black, child: Icon(Icons.arrow_forward, color: primaryColor, size: 40,)),
                 ],
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
               ),
