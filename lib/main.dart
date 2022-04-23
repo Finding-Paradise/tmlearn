@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:tmlearn/global_variables.dart';
 import 'package:tmlearn/pages/home_page.dart';
 
 void main() {

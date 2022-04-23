@@ -87,7 +87,7 @@ class HomePage extends StatelessWidget {
               );
             },
             itemBuilder: (BuildContext context, int index) {
-              return Container(
+              return SizedBox(
                 width: double.infinity,
                 child: TextButton(
                   onPressed: () {

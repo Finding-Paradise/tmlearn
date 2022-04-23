@@ -60,13 +60,14 @@ class SpecificCategoryNavWidget extends StatelessWidget {
 
 class SpecificCategoryNavWidgetButtonLearn
     extends SpecificCategoryNavWidgetFields {
-  int buttonIndex;
-  int routeToPageIndex;
+  final int buttonIndex;
+  final int routeToPageIndex;
   SpecificCategoryNavWidgetButtonLearn(
-      {Key? key, required this.buttonIndex, required this.routeToPageIndex});
+      {Key? key, required this.buttonIndex, required this.routeToPageIndex}) : super(key: key);
 
+  @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       child: Column(
         children: [
           IconButton(
@@ -90,10 +91,11 @@ class SpecificCategoryNavWidgetButtonLearn
 
 class SpecificCategoryNavWidgetButtonCards
     extends SpecificCategoryNavWidgetFields {
-  SpecificCategoryNavWidgetButtonCards({Key? key, required this.buttonIndex});
+  SpecificCategoryNavWidgetButtonCards({Key? key, required this.buttonIndex}) : super(key: key);
   final int buttonIndex;
+  @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       child: Column(
         children: [
           IconButton(
@@ -116,10 +118,11 @@ class SpecificCategoryNavWidgetButtonCards
 }
 
 class SpecificCategoryNavWidgetButtonTest1 extends SpecificCategoryNavWidgetFields {
-  SpecificCategoryNavWidgetButtonTest1({Key? key, required this.buttonIndex});
+  SpecificCategoryNavWidgetButtonTest1({Key? key, required this.buttonIndex}) : super(key: key);
   final int buttonIndex;
+  @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       child: Column(
         children: [
           IconButton(
@@ -142,11 +145,11 @@ class SpecificCategoryNavWidgetButtonTest1 extends SpecificCategoryNavWidgetFiel
 }
 
 class SpecificCategoryNavWidgetButtonTest2 extends SpecificCategoryNavWidgetFields {
-  SpecificCategoryNavWidgetButtonTest2({Key? key, required this.buttonIndex});
+  SpecificCategoryNavWidgetButtonTest2({Key? key, required this.buttonIndex}) : super(key: key);
   final int buttonIndex;
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       child: Column(
         children: [
           IconButton(
