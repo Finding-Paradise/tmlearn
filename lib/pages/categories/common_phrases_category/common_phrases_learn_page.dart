@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:tmlearn/widgets/specific_category_learn.dart';
 
-class CommonPhrasesLearn extends StatefulWidget {
-  CommonPhrasesLearn({Key? key}) : super(key: key);
+class CommonPhrasesLearnPage extends StatefulWidget {
+  const CommonPhrasesLearnPage({Key? key}) : super(key: key);
 
   @override
-  State<CommonPhrasesLearn> createState() => _CommonPhrasesLearnState();
+  State<CommonPhrasesLearnPage> createState() => _CommonPhrasesLearnPageState();
 }
 
-class _CommonPhrasesLearnState extends State<CommonPhrasesLearn> {
+class _CommonPhrasesLearnPageState extends State<CommonPhrasesLearnPage> {
   @override
   Widget build(BuildContext context) {
-    return SpecificCategoryLearnWidget(
+    return const SpecificCategoryLearnWidget(
       filePath: 'assets/app_sections_data/common_phrases.json',
       categoryTitleRus: 'Общие фразы\n',
       categoryTitleTurk: 'Umumy jümleler',

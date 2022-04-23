@@ -6,7 +6,7 @@ class QuestionsPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SpecificCategoryNavWidget(
+    return const SpecificCategoryNavWidget(
       learnPageIndex: 3,
       categoryTitleRus: 'Вопросы\n',
       categoryTitleTurk: 'Soraglar',

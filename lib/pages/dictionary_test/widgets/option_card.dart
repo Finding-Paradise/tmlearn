@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
 enum OptionState {
-  NotChosen,
-  Correct,
-  Wrong,
+  notChosen,
+  correct,
+  wrong,
 }
 
 class OptionCard extends StatefulWidget {
@@ -25,7 +25,7 @@ class OptionCard extends StatefulWidget {
 }
 
 class _OptionCardState extends State<OptionCard> {
-  OptionState currentOptionState = OptionState.NotChosen;
+  OptionState currentOptionState = OptionState.notChosen;
 
   @override
   Widget build(BuildContext context) {
@@ -34,13 +34,13 @@ class _OptionCardState extends State<OptionCard> {
         setState(() {
           widget.onTap!(widget.id);
           currentOptionState =
-              widget.isCorrect ? OptionState.Correct : OptionState.Wrong;
+              widget.isCorrect ? OptionState.correct : OptionState.wrong;
         });
       },
       child: AnimatedContainer(
         width: double.infinity,
-        duration: Duration(milliseconds: 300),
-        padding: EdgeInsets.only(top: 10, bottom: 6),
+        duration: const Duration(milliseconds: 300),
+        padding: const EdgeInsets.only(top: 10, bottom: 6),
         decoration: BoxDecoration(
           color: getColorsFromOptionState(currentOptionState),
           borderRadius: BorderRadius.circular(11.4),
@@ -48,7 +48,7 @@ class _OptionCardState extends State<OptionCard> {
         child: Center(
           child: Text(
             widget.text ?? "Option",
-            style: TextStyle(
+            style: const TextStyle(
               fontSize: 30,
               color: Colors.white,
             ),
@@ -60,11 +60,11 @@ class _OptionCardState extends State<OptionCard> {
 
   Color getColorsFromOptionState(OptionState optionState) {
     switch (optionState) {
-      case OptionState.NotChosen:
-        return Color(0xFF473A63);
-      case OptionState.Correct:
+      case OptionState.notChosen:
+        return const Color(0xFF473A63);
+      case OptionState.correct:
         return Colors.green;
-      case OptionState.Wrong:
+      case OptionState.wrong:
         return Colors.red;
     }
   }

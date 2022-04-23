@@ -1,0 +1,172 @@
+{
+    "items": [
+        {
+            "nameRus": "Месяц",
+            "nameTurk": "Aý"
+        },
+        {
+            "nameRus": "Январь",
+            "nameTurk": "Ýanwar"
+        },
+        {
+            "nameRus": "Февраль",
+            "nameTurk": "Fewral"
+        },
+        {
+            "nameRus": "Март",
+            "nameTurk": "Mart"
+        },
+        {
+            "nameRus": "Апрель",
+            "nameTurk": "Aprel"
+        },
+        {
+            "nameRus": "Май",
+            "nameTurk": "Maý"
+        },
+        {
+            "nameRus": "Июнь",
+            "nameTurk": "Iýun"
+        },
+        {
+            "nameRus": "Июль",
+            "nameTurk": "Iýul"
+        },
+        {
+            "nameRus": "Август",
+            "nameTurk": "Awgust"
+        },
+        {
+            "nameRus": "Сентябрь",
+            "nameTurk": "Sentýabr"
+        },
+        {
+            "nameRus": "Октябрь",
+            "nameTurk": "Oktýabr"
+        },
+        {
+            "nameRus": "Ноябрь",
+            "nameTurk": "Noýabr"
+        },
+        {
+            "nameRus": "Декабрь",
+            "nameTurk": "Dekabr"
+        },
+        {
+            "nameRus": "Год",
+            "nameTurk": "Ýyl"
+        },
+        {
+            "nameRus": "Понедельник",
+            "nameTurk": "Duşenbe"
+        },
+        {
+            "nameRus": "Вторник",
+            "nameTurk": "Sişenbe"
+        },
+        {
+            "nameRus": "Среда",
+            "nameTurk": "Çarşenbe"
+        },
+        {
+            "nameRus": "Четверг",
+            "nameTurk": "Penşenbe"
+        },
+        {
+            "nameRus": "Пятница",
+            "nameTurk": "Anna"
+        },
+        {
+            "nameRus": "Суббота",
+            "nameTurk": "Şenbe"
+        },
+        {
+            "nameRus": "Воскресенье",
+            "nameTurk": "Ýekşenbe"
+        },
+        {
+            "nameRus": "Летнее время",
+            "nameTurk": "Tomus wagty"
+        },
+        {
+            "nameRus": "Местное время",
+            "nameTurk": "Ýerli wagt"
+        },
+        {
+            "nameRus": "Сколько времени?",
+            "nameTurk": "Sagat näçe?"
+        },
+        {
+            "nameRus": "Сейчас 10 часов",
+            "nameTurk": "Häzir sagat 10"
+        },
+        {
+            "nameRus": "9 часов 30 минут (пол десятого)",
+            "nameTurk": "9 sagat 30 minut (10-nyň ýary)"
+        },
+        {
+            "nameRus": "Без пятнадцати 12",
+            "nameTurk": "15 minudy kem 12"
+        },
+        {
+            "nameRus": "Времена года",
+            "nameTurk": "Ýyl pasyllary"
+        },
+        {
+            "nameRus": "Зима",
+            "nameTurk": "Gyş"
+        },
+        {
+            "nameRus": "Весна",
+            "nameTurk": "Bahar"
+        },
+        {
+            "nameRus": "Лето",
+            "nameTurk": "Tomus"
+        },
+        {
+            "nameRus": "Осень",
+            "nameTurk": "Güýz"
+        },
+        {
+            "nameRus": "Вчера",
+            "nameTurk": "Düýn, öten gün"
+        },
+        {
+            "nameRus": "Сегодня",
+            "nameTurk": "Şu gün"
+        },
+        {
+            "nameRus": "Завтра",
+            "nameTurk": "Ertir"
+        },
+        {
+            "nameRus": "Послезавтра",
+            "nameTurk": "Birigün"
+        },
+        {
+            "nameRus": "Сегодня утром",
+            "nameTurk": "Şügün irden"
+        },
+        {
+            "nameRus": "Давно",
+            "nameTurk": "Öň, bireýýäm"
+        },
+        {
+            "nameRus": "Недавно",
+            "nameTurk": "Ýaňy-ýakynda, golaýda"
+        },
+        {
+            "nameRus": "В последнее время",
+            "nameTurk": "Soňky wagtda"
+        },
+        {
+            "nameRus": "Сейчас",
+            "nameTurk": "Häzir"
+        },
+        {
+            "nameRus": "Мне пора!",
+            "nameTurk": "Meniň gitmeli wagtym boldy!"
+        }
+    ]
+}

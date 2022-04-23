@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:tmlearn/global_variables.dart';
 import 'package:tmlearn/pages/dictionary_info_page.dart';
-import 'package:tmlearn/widgets/ariet_transparent_app_bar.dart';
+import 'package:tmlearn/widgets/custom_transparent_app_bar.dart';
 
 class DictionaryPage extends StatelessWidget {
   const DictionaryPage({Key? key}) : super(key: key);
@@ -10,22 +10,22 @@ class DictionaryPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: backgroundColor,
-      appBar: ArietTransparentBar(titleRus: 'Словарь\n', titleTurk: 'Sözlük',),
+      appBar: const CustomTransparentAppBar(titleRus: 'Словарь\n', titleTurk: 'Sözlük',),
       body: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 17) +
-            EdgeInsets.only(top: 20, bottom: 32),
+        padding: const EdgeInsets.symmetric(horizontal: 17) +
+            const EdgeInsets.only(top: 20, bottom: 32),
         child: Column(
           children: [
             Container(
               height: 44,
-              padding: EdgeInsets.only(left: 25, right: 8) +
-                  EdgeInsets.symmetric(vertical: 8),
+              padding: const EdgeInsets.only(left: 25, right: 8) +
+                  const EdgeInsets.symmetric(vertical: 8),
               decoration: BoxDecoration(
                   color: secondaryColor,
                   borderRadius: BorderRadius.circular(11.4)),
               child: Row(children: [
                 Expanded(child: TextFormField()),
-                SizedBox(width: 30),
+                const SizedBox(width: 30),
                 FloatingActionButton(
                   backgroundColor: Colors.black,
                   onPressed: () {},
@@ -36,26 +36,26 @@ class DictionaryPage extends StatelessWidget {
                 )
               ]),
             ),
-            SizedBox(height: 21),
+            const SizedBox(height: 21),
             Expanded(
               child: Container(
-                padding: EdgeInsets.only(top: 7),
+                padding: const EdgeInsets.only(top: 7),
                 decoration: BoxDecoration(
                     color: secondaryColor,
                     borderRadius: BorderRadius.circular(11.4)),
                 child: ListView.separated(
                     itemBuilder: (context, index) => Padding(
-                          padding: EdgeInsets.only(left: 31),
+                          padding: const EdgeInsets.only(left: 31),
                           child: Align(
                             alignment: Alignment.centerLeft,
                             child: TextButton(
                               onPressed: () {
                                 Navigator.push(context,
                                     MaterialPageRoute(builder: (context) {
-                                  return DictionaryInfoPage();
+                                  return const DictionaryInfoPage();
                                 }));
                               },
-                              child: Text(
+                              child: const Text(
                                 "School",
                                 style: TextStyle(
                                   color: Colors.white,
@@ -65,7 +65,7 @@ class DictionaryPage extends StatelessWidget {
                             ),
                           ),
                         ),
-                    separatorBuilder: (contex, index) => Padding(
+                    separatorBuilder: (contex, index) => const Padding(
                         padding: EdgeInsets.symmetric(horizontal: 17),
                         child: Divider(
                           color: Colors.black,

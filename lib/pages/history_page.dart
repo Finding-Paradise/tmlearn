@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../widgets/ariet_transparent_app_bar.dart';
+import '../widgets/custom_transparent_app_bar.dart';
 import '../widgets/dictionary_card.dart';
 
 class HistoryPage extends StatelessWidget {
@@ -10,15 +10,15 @@ class HistoryPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color(0xFF191034),
-      appBar: ArietTransparentBar(titleRus: 'История\n', titleTurk: 'Geçmiş',),
+      appBar: const CustomTransparentAppBar(titleRus: 'История\n', titleTurk: 'Geçmiş',),
       body: SafeArea(
         child: Padding(
-          padding: const EdgeInsets.only(top: 20.0),
+          padding: const EdgeInsets.only(top: 20.0, bottom: 20.0),
           child: ListView.builder(
             itemCount: 7,
             itemBuilder: (BuildContext context, int index) => DictionaryCard(
               name: "Школа",
-              cardType: CardType.History,
+              cardType: CardType.history,
               onCardTap: () {},
             ),
           ),

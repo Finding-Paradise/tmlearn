@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:tmlearn/global_variables.dart';
-import 'package:tmlearn/widgets/ariet_transparent_app_bar.dart';
+import 'package:tmlearn/widgets/custom_transparent_app_bar.dart';
 import 'dart:convert';
 
 import 'package:tmlearn/widgets/icons_row.dart';
@@ -12,7 +12,7 @@ class SpecificCategoryLearnWidget extends StatefulWidget {
   final String? categoryTitleRus, categoryTitleTurk;
   final filePath;
 
-  SpecificCategoryLearnWidget({Key? key, required this.filePath, required this.categoryTitleRus, required this.categoryTitleTurk}) : super(key: key);
+  const SpecificCategoryLearnWidget({Key? key, required this.filePath, required this.categoryTitleRus, required this.categoryTitleTurk}) : super(key: key);
 
 
   @override
@@ -40,10 +40,10 @@ class _SpecificCategoryLearnWidgetState extends State<SpecificCategoryLearnWidge
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: ArietTransparentBar(
+      appBar: CustomTransparentAppBar(
           titleRus: widget.categoryTitleRus, titleTurk: widget.categoryTitleTurk),
       body: Padding(
-        padding: const EdgeInsets.only(top: 24.0),
+        padding: const EdgeInsets.only(top: 24.0, bottom: 24.0),
         child: ListView.separated(
           itemCount: _items.length,
           separatorBuilder: (BuildContext context, int index) {
@@ -61,19 +61,19 @@ class _SpecificCategoryLearnWidgetState extends State<SpecificCategoryLearnWidge
                     children: [
                       Text(
                         _items[index]["nameRus"],
-                        style: GoogleFonts.lato(
+                        style: GoogleFonts.nunito(
                           fontSize: 20.0,
                           textStyle: TextStyle(color: primaryColor),
                         ),
                       ),
                       Text(
                         _items[index]["nameTurk"],
-                        style: GoogleFonts.lato(
+                        style: GoogleFonts.nunito(
                           fontSize: 20.0,
                           textStyle: const TextStyle(color: Colors.white),
                         ),
                       ),
-                      const Divider(height: 10),
+                      Divider(height: 10, thickness: 0, color: secondaryColor,),
                       const IconRow(),
                     ],
                     mainAxisAlignment: MainAxisAlignment.center,

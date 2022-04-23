@@ -1,0 +1,108 @@
+{
+    "items": [
+        {
+            "nameRus": "Фамилия",
+            "nameTurk": "Familiýa"
+        },
+        {
+            "nameRus": "Имя",
+            "nameTurk": "At"
+        },
+        {
+            "nameRus": "Дата рождения",
+            "nameTurk": "Dogulan güni"
+        },
+        {
+            "nameRus": "Место рождения",
+            "nameTurk": "Dogulan ýeri"
+        },
+        {
+            "nameRus": "Гражданство",
+            "nameTurk": "Raýatçylyk"
+        },
+        {
+            "nameRus": "Пол",
+            "nameTurk": "Jyns"
+        },
+        {
+            "nameRus": "Женский",
+            "nameTurk": "Aýal jynsy"
+        },
+        {
+            "nameRus": "Мужской",
+            "nameTurk": "Erkek jynsy"
+        },
+        {
+            "nameRus": "Постоянное местожительство",
+            "nameTurk": "Hemişelik ýaşaýan ýeri"
+        },
+        {
+            "nameRus": "Адрес в Туркменистане",
+            "nameTurk": "Türkmenistanda adresi"
+        },
+        {
+            "nameRus": "Национальность",
+            "nameTurk": "Milleti"
+        },
+        {
+            "nameRus": "Образование",
+            "nameTurk": "Bilimi"
+        },
+        {
+            "nameRus": "Среднее образование",
+            "nameTurk": "Orta bilim"
+        },
+        {
+            "nameRus": "Высшее образование",
+            "nameTurk": "Ýokary bilim"
+        },
+        {
+            "nameRus": "Профессиональный опыт",
+            "nameTurk": "Professional dereje"
+        },
+        {
+            "nameRus": "У меня была практика...",
+            "nameTurk": "Meniň ... tejribam boldy"
+        },
+        {
+            "nameRus": "Я работал/а ...",
+            "nameTurk": "men ... işledim"
+        },
+        {
+            "nameRus": "Работаю в фирме",
+            "nameTurk": "Firmada işleýärin"
+        },
+        {
+            "nameRus": "Знание иностранных языков",
+            "nameTurk": "Daşary ýurt dilini bilişi"
+        },
+        {
+            "nameRus": "Семейное положение",
+            "nameTurk": "Maşgala ýagdaýy"
+        },
+        {
+            "nameRus": "Женат / замужем",
+            "nameTurk": "Aýally, öýlenen / durmuşa çykan"
+        },
+        {
+            "nameRus": "Холост / не замужем",
+            "nameTurk": "Sallah / durmuşa çykmadyk"
+        },
+        {
+            "nameRus": "Номер паспорта",
+            "nameTurk": "Pasport belgisi"
+        },
+        {
+            "nameRus": "Выдан",
+            "nameTurk": "Berildi"
+        },
+        {
+            "nameRus": "Выдавший орган",
+            "nameTurk": "Kim tarapyndan berildi"
+        },
+        {
+            "nameRus": "Возраст",
+            "nameTurk": "Ýaş"
+        }
+    ]
+}

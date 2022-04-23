@@ -11,9 +11,10 @@ class AcquaintanceLearnPage extends StatefulWidget {
 class _AcquaintanceLearnPageState extends State<AcquaintanceLearnPage> {
   @override
   Widget build(BuildContext context) {
-    return SpecificCategoryLearnWidget(
-        filePath: 'assets/app_sections_data/acquaintance.json',
-        categoryTitleRus: 'Знакомство\n',
-        categoryTitleTurk: 'Tanyşlyk');
+    return const SpecificCategoryLearnWidget(
+      filePath: 'assets/app_sections_data/acquaintance.json',
+      categoryTitleRus: 'Знакомство\n',
+      categoryTitleTurk: 'Tanyşlyk',
+    );
   }
 }

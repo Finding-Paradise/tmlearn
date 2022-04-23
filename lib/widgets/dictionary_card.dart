@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:like_button/like_button.dart';
 
 enum CardType {
-  History,
-  Favorite,
+  history,
+  favorite,
 }
 
 class DictionaryCard extends StatelessWidget {
@@ -48,7 +48,7 @@ class DictionaryCard extends StatelessWidget {
 
   Widget actionButton(CardType type) {
     switch (type) {
-      case CardType.Favorite:
+      case CardType.favorite:
         return LikeButton(
           isLiked: true,
           onTap: (bool isLiked) async {
@@ -66,7 +66,7 @@ class DictionaryCard extends StatelessWidget {
             );
           },
         );
-      case CardType.History:
+      case CardType.history:
         return IconButton(
           padding: EdgeInsets.zero,
           onPressed: () {
@@ -75,7 +75,7 @@ class DictionaryCard extends StatelessWidget {
           icon: const Icon(
             Icons.history,
             size: 25,
-            color: const Color(0xFFEBC811),
+            color: Color(0xFFEBC811),
           ),
         );
     }

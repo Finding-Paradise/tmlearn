@@ -6,7 +6,7 @@ class CommonPhrasesPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SpecificCategoryNavWidget(
+    return const SpecificCategoryNavWidget(
       learnPageIndex: 0,
       categoryTitleRus: 'Общие фразы\n',
       categoryTitleTurk: 'Umumy jümleler',

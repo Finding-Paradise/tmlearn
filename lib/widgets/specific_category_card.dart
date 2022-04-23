@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:tmlearn/global_variables.dart';
-import 'package:tmlearn/widgets/ariet_transparent_app_bar.dart';
+import 'package:tmlearn/widgets/custom_transparent_app_bar.dart';
 
 class SpecificCategoryCardWidget extends StatefulWidget {
   const SpecificCategoryCardWidget({Key? key}) : super(key: key);
@@ -16,13 +16,13 @@ class _SpecificCategoryCardWidgetState
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: ArietTransparentBar(),
+      appBar: const CustomTransparentAppBar(titleRus: '', titleTurk: '',),
       body: SafeArea(
         child: Column(
           children: [
             Center(
               child: Container(
-                padding: EdgeInsets.symmetric(horizontal: 20),
+                padding: const EdgeInsets.symmetric(horizontal: 20),
                 width: double.infinity,
                 height: 271.0,
                 child: Card(
@@ -33,12 +33,12 @@ class _SpecificCategoryCardWidgetState
                     children: [
                       Text(
                         'Господин...',
-                        style: GoogleFonts.lato(
+                        style: GoogleFonts.nunito(
                           fontSize: 30.0,
                           textStyle: TextStyle(color: primaryColor),
                         ),
                       ),
-                      Divider(height: 60),
+                      const Divider(height: 60),
                       Padding(
                         padding: const EdgeInsets.only(right: 20, bottom: 30),
                         child: IconButton(
@@ -57,7 +57,7 @@ class _SpecificCategoryCardWidgetState
               ),
             ),
             Container(
-              padding: EdgeInsets.all(50),
+              padding: const EdgeInsets.all(50),
               child: Row(
                 children: [
                   Container(
