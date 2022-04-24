@@ -6,21 +6,26 @@ import 'package:tmlearn/widgets/custom_transparent_app_bar.dart';
 import 'dart:convert';
 
 import 'package:tmlearn/widgets/icons_row.dart';
+import 'package:tmlearn/widgets/navigation_drawer.dart';
 
 class SpecificCategoryLearnWidget extends StatefulWidget {
-
   final String? categoryTitleRus, categoryTitleTurk;
   final String filePath;
 
-  const SpecificCategoryLearnWidget({Key? key, required this.filePath, required this.categoryTitleRus, required this.categoryTitleTurk}) : super(key: key);
-
+  const SpecificCategoryLearnWidget(
+      {Key? key,
+      required this.filePath,
+      required this.categoryTitleRus,
+      required this.categoryTitleTurk})
+      : super(key: key);
 
   @override
   State<SpecificCategoryLearnWidget> createState() =>
       _SpecificCategoryLearnWidgetState();
 }
 
-class _SpecificCategoryLearnWidgetState extends State<SpecificCategoryLearnWidget> {
+class _SpecificCategoryLearnWidgetState
+    extends State<SpecificCategoryLearnWidget> {
   @override
   void initState() {
     super.initState();
@@ -41,7 +46,10 @@ class _SpecificCategoryLearnWidgetState extends State<SpecificCategoryLearnWidge
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: CustomTransparentAppBar(
-          titleRus: widget.categoryTitleRus, titleTurk: widget.categoryTitleTurk),
+        titleRus: widget.categoryTitleRus,
+        titleTurk: widget.categoryTitleTurk,
+      ),
+      endDrawer: const NavigationDrawerWidget(),
       body: Padding(
         padding: const EdgeInsets.only(top: 24.0, bottom: 24.0),
         child: ListView.separated(
@@ -73,20 +81,25 @@ class _SpecificCategoryLearnWidgetState extends State<SpecificCategoryLearnWidge
                           textStyle: const TextStyle(color: Colors.white),
                         ),
                       ),
-                      Divider(height: 10, thickness: 0, color: secondaryColor,),
+                      Divider(
+                        height: 10,
+                        thickness: 0,
+                        color: secondaryColor,
+                      ),
                       const IconRow(),
                     ],
                     mainAxisAlignment: MainAxisAlignment.center,
                   ),
                 ),
                 style: ButtonStyle(
-                    backgroundColor:
-                        MaterialStateProperty.all<Color>(secondaryColor),
-                    shape:
-                        MaterialStateProperty.all<RoundedRectangleBorder>(
-                            RoundedRectangleBorder(
-                                borderRadius:
-                                    BorderRadius.circular(11.0)))),
+                  backgroundColor:
+                      MaterialStateProperty.all<Color>(secondaryColor),
+                  shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                    RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(11.0),
+                    ),
+                  ),
+                ),
               ),
             );
           },

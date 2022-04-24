@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tmlearn/widgets/navigation_drawer.dart';
 
 import '../widgets/custom_transparent_app_bar.dart';
 import '../widgets/dictionary_card.dart';
@@ -11,6 +12,7 @@ class HistoryPage extends StatelessWidget {
     return Scaffold(
       backgroundColor: const Color(0xFF191034),
       appBar: const CustomTransparentAppBar(titleRus: 'История\n', titleTurk: 'Geçmiş',),
+      endDrawer: const NavigationDrawerWidget(),
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.only(top: 20.0, bottom: 20.0),

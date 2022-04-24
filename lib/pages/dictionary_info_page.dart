@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:tmlearn/global_variables.dart';
 import 'package:tmlearn/widgets/custom_transparent_app_bar.dart';
 import 'package:tmlearn/widgets/icons_row.dart';
+import 'package:tmlearn/widgets/navigation_drawer.dart';
 
 class DictionaryInfoPage extends StatelessWidget {
   const DictionaryInfoPage({Key? key}) : super(key: key);
@@ -11,6 +12,7 @@ class DictionaryInfoPage extends StatelessWidget {
     return Scaffold(
       backgroundColor: backgroundColor,
       appBar: const CustomTransparentAppBar(titleRus: 'Словарь\n', titleTurk: 'Sözlük',),
+      endDrawer: const NavigationDrawerWidget(),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 17) +
             const EdgeInsets.only(top: 20, bottom: 32),

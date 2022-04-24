@@ -17,6 +17,7 @@ class CustomTransparentAppBar extends StatelessWidget implements PreferredSizeWi
         leading: Padding(
           padding: const EdgeInsets.only(left: 17.0),
           child: FloatingActionButton(
+            heroTag: 'btn-back',
             backgroundColor: Colors.black,
             onPressed: () {
               Navigator.pop(context);
@@ -33,11 +34,17 @@ class CustomTransparentAppBar extends StatelessWidget implements PreferredSizeWi
         actions: [
           Padding(
             padding: const EdgeInsets.only(right: 17.0),
-            child: CircleAvatar(
+            child: FloatingActionButton.small(
+              heroTag: 'btn-drawer',
               backgroundColor: Colors.black,
-              child: Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Image.asset("assets/TL.png", fit: BoxFit.fill,),
+              disabledElevation: 0,
+              onPressed: () => Scaffold.of(context).openEndDrawer(),
+              child: CircleAvatar(
+                backgroundColor: Colors.black,
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Image.asset("assets/TL.png", fit: BoxFit.fill,),
+                ),
               ),
             ),
           )
