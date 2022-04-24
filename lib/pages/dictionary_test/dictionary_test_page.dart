@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:tmlearn/global_variables.dart';
 import 'package:tmlearn/widgets/custom_transparent_app_bar.dart';
+import 'package:tmlearn/widgets/navigation_drawer.dart';
 
 import './widgets/option_card.dart';
 
@@ -31,6 +32,7 @@ class DictionaryTestPage extends StatelessWidget {
     return Scaffold(
       backgroundColor: const Color(0xFF191034),
       appBar: const CustomTransparentAppBar(titleRus: '', titleTurk: '',),
+      endDrawer: const NavigationDrawerWidget(),
       body: Padding(
         padding:
             const EdgeInsets.symmetric(horizontal: 18) + const EdgeInsets.only(top: 40),
@@ -98,13 +100,12 @@ class DictionaryTestPage extends StatelessWidget {
                       ),
                     ),
                     IconButton(
-                      padding: const EdgeInsets.only(right: 45),
                       onPressed: () {},
                       icon: Icon(
                         Icons.volume_up,
                         color: primaryColor,
-                        size: 74,
                       ),
+                      iconSize: 74,
                     ),
                   ],
                   mainAxisAlignment: MainAxisAlignment.spaceAround,

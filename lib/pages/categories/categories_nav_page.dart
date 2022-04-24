@@ -10,6 +10,7 @@ import 'package:tmlearn/pages/categories/personal_data_category/personal_data_pa
 import 'package:tmlearn/pages/categories/questions_category/questions_page.dart';
 import 'package:tmlearn/pages/categories/time_and_date_category/time_and_date_page.dart';
 import 'package:tmlearn/widgets/custom_transparent_app_bar.dart';
+import 'package:tmlearn/widgets/navigation_drawer.dart';
 
 class CategoryNavPage extends StatelessWidget {
   CategoryNavPage({Key? key}) : super(key: key);
@@ -52,6 +53,7 @@ class CategoryNavPage extends StatelessWidget {
         titleRus: 'Разделы\n',
         titleTurk: 'Bölümler',
       ),
+      endDrawer: const NavigationDrawerWidget(),
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.only(top: 20.0, bottom: 20.0),

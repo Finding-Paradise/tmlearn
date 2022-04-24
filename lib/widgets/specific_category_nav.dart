@@ -12,6 +12,7 @@ import 'package:tmlearn/pages/categories/questions_category/questions_learn_page
 import 'package:tmlearn/pages/categories/time_and_date_category/time_and_date_learn_page.dart';
 import 'package:tmlearn/pages/dictionary_test/dictionary_test_page.dart';
 import 'package:tmlearn/widgets/custom_transparent_app_bar.dart';
+import 'package:tmlearn/widgets/navigation_drawer.dart';
 import 'package:tmlearn/widgets/specific_category_card.dart';
 
 class SpecificCategoryNavWidget extends StatelessWidget {
@@ -31,6 +32,7 @@ class SpecificCategoryNavWidget extends StatelessWidget {
         titleRus: categoryTitleRus,
         titleTurk: categoryTitleTurk,
       ),
+      endDrawer: const NavigationDrawerWidget(),
       body: SafeArea(
         child: Column(children: [
           Row(
