@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:tmlearn/widgets/specific_category_learn.dart';
 
+import '../../../utils.dart';
+
 class EconomicTermsLearnPage extends StatefulWidget {
   const EconomicTermsLearnPage({Key? key}) : super(key: key);
 
@@ -15,6 +17,7 @@ class _EconomicTermsLearnState extends State<EconomicTermsLearnPage> {
       filePath: 'assets/app_sections_data/economic_terms.json',
       categoryTitleRus: 'Экономические термины\n',
       categoryTitleTurk: 'Ykdysady şertler',
+      categoryName: CategoryNames.economicTerms
     );
   }
 }

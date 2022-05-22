@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:tmlearn/widgets/specific_category_learn.dart';
 
+import '../../../utils.dart';
+
 class TimeAndDateLearnPage extends StatefulWidget {
   const TimeAndDateLearnPage({Key? key}) : super(key: key);
 
@@ -15,6 +17,7 @@ class _TimeAndDateLearnPageState extends State<TimeAndDateLearnPage> {
       filePath: 'assets/app_sections_data/time_and_date.json',
       categoryTitleRus: 'Время, даты\n',
       categoryTitleTurk: 'Wagt, seneler',
+      categoryName: CategoryNames.timeAndDate,
     );
   }
 }

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:tmlearn/widgets/specific_category_learn.dart';
 
+import '../../../utils.dart';
+
 class QuestionsLearnPage extends StatefulWidget {
   const QuestionsLearnPage({Key? key}) : super(key: key);
 
@@ -15,6 +17,7 @@ class _QuestionsLearnPageState extends State<QuestionsLearnPage> {
       filePath: 'assets/app_sections_data/questions.json',
       categoryTitleRus: 'Вопросы\n',
       categoryTitleTurk: 'Soraglar',
+      categoryName: CategoryNames.questions,
     );
   }
 }

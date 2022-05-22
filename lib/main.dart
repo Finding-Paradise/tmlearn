@@ -10,17 +10,19 @@ import 'package:tmlearn/hive_data/questions_data/questions.dart';
 import 'package:tmlearn/hive_data/time_and_date_data/time_and_date.dart';
 import 'package:tmlearn/pages/home_page.dart';
 
+import 'utils.dart';
+
 Future<void> main() async {
   await Hive.initFlutter();
+  await Hive.openBox<Acquaintance>(BoxName.acquaintanceBox);
+  await Hive.openBox<CommonPhrases>(BoxName.commonPhrasesBox);
+  await Hive.openBox<EconomicTerms>(BoxName.economicTermsBox);
+  await Hive.openBox<Greetings>(BoxName.greetingsBox);
+  await Hive.openBox<Measurements>(BoxName.measurementsBox);
+  await Hive.openBox<Personal>(BoxName.personalBox);
+  await Hive.openBox<Questions>(BoxName.questionsBox);
+  await Hive.openBox<TimeAndDate>(BoxName.timeAndDateBox);
   runApp(const MyApp());
-  Hive.registerAdapter(AcquaintanceAdapter());
-  Hive.registerAdapter(CommonPhrasesAdapter());
-  Hive.registerAdapter(EconomicTermsAdapter());
-  Hive.registerAdapter(GreetingsAdapter());
-  Hive.registerAdapter(MeasurementsAdapter());
-  Hive.registerAdapter(PersonalAdapter());
-  Hive.registerAdapter(QuestionsAdapter());
-  Hive.registerAdapter(TimeAndDateAdapter());
 }
 
 class MyApp extends StatelessWidget {
