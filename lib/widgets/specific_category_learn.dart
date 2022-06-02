@@ -191,7 +191,7 @@ class _SpecificCategoryLearnWidgetState
                         thickness: 0,
                         color: secondaryColor,
                       ),
-                      const IconRow(),
+                      IconRow(),
                     ],
                     mainAxisAlignment: MainAxisAlignment.center,
                   ),
