@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:tmlearn/widgets/specific_category_learn.dart';
 
+import '../../../utils.dart';
+
 class AcquaintanceLearnPage extends StatefulWidget {
   const AcquaintanceLearnPage({Key? key}) : super(key: key);
 
@@ -15,6 +17,7 @@ class _AcquaintanceLearnPageState extends State<AcquaintanceLearnPage> {
       filePath: 'assets/app_sections_data/acquaintance.json',
       categoryTitleRus: 'Знакомство\n',
       categoryTitleTurk: 'Tanyşlyk',
+      categoryName: CategoryNames.acquaintance,
     );
   }
 }

@@ -13,3 +13,4 @@ class AcquaintancePage extends StatelessWidget {
     );
   }
 }
+

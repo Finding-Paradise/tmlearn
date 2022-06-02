@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:tmlearn/widgets/specific_category_learn.dart';
 
+import '../../../utils.dart';
+
 class PersonalDataLearnPage extends StatefulWidget {
   const PersonalDataLearnPage({Key? key}) : super(key: key);
 
@@ -15,6 +17,7 @@ class _PersonalDataLearnPageState extends State<PersonalDataLearnPage> {
       filePath: 'assets/app_sections_data/personal_data.json',
       categoryTitleRus: 'Анкетные данные\n',
       categoryTitleTurk: 'Anket maglumatlary',
+      categoryName: CategoryNames.personal,
     );
   }
 }

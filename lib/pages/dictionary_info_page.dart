@@ -47,7 +47,7 @@ class DictionaryInfoPage extends StatelessWidget {
                       borderRadius: BorderRadius.circular(11.4)),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
-                    children: const [
+                    children: [
                       Padding(
                         padding: EdgeInsets.only(left: 38),
                         child: Text(

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:tmlearn/widgets/specific_category_learn.dart';
 
+import '../../../utils.dart';
+
 class GreetingLearnPage extends StatefulWidget {
   const GreetingLearnPage({Key? key}) : super(key: key);
 
@@ -15,6 +17,7 @@ class _GreetingLearnPageState extends State<GreetingLearnPage> {
       filePath: 'assets/app_sections_data/greetings.json',
       categoryTitleRus: 'Обращение\n',
       categoryTitleTurk: 'Ýüzlenme',
+      categoryName: CategoryNames.greetings,
     );
   }
 }

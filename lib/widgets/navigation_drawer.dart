@@ -35,6 +35,7 @@ class NavigationDrawerWidget extends StatelessWidget {
           ),
           TextButton(
             onPressed: () {
+              Navigator.pop(context);
               Navigator.push(context, MaterialPageRoute(builder: (context) {
                 return CategoryNavPage();
               }));
@@ -55,6 +56,7 @@ class NavigationDrawerWidget extends StatelessWidget {
           ),
           TextButton(
             onPressed: () {
+              Navigator.pop(context);
               Navigator.push(context, MaterialPageRoute(builder: (context) {
                 return const DictionaryPage();
               }));
@@ -75,6 +77,7 @@ class NavigationDrawerWidget extends StatelessWidget {
           ),
           TextButton(
             onPressed: () {
+              Navigator.pop(context);
               Navigator.push(context, MaterialPageRoute(builder: (context) {
                 return const FavoritePage();
               }));
@@ -95,6 +98,7 @@ class NavigationDrawerWidget extends StatelessWidget {
           ),
           TextButton(
             onPressed: () {
+              Navigator.pop(context);
               Navigator.push(context, MaterialPageRoute(builder: (context) {
                 return const HistoryPage();
               }));
