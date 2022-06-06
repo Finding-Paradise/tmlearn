@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:get/get.dart';
 import 'package:tmlearn/global_variables.dart';
 import 'package:tmlearn/pages/categories/acquaintance_category/acquaintance_page.dart';
 import 'package:tmlearn/pages/categories/common_phrases_category/common_phrases_page.dart';
@@ -70,17 +70,14 @@ class CategoryNavPage extends StatelessWidget {
                 width: double.infinity,
                 child: TextButton(
                   onPressed: () {
-                    Navigator.push(context, MaterialPageRoute(
-                      builder: (context) {
-                        return _categoriesList[index];
-                      },
-                    ));
+                    Get.to(_categoriesList[index]);
                   },
                   child: Align(
                     alignment: Alignment.centerLeft,
                     child: RichText(
                       text: TextSpan(
-                        style: GoogleFonts.nunito(fontSize: 25.0),
+                        style: const TextStyle(
+                            fontFamily: 'Nunito', fontSize: 25.0),
                         children: [
                           TextSpan(
                             text: categoryNavButtonsRus[index],

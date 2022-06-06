@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:tmlearn/global_variables.dart';
 import 'package:tmlearn/widgets/custom_transparent_app_bar.dart';
@@ -16,7 +15,7 @@ import '../hive_data/measurements_data/measurements.dart';
 import '../hive_data/personal_data/personal.dart';
 import '../hive_data/questions_data/questions.dart';
 import '../hive_data/time_and_date_data/time_and_date.dart';
-import '../utils.dart';
+import '../utils/utils.dart';
 import '../hive_data/acquaintance_data/acquaintance.dart';
 
 class SpecificCategoryLearnWidget extends StatefulWidget {
@@ -174,24 +173,24 @@ class _SpecificCategoryLearnWidgetState
                     children: [
                       Text(
                         item.nameRus,
-                        style: GoogleFonts.nunito(
-                          fontSize: 20.0,
-                          textStyle: TextStyle(color: primaryColor),
-                        ),
+                        style: TextStyle(
+                            fontFamily: 'Nunito',
+                            fontSize: 20.0,
+                            color: primaryColor),
                       ),
                       Text(
                         item.nameTurk,
-                        style: GoogleFonts.nunito(
-                          fontSize: 20.0,
-                          textStyle: const TextStyle(color: Colors.white),
-                        ),
+                        style: const TextStyle(
+                            fontFamily: 'Nunito',
+                            fontSize: 20.0,
+                            color: Colors.white),
                       ),
-                      Divider(
+                      const Divider(
                         height: 10,
                         thickness: 0,
-                        color: secondaryColor,
+                        color: Colors.transparent,
                       ),
-                      IconRow(),
+                      IconRow(nameRus: item.nameRus, nameTurk: item.nameTurk,),
                     ],
                     mainAxisAlignment: MainAxisAlignment.center,
                   ),

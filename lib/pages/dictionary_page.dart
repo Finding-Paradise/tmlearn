@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:tmlearn/global_variables.dart';
 import 'package:tmlearn/pages/dictionary_info_page.dart';
 import 'package:tmlearn/widgets/custom_transparent_app_bar.dart';
@@ -11,7 +12,10 @@ class DictionaryPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: backgroundColor,
-      appBar: const CustomTransparentAppBar(titleRus: 'Словарь\n', titleTurk: 'Sözlük',),
+      appBar: const CustomTransparentAppBar(
+        titleRus: 'Словарь\n',
+        titleTurk: 'Sözlük',
+      ),
       endDrawer: const NavigationDrawerWidget(),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 17) +
@@ -26,7 +30,10 @@ class DictionaryPage extends StatelessWidget {
                   color: secondaryColor,
                   borderRadius: BorderRadius.circular(11.4)),
               child: Row(children: [
-                Expanded(child: TextFormField()),
+                Expanded(
+                    child: TextFormField(
+                  style: const TextStyle(color: Colors.white),
+                )),
                 const SizedBox(width: 30),
                 FloatingActionButton(
                   backgroundColor: Colors.black,
@@ -52,10 +59,7 @@ class DictionaryPage extends StatelessWidget {
                             alignment: Alignment.centerLeft,
                             child: TextButton(
                               onPressed: () {
-                                Navigator.push(context,
-                                    MaterialPageRoute(builder: (context) {
-                                  return const DictionaryInfoPage();
-                                }));
+                                Get.to(DictionaryInfoPage());
                               },
                               child: const Text(
                                 "School",

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:tmlearn/global_variables.dart';
 
 class CustomTransparentAppBar extends StatelessWidget implements PreferredSizeWidget {
@@ -52,9 +51,7 @@ class CustomTransparentAppBar extends StatelessWidget implements PreferredSizeWi
         title: RichText(
           textAlign: TextAlign.center,
           text: TextSpan(
-            style: GoogleFonts.nunito(
-              textStyle: const TextStyle(fontSize: 25.0),
-            ),
+            style: const TextStyle(fontFamily: 'Nunito', fontSize: 25.0),
             children: [
               TextSpan(
                 text: titleRus ?? '',

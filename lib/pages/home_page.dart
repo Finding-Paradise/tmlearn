@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:get/get.dart';
 import 'package:tmlearn/global_variables.dart';
 import 'package:tmlearn/pages/categories/categories_nav_page.dart';
 import 'package:tmlearn/pages/dictionary_page.dart';
@@ -12,9 +12,9 @@ class HomePage extends StatelessWidget {
 
   final List pagesList = [
     CategoryNavPage(),
-    const DictionaryPage(),
-    const FavoritePage(),
-    const HistoryPage()
+    DictionaryPage(),
+    FavoritePage(),
+    HistoryPage()
   ];
 
   final String appDescription = 'Русско-Туркменский\nсловарь и разговорник';
@@ -45,12 +45,10 @@ class HomePage extends StatelessWidget {
           Center(
             child: RichText(
               text: TextSpan(
-                style: GoogleFonts.lato(
-                  textStyle: const TextStyle(
+                style: const TextStyle(
+                    fontFamily: 'Lato',
                     fontSize: 38,
-                    fontWeight: FontWeight.w700,
-                  ),
-                ),
+                    fontWeight: FontWeight.bold),
                 children: [
                   const TextSpan(
                     text: 'Tm',
@@ -80,7 +78,7 @@ class HomePage extends StatelessWidget {
             shrinkWrap: true,
             physics: const NeverScrollableScrollPhysics(),
             padding: const EdgeInsets.all(37.0),
-            itemCount: homePageNavButtonsRus.length,
+            itemCount: pagesList.length,
             separatorBuilder: (BuildContext context, int index) {
               return const Divider(
                 height: 26.0,
@@ -91,16 +89,13 @@ class HomePage extends StatelessWidget {
                 width: double.infinity,
                 child: TextButton(
                   onPressed: () {
-                    Navigator.push(context, MaterialPageRoute(
-                      builder: (context) {
-                        return pagesList[index];
-                      },
-                    ));
+                    Get.to(pagesList[index]);
                   },
                   child: RichText(
                     textAlign: TextAlign.center,
                     text: TextSpan(
-                      style: GoogleFonts.nunito(fontSize: 25.0),
+                      style:
+                          const TextStyle(fontFamily: 'Nunito', fontSize: 25.0),
                       children: [
                         TextSpan(
                           text: homePageNavButtonsRus[index],
@@ -117,8 +112,7 @@ class HomePage extends StatelessWidget {
                     padding: MaterialStateProperty.all<EdgeInsets>(
                       const EdgeInsets.symmetric(vertical: 16.0),
                     ),
-                    shape:
-                        MaterialStateProperty.all<RoundedRectangleBorder>(
+                    shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                       RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(10.0),
                       ),

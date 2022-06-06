@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:tmlearn/widgets/specific_category_learn.dart';
 
-import '../../../utils.dart';
+import '../../../utils/utils.dart';
 
 class EconomicTermsLearnPage extends StatefulWidget {
   const EconomicTermsLearnPage({Key? key}) : super(key: key);

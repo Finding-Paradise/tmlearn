@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:get/get.dart';
 import 'package:tmlearn/global_variables.dart';
 import 'package:tmlearn/pages/categories/acquaintance_category/acquaintance_learn_page.dart';
 import 'package:tmlearn/pages/categories/common_phrases_category/common_phrases_learn_page.dart';
@@ -65,7 +65,8 @@ class SpecificCategoryNavWidgetButtonLearn
   final int buttonIndex;
   final int routeToPageIndex;
   SpecificCategoryNavWidgetButtonLearn(
-      {Key? key, required this.buttonIndex, required this.routeToPageIndex}) : super(key: key);
+      {Key? key, required this.buttonIndex, required this.routeToPageIndex})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -74,9 +75,7 @@ class SpecificCategoryNavWidgetButtonLearn
         children: [
           IconButton(
             onPressed: () {
-              Navigator.push(context, MaterialPageRoute(builder: (context) {
-                return routeToPage[routeToPageIndex];
-              }));
+              Get.to(routeToPage[routeToPageIndex]);
             },
             icon: SvgPicture.asset(_navPageIcons[buttonIndex]),
             iconSize: 172.0,
@@ -93,7 +92,8 @@ class SpecificCategoryNavWidgetButtonLearn
 
 class SpecificCategoryNavWidgetButtonCards
     extends SpecificCategoryNavWidgetFields {
-  SpecificCategoryNavWidgetButtonCards({Key? key, required this.buttonIndex}) : super(key: key);
+  SpecificCategoryNavWidgetButtonCards({Key? key, required this.buttonIndex})
+      : super(key: key);
   final int buttonIndex;
   @override
   Widget build(BuildContext context) {
@@ -102,9 +102,7 @@ class SpecificCategoryNavWidgetButtonCards
         children: [
           IconButton(
             onPressed: () {
-              Navigator.push(context, MaterialPageRoute(builder: (context) {
-                return const SpecificCategoryCardWidget();
-              }));
+              Get.to(SpecificCategoryCardWidget());
             },
             icon: SvgPicture.asset(_navPageIcons[buttonIndex]),
             iconSize: 172.0,
@@ -119,8 +117,10 @@ class SpecificCategoryNavWidgetButtonCards
   }
 }
 
-class SpecificCategoryNavWidgetButtonTest1 extends SpecificCategoryNavWidgetFields {
-  SpecificCategoryNavWidgetButtonTest1({Key? key, required this.buttonIndex}) : super(key: key);
+class SpecificCategoryNavWidgetButtonTest1
+    extends SpecificCategoryNavWidgetFields {
+  SpecificCategoryNavWidgetButtonTest1({Key? key, required this.buttonIndex})
+      : super(key: key);
   final int buttonIndex;
   @override
   Widget build(BuildContext context) {
@@ -129,9 +129,7 @@ class SpecificCategoryNavWidgetButtonTest1 extends SpecificCategoryNavWidgetFiel
         children: [
           IconButton(
             onPressed: () {
-              Navigator.push(context, MaterialPageRoute(builder: (context) {
-                return tempName[0];
-              }));
+              Get.to(tempName[0]);
             },
             icon: SvgPicture.asset(_navPageIcons[buttonIndex]),
             iconSize: 172.0,
@@ -146,8 +144,10 @@ class SpecificCategoryNavWidgetButtonTest1 extends SpecificCategoryNavWidgetFiel
   }
 }
 
-class SpecificCategoryNavWidgetButtonTest2 extends SpecificCategoryNavWidgetFields {
-  SpecificCategoryNavWidgetButtonTest2({Key? key, required this.buttonIndex}) : super(key: key);
+class SpecificCategoryNavWidgetButtonTest2
+    extends SpecificCategoryNavWidgetFields {
+  SpecificCategoryNavWidgetButtonTest2({Key? key, required this.buttonIndex})
+      : super(key: key);
   final int buttonIndex;
   @override
   Widget build(BuildContext context) {
@@ -156,9 +156,7 @@ class SpecificCategoryNavWidgetButtonTest2 extends SpecificCategoryNavWidgetFiel
         children: [
           IconButton(
             onPressed: () {
-              Navigator.push(context, MaterialPageRoute(builder: (context) {
-                return tempName[0];
-              }));
+              Get.to(tempName[0]);
             },
             icon: SvgPicture.asset(_navPageIcons[buttonIndex]),
             iconSize: 172.0,
@@ -215,7 +213,9 @@ class SpecificCategoryNavWidgetFields extends StatelessWidget {
 }
 
 class SpecificCategoryNavWidgetText extends StatelessWidget {
-  const SpecificCategoryNavWidgetText({Key? key, this.navItemsRus = '', this.navItemsTurk = ''}): super(key: key);
+  const SpecificCategoryNavWidgetText(
+      {Key? key, this.navItemsRus = '', this.navItemsTurk = ''})
+      : super(key: key);
 
   final String navItemsRus;
   final String navItemsTurk;
@@ -225,9 +225,7 @@ class SpecificCategoryNavWidgetText extends StatelessWidget {
     return RichText(
       textAlign: TextAlign.center,
       text: TextSpan(
-        style: GoogleFonts.nunito(
-          textStyle: const TextStyle(fontSize: 25.0),
-        ),
+        style: const TextStyle(fontFamily: 'Nunito', fontSize: 25.0),
         children: [
           TextSpan(
             text: navItemsRus,

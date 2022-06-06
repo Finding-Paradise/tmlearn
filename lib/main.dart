@@ -9,10 +9,14 @@ import 'package:tmlearn/hive_data/personal_data/personal.dart';
 import 'package:tmlearn/hive_data/questions_data/questions.dart';
 import 'package:tmlearn/hive_data/time_and_date_data/time_and_date.dart';
 import 'package:tmlearn/pages/home_page.dart';
-
-import 'utils.dart';
+import 'package:flutter/services.dart';
+import 'utils/utils.dart';
+import 'package:get/get.dart';
 
 Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await SystemChrome.setPreferredOrientations(
+      [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]);
   await Hive.initFlutter();
   await Hive.openBox<Acquaintance>(BoxName.acquaintanceBox);
   await Hive.openBox<CommonPhrases>(BoxName.commonPhrasesBox);
@@ -30,11 +34,13 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
       title: 'TmLearn',
       theme: ThemeData(
-          primarySwatch: Colors.deepPurple,
-          primaryColor: Colors.deepPurple[50]),
+        primarySwatch: Colors.deepPurple,
+        primaryColor: Colors.deepPurple[50],
+        fontFamily: 'Nunito',
+      ),
       home: HomePage(),
       debugShowCheckedModeBanner: false,
     );

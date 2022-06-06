@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:tmlearn/global_variables.dart';
 import 'package:tmlearn/widgets/custom_transparent_app_bar.dart';
 import 'package:tmlearn/widgets/navigation_drawer.dart';
@@ -14,10 +13,15 @@ class SpecificCategoryCardWidget extends StatefulWidget {
 
 class _SpecificCategoryCardWidgetState
     extends State<SpecificCategoryCardWidget> {
+  bool isRus = true;
+  List<String> specificCategoryCardText = ['Господин...', 'Jenap...'];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const CustomTransparentAppBar(titleRus: '', titleTurk: '',),
+      appBar: const CustomTransparentAppBar(
+        titleRus: '',
+        titleTurk: '',
+      ),
       endDrawer: const NavigationDrawerWidget(),
       body: SafeArea(
         child: Column(
@@ -33,14 +37,15 @@ class _SpecificCategoryCardWidgetState
                       borderRadius: BorderRadius.circular(12.0)),
                   child: Column(
                     children: [
-                      Text(
-                        'Господин...',
-                        style: GoogleFonts.nunito(
-                          fontSize: 30.0,
-                          textStyle: TextStyle(color: primaryColor),
-                        ),
+                      Text((isRus) ? specificCategoryCardText[0] : specificCategoryCardText[1],
+                          style: TextStyle(
+                              fontFamily: 'Nunito',
+                              fontSize: 30.0,
+                              color: primaryColor)),
+                      const Divider(
+                        height: 60,
+                        color: Colors.transparent,
                       ),
-                      const Divider(height: 60),
                       Padding(
                         padding: const EdgeInsets.only(bottom: 30),
                         child: IconButton(
@@ -62,9 +67,37 @@ class _SpecificCategoryCardWidgetState
               padding: const EdgeInsets.all(50),
               child: Row(
                 children: [
-                  FloatingActionButton(heroTag: 'card-btn-back', onPressed: () {},backgroundColor: Colors.black, child: Icon(Icons.arrow_back, color: primaryColor, size: 40,)),
-                  FloatingActionButton(heroTag: 'card-btn-restart', onPressed: () {},backgroundColor: Colors.black, child: Icon(Icons.restart_alt_outlined, color: primaryColor, size: 40,)),
-                  FloatingActionButton(heroTag: 'card-btn-forward', onPressed: () {},backgroundColor: Colors.black, child: Icon(Icons.arrow_forward, color: primaryColor, size: 40,)),
+                  FloatingActionButton(
+                      heroTag: 'card-btn-back',
+                      onPressed: () {},
+                      backgroundColor: Colors.black,
+                      child: Icon(
+                        Icons.arrow_back,
+                        color: primaryColor,
+                        size: 40,
+                      )),
+                  FloatingActionButton(
+                      heroTag: 'card-btn-restart',
+                      onPressed: () {
+                        setState(() {
+                          isRus = !isRus;
+                        });
+                      },
+                      backgroundColor: Colors.black,
+                      child: Icon(
+                        Icons.restart_alt_outlined,
+                        color: primaryColor,
+                        size: 40,
+                      )),
+                  FloatingActionButton(
+                      heroTag: 'card-btn-forward',
+                      onPressed: () {},
+                      backgroundColor: Colors.black,
+                      child: Icon(
+                        Icons.arrow_forward,
+                        color: primaryColor,
+                        size: 40,
+                      )),
                 ],
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
               ),

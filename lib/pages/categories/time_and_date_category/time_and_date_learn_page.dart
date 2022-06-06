@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:tmlearn/widgets/specific_category_learn.dart';
 
-import '../../../utils.dart';
+import '../../../utils/utils.dart';
 
 class TimeAndDateLearnPage extends StatefulWidget {
   const TimeAndDateLearnPage({Key? key}) : super(key: key);

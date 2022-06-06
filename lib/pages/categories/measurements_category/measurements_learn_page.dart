@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:tmlearn/widgets/specific_category_learn.dart';
 
-import '../../../utils.dart';
+import '../../../utils/utils.dart';
 
 class MeasurementsLearnPage extends StatefulWidget {
   const MeasurementsLearnPage({Key? key}) : super(key: key);

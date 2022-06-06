@@ -26,7 +26,7 @@ class DictionaryInfoPage extends StatelessWidget {
                   color: secondaryColor,
                   borderRadius: BorderRadius.circular(11.4)),
               child: Row(children: [
-                Expanded(child: TextFormField()),
+                Expanded(child: TextFormField(style: const TextStyle(color: Colors.white),)),
                 const SizedBox(width: 30),
                 FloatingActionButton(
                   backgroundColor: Colors.black,
@@ -75,7 +75,7 @@ class DictionaryInfoPage extends StatelessWidget {
                       Spacer(),
                       Padding(
                         padding: EdgeInsets.only(bottom: 35.0),
-                        child: IconRow(),
+                        child: IconRow(nameRus: '', nameTurk: '',),
                       )
                     ],
                   )),
