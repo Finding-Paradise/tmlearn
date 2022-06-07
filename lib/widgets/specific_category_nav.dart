@@ -51,8 +51,14 @@ class SpecificCategoryNavWidget extends StatelessWidget {
           ),
           Row(
             children: [
-              SpecificCategoryNavWidgetButtonTest1(buttonIndex: 2),
-              SpecificCategoryNavWidgetButtonTest2(buttonIndex: 3)
+              SpecificCategoryNavWidgetButtonTest1(
+                buttonIndex: 2,
+                index: learnPageIndex,
+              ),
+              SpecificCategoryNavWidgetButtonTest2(
+                buttonIndex: 3,
+                index: learnPageIndex,
+              ),
             ],
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           ),
@@ -128,9 +134,11 @@ class SpecificCategoryNavWidgetButtonCards
 
 class SpecificCategoryNavWidgetButtonTest1
     extends SpecificCategoryNavWidgetFields {
-  SpecificCategoryNavWidgetButtonTest1({Key? key, required this.buttonIndex})
+  SpecificCategoryNavWidgetButtonTest1(
+      {Key? key, required this.buttonIndex, required this.index})
       : super(key: key);
   final int buttonIndex;
+  final int index;
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -139,7 +147,7 @@ class SpecificCategoryNavWidgetButtonTest1
           IconButton(
             onPressed: () {
               Navigator.push(context, MaterialPageRoute(builder: (context) {
-                return tempName[0];
+                return DictionaryTestPage(index: index,test_index:1);
               }));
             },
             icon: SvgPicture.asset(_navPageIcons[buttonIndex]),
@@ -157,9 +165,11 @@ class SpecificCategoryNavWidgetButtonTest1
 
 class SpecificCategoryNavWidgetButtonTest2
     extends SpecificCategoryNavWidgetFields {
-  SpecificCategoryNavWidgetButtonTest2({Key? key, required this.buttonIndex})
+  SpecificCategoryNavWidgetButtonTest2(
+      {Key? key, required this.buttonIndex, required this.index})
       : super(key: key);
   final int buttonIndex;
+  final int index;
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -168,7 +178,7 @@ class SpecificCategoryNavWidgetButtonTest2
           IconButton(
             onPressed: () {
               Navigator.push(context, MaterialPageRoute(builder: (context) {
-                return tempName[0];
+                return DictionaryTestPage(index: index,test_index:2);
               }));
             },
             icon: SvgPicture.asset(_navPageIcons[buttonIndex]),
@@ -195,7 +205,7 @@ class SpecificCategoryNavWidgetFields extends StatelessWidget {
     const TimeAndDateLearnPage(),
     const EconomicTermsLearnPage(),
   ];
-  final List tempName = [DictionaryTestPage()];
+  // final List tempName = [DictionaryTestPage()];
 
   final List<String> _navPageIcons = [
     'assets/icons/specific_category_nav_page_learn_icon.svg',

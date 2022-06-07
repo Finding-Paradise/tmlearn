@@ -40,7 +40,7 @@ class _SpecificCategoryCardWidgetState
     "assets/app_sections_data/greetings.json",
     "assets/app_sections_data/acquaintance.json",
     "assets/app_sections_data/questions.json",
-    "assets/app_sections_data/personal.json",
+    "assets/app_sections_data/personal_data.json",
     "assets/app_sections_data/measurements_and_directions.json",
     "assets/app_sections_data/time_and_date.json",
     "assets/app_sections_data/economic_terms.json",

@@ -39,7 +39,6 @@ class FavoriteCubit extends Cubit<FavoriteState> {
       jsonEncode(phrase.toJson())
     ]);
     emit(FavoriteLoaded([...state.phrases, phrase]));
-    log(state.phrases.toString());
   }
 
   delete_favorite(Phrases phrase) {

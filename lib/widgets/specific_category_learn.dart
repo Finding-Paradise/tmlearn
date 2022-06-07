@@ -163,7 +163,6 @@ class _SpecificCategoryLearnWidgetState
           },
           itemBuilder: (BuildContext context, int index) {
             var item = _items[index];
-            print(item);
             return Container(
               padding: const EdgeInsets.symmetric(horizontal: 20),
               width: double.infinity,
