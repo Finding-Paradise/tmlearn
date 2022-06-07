@@ -1,9 +1,7 @@
-
 import 'package:equatable/equatable.dart';
 import 'package:hive/hive.dart';
 
 import '../data.dart';
-
 
 @HiveType(typeId: 4)
 class Greetings extends Equatable implements Phrases {
@@ -46,24 +44,23 @@ class Greetings extends Equatable implements Phrases {
   // }
   Map<String, dynamic> toJson() {
     return {
-      "nameTurk":nameTurk,
-      "nameRus":nameRus,
+      "nameTurk": nameTurk,
+      "nameRus": nameRus,
     };
   }
 
-  static fromJson(Map<String,dynamic> json){
+  static fromJson(Map<String, dynamic> json) {
     return Greetings(
-      nameRus:json["nameRus"],
-      nameTurk:json["nameTurk"],
+      nameRus: json["nameRus"],
+      nameTurk: json["nameTurk"],
     );
   }
+
   @override
   String toString() {
-    // TODO: implement toString
     return "$nameRus:$nameTurk";
   }
 
   @override
-  // TODO: implement props
   List<Object?> get props => [nameRus, nameTurk];
 }

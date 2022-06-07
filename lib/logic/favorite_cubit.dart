@@ -14,9 +14,8 @@ class FavoriteCubit extends Cubit<FavoriteState> {
   FavoriteCubit(this.preferences) : super(FavoriteInitial([]));
 
   get_favorites() {
-    List<String> favs2_str = preferences.getStringList('favs2') ?? [];
-    print(favs2_str);
-    var new_ls = favs2_str
+    List<String> favs7_str = preferences.getStringList('favs7') ?? [];
+    var new_ls = favs7_str
         .map(
           (e) => Phrases.fromJson(jsonDecode(e)),
         )
@@ -26,26 +25,34 @@ class FavoriteCubit extends Cubit<FavoriteState> {
   }
 
   bool is_favorite(Phrases phrase) {
-    return state.phrases.contains(phrase);
+    for (var element in state.phrases) {
+      if (element.nameRus == phrase.nameRus) {
+        return true;
+      }
+    }
+    return false;
   }
 
   add_favorite(Phrases phrase) {
-    preferences.setStringList('favs2', <String>[
+    preferences.setStringList('favs7', <String>[
       ...state.phrases.map((e) => jsonEncode(e.toJson())),
       jsonEncode(phrase.toJson())
     ]);
-    print("Inserting");
-    log(state.phrases.toString());
     emit(FavoriteLoaded([...state.phrases, phrase]));
+    log(state.phrases.toString());
   }
 
   delete_favorite(Phrases phrase) {
     state.phrases.removeWhere((element) => element == phrase);
     List<Phrases> new_ls = List.from(state.phrases);
-    preferences.setStringList('favs2', <String>[
+    preferences.setStringList('favs7', <String>[
       ...new_ls.map((e) => jsonEncode(e.toJson())),
     ]);
-    print(new_ls);
-    emit(FavoriteLoaded(new_ls));
+    emit(FavoriteInitial([]));
+    if (new_ls.isEmpty) {
+      emit(FavoriteEmpty([]));
+    } else {
+      emit(FavoriteLoaded(new_ls));
+    }
   }
 }
