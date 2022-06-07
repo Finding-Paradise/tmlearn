@@ -35,11 +35,12 @@ class SpecificCategoryNavWidget extends StatelessWidget {
       endDrawer: const NavigationDrawerWidget(),
       body: SafeArea(
         child: Column(children: [
+          Text("Here"),
           Row(
             children: [
               SpecificCategoryNavWidgetButtonLearn(
                   buttonIndex: 0, routeToPageIndex: learnPageIndex),
-              SpecificCategoryNavWidgetButtonCards(buttonIndex: 1)
+              SpecificCategoryNavWidgetButtonCards(buttonIndex: 1,learnPageIndex: learnPageIndex,)
             ],
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           ),
@@ -65,7 +66,8 @@ class SpecificCategoryNavWidgetButtonLearn
   final int buttonIndex;
   final int routeToPageIndex;
   SpecificCategoryNavWidgetButtonLearn(
-      {Key? key, required this.buttonIndex, required this.routeToPageIndex}) : super(key: key);
+      {Key? key, required this.buttonIndex, required this.routeToPageIndex})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -93,8 +95,10 @@ class SpecificCategoryNavWidgetButtonLearn
 
 class SpecificCategoryNavWidgetButtonCards
     extends SpecificCategoryNavWidgetFields {
-  SpecificCategoryNavWidgetButtonCards({Key? key, required this.buttonIndex}) : super(key: key);
+  SpecificCategoryNavWidgetButtonCards({required this.learnPageIndex, Key? key, required this.buttonIndex})
+      : super(key: key);
   final int buttonIndex;
+  final int learnPageIndex;
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -103,7 +107,7 @@ class SpecificCategoryNavWidgetButtonCards
           IconButton(
             onPressed: () {
               Navigator.push(context, MaterialPageRoute(builder: (context) {
-                return const SpecificCategoryCardWidget();
+                return SpecificCategoryCardWidget(index:learnPageIndex);
               }));
             },
             icon: SvgPicture.asset(_navPageIcons[buttonIndex]),
@@ -119,8 +123,10 @@ class SpecificCategoryNavWidgetButtonCards
   }
 }
 
-class SpecificCategoryNavWidgetButtonTest1 extends SpecificCategoryNavWidgetFields {
-  SpecificCategoryNavWidgetButtonTest1({Key? key, required this.buttonIndex}) : super(key: key);
+class SpecificCategoryNavWidgetButtonTest1
+    extends SpecificCategoryNavWidgetFields {
+  SpecificCategoryNavWidgetButtonTest1({Key? key, required this.buttonIndex})
+      : super(key: key);
   final int buttonIndex;
   @override
   Widget build(BuildContext context) {
@@ -146,8 +152,10 @@ class SpecificCategoryNavWidgetButtonTest1 extends SpecificCategoryNavWidgetFiel
   }
 }
 
-class SpecificCategoryNavWidgetButtonTest2 extends SpecificCategoryNavWidgetFields {
-  SpecificCategoryNavWidgetButtonTest2({Key? key, required this.buttonIndex}) : super(key: key);
+class SpecificCategoryNavWidgetButtonTest2
+    extends SpecificCategoryNavWidgetFields {
+  SpecificCategoryNavWidgetButtonTest2({Key? key, required this.buttonIndex})
+      : super(key: key);
   final int buttonIndex;
   @override
   Widget build(BuildContext context) {
@@ -215,7 +223,9 @@ class SpecificCategoryNavWidgetFields extends StatelessWidget {
 }
 
 class SpecificCategoryNavWidgetText extends StatelessWidget {
-  const SpecificCategoryNavWidgetText({Key? key, this.navItemsRus = '', this.navItemsTurk = ''}): super(key: key);
+  const SpecificCategoryNavWidgetText(
+      {Key? key, this.navItemsRus = '', this.navItemsTurk = ''})
+      : super(key: key);
 
   final String navItemsRus;
   final String navItemsTurk;

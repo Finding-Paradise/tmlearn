@@ -22,7 +22,6 @@ class _IconRowState extends State<IconRow> {
   @override
   void initState() {
     super.initState();
-    log(widget.phrase.toString());
     setState(() {
       isPressed = BlocProvider.of<FavoriteCubit>(context)
           .is_favorite(widget.phrase);
