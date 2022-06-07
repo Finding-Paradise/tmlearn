@@ -107,8 +107,8 @@ class _DictionaryPageState extends State<DictionaryPage> {
                         finding_list = _items
                             .where(
                               (element) =>
-                                  element.nameRus.contains(text) |
-                                  element.nameTurk.contains(text),
+                                  element.nameRus.toString().toLowerCase().contains(text.toLowerCase()) |
+                                  element.nameTurk.toString().toLowerCase().contains(text.toLowerCase()),
                             )
                             .toList();
                         show_find = true;
