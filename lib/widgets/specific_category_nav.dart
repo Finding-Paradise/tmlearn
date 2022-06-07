@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:tmlearn/global_variables.dart';
+import 'package:tmlearn/logic/current_test_cubit.dart';
 import 'package:tmlearn/pages/categories/acquaintance_category/acquaintance_learn_page.dart';
 import 'package:tmlearn/pages/categories/common_phrases_category/common_phrases_learn_page.dart';
 import 'package:tmlearn/pages/categories/economic_terms_category/economic_terms_learn_page.dart';
@@ -146,8 +148,9 @@ class SpecificCategoryNavWidgetButtonTest1
         children: [
           IconButton(
             onPressed: () {
+              BlocProvider.of<CurrentTestCubit>(context).initial();
               Navigator.push(context, MaterialPageRoute(builder: (context) {
-                return DictionaryTestPage(index: index,test_index:1);
+                return DictionaryTestPage(index: index, test_index: 1);
               }));
             },
             icon: SvgPicture.asset(_navPageIcons[buttonIndex]),
@@ -177,8 +180,9 @@ class SpecificCategoryNavWidgetButtonTest2
         children: [
           IconButton(
             onPressed: () {
+              BlocProvider.of<CurrentTestCubit>(context).initial();
               Navigator.push(context, MaterialPageRoute(builder: (context) {
-                return DictionaryTestPage(index: index,test_index:2);
+                return DictionaryTestPage(index: index, test_index: 2);
               }));
             },
             icon: SvgPicture.asset(_navPageIcons[buttonIndex]),

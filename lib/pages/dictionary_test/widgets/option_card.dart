@@ -1,4 +1,8 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:tmlearn/logic/current_test_cubit.dart';
 
 enum OptionState {
   notChosen,
@@ -10,6 +14,7 @@ class OptionCard extends StatefulWidget {
   const OptionCard(
       {Key? key,
       required this.id,
+      required this.optionState,
       this.text,
       required this.isCorrect,
       this.onTap})
@@ -19,43 +24,72 @@ class OptionCard extends StatefulWidget {
   final String? text;
   final bool isCorrect;
   final Function(int)? onTap;
+  final OptionState optionState;
 
   @override
   State<OptionCard> createState() => _OptionCardState();
 }
 
 class _OptionCardState extends State<OptionCard> {
-  OptionState currentOptionState = OptionState.notChosen;
+  late OptionState currentOptionState;
 
+  @override
+  void initState() {
+    super.initState();
+    currentOptionState = widget.optionState;
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+  }
+
+  bool to_call = true;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {
-        setState(() {
-          widget.onTap!(widget.id);
-          currentOptionState =
-              widget.isCorrect ? OptionState.correct : OptionState.wrong;
-        });
-      },
-      child: AnimatedContainer(
-        width: double.infinity,
-        duration: const Duration(milliseconds: 300),
-        padding: const EdgeInsets.only(top: 10, bottom: 6),
-        decoration: BoxDecoration(
-          color: getColorsFromOptionState(currentOptionState),
-          borderRadius: BorderRadius.circular(11.4),
-        ),
-        child: Center(
-          child: Text(
-            widget.text ?? "Option",
-            style: const TextStyle(
-              fontSize: 30,
-              color: Colors.white,
+        onTap: () {
+          // setState(() {
+          //   print(widget.isCorrect);
+          //   // widget.onTap!(widget.id);
+          setState(() {
+            currentOptionState =
+                widget.isCorrect ? OptionState.correct : OptionState.wrong;
+            currentOptionState == OptionState.correct
+                ? BlocProvider.of<CurrentTestCubit>(context).correct_answers +=
+                    1
+                : BlocProvider.of<CurrentTestCubit>(context).incorrect_answers +=
+                    1;
+          });
+          // });
+        },
+        child: AnimatedContainer(
+          onEnd: () {
+            if (to_call)
+              setState(() {
+                currentOptionState = OptionState.notChosen;
+                if (BlocProvider.of<CurrentTestCubit>(context).state < 3)
+                  BlocProvider.of<CurrentTestCubit>(context).next_item();
+              });
+            to_call = false;
+          },
+          width: double.infinity,
+          duration: const Duration(milliseconds: 500),
+          padding: const EdgeInsets.only(top: 10, bottom: 6),
+          decoration: BoxDecoration(
+            color: getColorsFromOptionState(currentOptionState),
+            borderRadius: BorderRadius.circular(11.4),
+          ),
+          child: Center(
+            child: Text(
+              widget.text ?? "Option",
+              style: const TextStyle(
+                fontSize: 30,
+                color: Colors.white,
+              ),
             ),
           ),
-        ),
-      ),
-    );
+        ));
   }
 
   Color getColorsFromOptionState(OptionState optionState) {
