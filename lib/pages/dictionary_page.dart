@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -71,8 +72,8 @@ class _DictionaryPageState extends State<DictionaryPage> {
                         finding_list = _items
                             .where(
                               (element) =>
-                                  element.nameRus.contains(text) |
-                                  element.nameTurk.contains(text),
+                                  element.nameRus.toLowerCase().contains(text.toLowerCase()) |
+                                  element.nameTurk.toLowerCase().contains(text.toLowerCase()),
                             )
                             .toList();
                         show_find = true;
@@ -104,13 +105,20 @@ class _DictionaryPageState extends State<DictionaryPage> {
                     String text = controller.text;
                     if (text.isNotEmpty) {
                       setState(() {
-                        finding_list = _items
-                            .where(
-                              (element) =>
-                                  element.nameRus.toString().toLowerCase().contains(text.toLowerCase()) |
-                                  element.nameTurk.toString().toLowerCase().contains(text.toLowerCase()),
-                            )
-                            .toList();
+                        finding_list = _items.where(
+                          (element) {
+                            print(element.nameRus);
+                            print(text);
+                            return element.nameRus
+                                    .toLowerCase()
+                                    .contains(text.toLowerCase()) |
+                                element.nameTurk
+                                    .toLowerCase()
+                                    .contains(text.toLowerCase());
+                          },
+                        ).toList();
+                        print(finding_list);
+                        // print("Hello".toString());
                         show_find = true;
                       });
                       print(finding_list);
