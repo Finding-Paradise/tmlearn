@@ -179,6 +179,19 @@ class _DictionaryTestPageState extends State<DictionaryTestPage> {
               else {
                 return Column(
                   children: [
+                    const SizedBox(
+                      height: 150,
+                    ),
+                    Text(
+                      "Тест закончен!",
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 25,
+                      ),
+                    ),
+                    const SizedBox(
+                      height: 30,
+                    ),
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 19),
                       child: Row(
@@ -219,56 +232,6 @@ class _DictionaryTestPageState extends State<DictionaryTestPage> {
                             ),
                           ),
                         ],
-                      ),
-                    ),
-                    const SizedBox(height: 38),
-                    Container(
-                      width: double.infinity,
-                      height: 271.0,
-                      decoration: BoxDecoration(
-                        color: secondaryColor,
-                        borderRadius: BorderRadius.circular(12),
-                      ),
-                      child: Column(
-                        children: [
-                          Text(
-                            _items.last["question"],
-                            style: TextStyle(fontSize: 30, color: primaryColor),
-                          ),
-                          IconButton(
-                            onPressed: () {},
-                            icon: Icon(
-                              Icons.volume_up,
-                              color: primaryColor,
-                            ),
-                            iconSize: 74,
-                          ),
-                        ],
-                        mainAxisAlignment: MainAxisAlignment.spaceAround,
-                      ),
-                    ),
-                    const Divider(height: 50),
-                    Expanded(
-                      child: ListView.separated(
-                        itemCount: _items.last.length - 2,
-                        itemBuilder: (context, index) {
-                          bool is_Correct =
-                              _items.last.entries.toList()[index + 1].key ==
-                                  _items.last["right"];
-                          return IgnorePointer(
-                            ignoring: true,
-                            child: OptionCard(
-                              optionState: OptionState.notChosen,
-                              id: index,
-                              text:
-                                  _items.last.entries.toList()[index + 1].value,
-                              isCorrect: is_Correct,
-                              // onTap: (int) {},
-                            ),
-                          );
-                        },
-                        separatorBuilder: (context, index) =>
-                            const SizedBox(height: 18),
                       ),
                     ),
                   ],

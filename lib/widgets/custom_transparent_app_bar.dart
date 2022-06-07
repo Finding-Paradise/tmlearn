@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:tmlearn/global_variables.dart';
 
-class CustomTransparentAppBar extends StatelessWidget implements PreferredSizeWidget {
-  const CustomTransparentAppBar({Key? key, @required this.titleRus, @required this.titleTurk})
+class CustomTransparentAppBar extends StatelessWidget
+    implements PreferredSizeWidget {
+  const CustomTransparentAppBar(
+      {Key? key, @required this.titleRus, @required this.titleTurk})
       : super(key: key);
   final String? titleRus, titleTurk;
   @override
@@ -43,7 +45,10 @@ class CustomTransparentAppBar extends StatelessWidget implements PreferredSizeWi
                 backgroundColor: Colors.black,
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
-                  child: Image.asset("assets/TL.png", fit: BoxFit.fill,),
+                  child: Image.asset(
+                    "assets/TL.png",
+                    fit: BoxFit.fill,
+                  ),
                 ),
               ),
             ),
