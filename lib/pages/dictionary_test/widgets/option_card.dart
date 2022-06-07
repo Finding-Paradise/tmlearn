@@ -55,11 +55,16 @@ class _OptionCardState extends State<OptionCard> {
           setState(() {
             currentOptionState =
                 widget.isCorrect ? OptionState.correct : OptionState.wrong;
+            // if (currentOptionState == OptionState.wrong) {
+            //   // BlocProvider.of<CurrentTestCubit>(context).answered_correctly =
+            //   //     false;
+            //   // BlocProvider.of<CurrentTestCubit>(context).update();
+            // }
             currentOptionState == OptionState.correct
                 ? BlocProvider.of<CurrentTestCubit>(context).correct_answers +=
                     1
-                : BlocProvider.of<CurrentTestCubit>(context).incorrect_answers +=
-                    1;
+                : BlocProvider.of<CurrentTestCubit>(context)
+                    .incorrect_answers += 1;
           });
           // });
         },
@@ -68,10 +73,11 @@ class _OptionCardState extends State<OptionCard> {
             if (to_call)
               setState(() {
                 currentOptionState = OptionState.notChosen;
-                if (BlocProvider.of<CurrentTestCubit>(context).state < 3)
+                if (BlocProvider.of<CurrentTestCubit>(context).state.index < 3)
                   BlocProvider.of<CurrentTestCubit>(context).next_item();
               });
             to_call = false;
+            // BlocProvider.of<CurrentTestCubit>(context).can_change = true;
           },
           width: double.infinity,
           duration: const Duration(milliseconds: 500),

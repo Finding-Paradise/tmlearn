@@ -70,111 +70,110 @@ class _DictionaryTestPageState extends State<DictionaryTestPage> {
             const EdgeInsets.only(top: 15),
         child: SizedBox(
           height: MediaQuery.of(context).size.height,
-          child: BlocBuilder<CurrentTestCubit, int>(
+          child: BlocBuilder<CurrentTestCubit, Test>(
             builder: (context, state) {
               _correctAnswers =
                   BlocProvider.of<CurrentTestCubit>(context).correct_answers;
               _inCorrectAnswers =
                   BlocProvider.of<CurrentTestCubit>(context).incorrect_answers;
-              if (state < 3)
-                return IgnorePointer(
-                  ignoring: state > 2,
-                  child: Column(
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 19),
-                        child: Row(
-                          children: [
-                            CircleAvatar(
-                              radius: 25,
-                              backgroundColor: Colors.green,
-                              child: Icon(
-                                Icons.check,
-                                size: 32.5,
-                                color: backgroundColor,
-                              ),
+              if (state.index < 3)
+                // ignore: curly_braces_in_flow_control_structures
+                return Column(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 19),
+                      child: Row(
+                        children: [
+                          CircleAvatar(
+                            radius: 25,
+                            backgroundColor: Colors.green,
+                            child: Icon(
+                              Icons.check,
+                              size: 32.5,
+                              color: backgroundColor,
                             ),
-                            const SizedBox(width: 14),
-                            Text(
-                              "$_correctAnswers",
-                              style: TextStyle(
-                                color: Colors.green,
-                                fontSize: 35,
-                              ),
+                          ),
+                          const SizedBox(width: 14),
+                          Text(
+                            "$_correctAnswers",
+                            style: TextStyle(
+                              color: Colors.green,
+                              fontSize: 35,
                             ),
-                            const Spacer(),
-                            Text(
-                              "$_inCorrectAnswers",
-                              style: TextStyle(
-                                color: Colors.red,
-                                fontSize: 35,
-                              ),
+                          ),
+                          const Spacer(),
+                          Text(
+                            "$_inCorrectAnswers",
+                            style: TextStyle(
+                              color: Colors.red,
+                              fontSize: 35,
                             ),
-                            const SizedBox(width: 14),
-                            CircleAvatar(
-                              radius: 25,
-                              backgroundColor: Colors.red,
-                              child: Icon(
-                                Icons.close,
-                                size: 32.5,
-                                color: backgroundColor,
-                              ),
+                          ),
+                          const SizedBox(width: 14),
+                          CircleAvatar(
+                            radius: 25,
+                            backgroundColor: Colors.red,
+                            child: Icon(
+                              Icons.close,
+                              size: 32.5,
+                              color: backgroundColor,
                             ),
-                          ],
-                        ),
+                          ),
+                        ],
                       ),
-                      const SizedBox(height: 38),
-                      Container(
-                        width: double.infinity,
-                        height: 271.0,
-                        decoration: BoxDecoration(
-                          color: secondaryColor,
-                          borderRadius: BorderRadius.circular(12),
-                        ),
-                        child: Column(
-                          children: [
-                            Text(
-                              _items[state]["question"],
-                              style:
-                                  TextStyle(fontSize: 30, color: primaryColor),
-                            ),
-                            IconButton(
-                              onPressed: () {},
-                              icon: Icon(
-                                Icons.volume_up,
-                                color: primaryColor,
-                              ),
-                              iconSize: 74,
-                            ),
-                          ],
-                          mainAxisAlignment: MainAxisAlignment.spaceAround,
-                        ),
+                    ),
+                    const SizedBox(height: 38),
+                    Container(
+                      width: double.infinity,
+                      height: 271.0,
+                      decoration: BoxDecoration(
+                        color: secondaryColor,
+                        borderRadius: BorderRadius.circular(12),
                       ),
-                      const Divider(height: 50),
-                      Expanded(
-                        child: ListView.separated(
-                          itemCount: _items[state].length - 2,
-                          itemBuilder: (context, index) {
-                            bool is_Correct =
-                                _items[state].entries.toList()[index + 1].key ==
-                                    _items[state]["right"];
-                            return OptionCard(
-                              optionState: OptionState.notChosen,
-                              id: index,
-                              text: _items[state]
-                                  .entries
-                                  .toList()[index + 1]
-                                  .value,
-                              isCorrect: is_Correct,
-                              // onTap: (int) {},
-                            );
-                          },
-                          separatorBuilder: (context, index) =>
-                              const SizedBox(height: 18),
-                        ),
+                      child: Column(
+                        children: [
+                          Text(
+                            _items[state.index]["question"],
+                            style: TextStyle(fontSize: 30, color: primaryColor),
+                          ),
+                          IconButton(
+                            onPressed: () {},
+                            icon: Icon(
+                              Icons.volume_up,
+                              color: primaryColor,
+                            ),
+                            iconSize: 74,
+                          ),
+                        ],
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
                       ),
-                    ],
-                  ),
+                    ),
+                    const Divider(height: 50),
+                    Expanded(
+                      child: ListView.separated(
+                        itemCount: _items[state.index].length - 2,
+                        itemBuilder: (context, index) {
+                          // bool ans_correct =
+                          //     BlocProvider.of<CurrentTestCubit>(context)
+                          //         .answered_correctly;
+                          bool is_Correct =
+                              _items[state.index].entries.toList()[index + 1].key ==
+                                  _items[state.index]["right"];
+                          return OptionCard(
+                            optionState: OptionState.notChosen,
+
+                            id: index,
+                            text:
+                                _items[state.index].entries.toList()[index + 1].value,
+                            isCorrect: is_Correct,
+                            // onTap: (int) {},
+                          );
+                        },
+                        separatorBuilder: (context, index) =>
+                            const SizedBox(height: 18),
+                      ),
+                    ),
+                  ],
                 );
               else {
                 return Column(
@@ -182,7 +181,7 @@ class _DictionaryTestPageState extends State<DictionaryTestPage> {
                     const SizedBox(
                       height: 150,
                     ),
-                    Text(
+                    const Text(
                       "Тест закончен!",
                       style: TextStyle(
                         color: Colors.white,
