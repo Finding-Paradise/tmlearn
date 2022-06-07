@@ -58,7 +58,7 @@ class NavigationDrawerWidget extends StatelessWidget {
             onPressed: () {
               Navigator.pop(context);
               Navigator.push(context, MaterialPageRoute(builder: (context) {
-                return const DictionaryPage();
+                return DictionaryPage();
               }));
             },
             child: ListTile(

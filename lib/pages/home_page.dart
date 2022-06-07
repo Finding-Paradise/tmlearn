@@ -19,7 +19,7 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   final List pagesList = [
     CategoryNavPage(),
-    const DictionaryPage(),
+    DictionaryPage(),
     const FavoritePage(),
     const HistoryPage()
   ];

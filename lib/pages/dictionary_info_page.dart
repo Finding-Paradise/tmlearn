@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:tmlearn/global_variables.dart';
+import 'package:tmlearn/hive_data/data.dart';
 import 'package:tmlearn/widgets/custom_transparent_app_bar.dart';
 import 'package:tmlearn/widgets/icons_row.dart';
 import 'package:tmlearn/widgets/navigation_drawer.dart';
 
 class DictionaryInfoPage extends StatelessWidget {
-  const DictionaryInfoPage({Key? key}) : super(key: key);
+  DictionaryInfoPage(this.phrase, {Key? key}) : super(key: key);
+  Phrases phrase;
 
   @override
   Widget build(BuildContext context) {
@@ -54,7 +56,7 @@ class DictionaryInfoPage extends StatelessWidget {
                       Padding(
                         padding: EdgeInsets.only(left: 38),
                         child: Text(
-                          "School",
+                          phrase.nameRus,
                           style: TextStyle(
                             color: Colors.white,
                             fontSize: 30,
@@ -68,7 +70,7 @@ class DictionaryInfoPage extends StatelessWidget {
                       Padding(
                         padding: EdgeInsets.only(left: 38, top: 21),
                         child: Text(
-                          "Mekdep",
+                          phrase.nameTurk,
                           style: TextStyle(
                             color: Color(0xFFEBC811),
                             fontSize: 30,
@@ -78,8 +80,10 @@ class DictionaryInfoPage extends StatelessWidget {
                       Spacer(),
                       Padding(
                         padding: EdgeInsets.only(bottom: 35.0),
-                        // child: IconRow(phrase: ,),
-                        child: Text("Has to be corrected"),
+                        child: IconRow(
+                          phrase: phrase,
+                        ),
+                        // child: Text("Has to be corrected"),
                       )
                     ],
                   )),
