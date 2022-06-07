@@ -1,15 +1,22 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:tmlearn/global_variables.dart';
+import 'package:tmlearn/logic/favorite_cubit.dart';
 import 'package:tmlearn/pages/categories/categories_nav_page.dart';
 import 'package:tmlearn/pages/dictionary_page.dart';
 import 'package:tmlearn/pages/favorite_page.dart';
 import 'package:tmlearn/pages/history_page.dart';
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
   HomePage({Key? key}) : super(key: key);
 
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
   final List pagesList = [
     CategoryNavPage(),
     const DictionaryPage(),
@@ -19,18 +26,26 @@ class HomePage extends StatelessWidget {
 
   final String appDescription = 'Русско-Туркменский\nсловарь и разговорник';
 
+  @override
+  void initState() {
+    super.initState();
+    BlocProvider.of<FavoriteCubit>(context).get_favorites();
+  }
+
   final List<String> homePageNavButtonsRus = [
     'Разделы\n',
     'Словарь\n',
     'Избранные\n',
     'История\n'
   ];
+
   final List<String> homePageNavButtonsTurk = [
     'Bölümler',
     'Sözlük',
     'Halananlar',
     'Geçmiş'
   ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -117,8 +132,7 @@ class HomePage extends StatelessWidget {
                     padding: MaterialStateProperty.all<EdgeInsets>(
                       const EdgeInsets.symmetric(vertical: 16.0),
                     ),
-                    shape:
-                        MaterialStateProperty.all<RoundedRectangleBorder>(
+                    shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                       RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(10.0),
                       ),

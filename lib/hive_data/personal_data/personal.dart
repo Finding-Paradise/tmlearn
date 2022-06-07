@@ -1,8 +1,10 @@
+import 'package:equatable/equatable.dart';
 import 'package:hive/hive.dart';
+import 'package:tmlearn/hive_data/data.dart';
 
 
 @HiveType(typeId: 6)
-class Personal {
+class Personal extends Equatable implements Phrases {
   Personal({required this.nameRus, required this.nameTurk});
 
   @HiveField(0)
@@ -66,10 +68,27 @@ class Personal {
   //   "Kim tarapyndan berildi",
   //   "Ýaş",
   // ];
-  factory Personal.fromJson(Map<String, dynamic> json) {
+
+  Map<String, dynamic> toJson() {
+    return {
+      "nameTurk":nameTurk,
+      "nameRus":nameRus,
+    };
+  }
+
+  static fromJson(Map<String,dynamic> json){
     return Personal(
-      nameTurk: json["nameTurk"],
-      nameRus: json["nameRus"],
+      nameRus:json["nameRus"],
+      nameTurk:json["nameTurk"],
     );
   }
+  @override
+  String toString() {
+    // TODO: implement toString
+    return "$nameRus:$nameTurk";
+  }
+
+  @override
+  // TODO: implement props
+  List<Object?> get props => [nameRus, nameTurk];
 }

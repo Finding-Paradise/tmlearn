@@ -8,7 +8,11 @@ enum CardType {
 
 class DictionaryCard extends StatelessWidget {
   const DictionaryCard(
-      {Key? key, this.name, required this.cardType, this.onCardTap, this.onIconTap})
+      {Key? key,
+      this.name,
+      required this.cardType,
+      this.onCardTap,
+      this.onIconTap})
       : super(key: key);
 
   final String? name;
@@ -20,7 +24,7 @@ class DictionaryCard extends StatelessWidget {
     return GestureDetector(
       onTap: onCardTap!(),
       child: Container(
-        height: 44,
+        height: 50,
         margin: const EdgeInsets.symmetric(horizontal: 18, vertical: 3),
         decoration: BoxDecoration(
           color: const Color.fromARGB(255, 71, 58, 99),
@@ -60,7 +64,7 @@ class DictionaryCard extends StatelessWidget {
               padding: const EdgeInsets.only(right: 12.0),
               child: Icon(
                 Icons.favorite_rounded,
-                color: isLiked ? Colors.redAccent : Colors.grey,
+                color: isLiked ? Colors.red : Colors.grey,
                 size: 25,
               ),
             );

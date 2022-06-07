@@ -1,16 +1,28 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:tmlearn/global_variables.dart';
+import 'package:tmlearn/hive_data/common_phrases_data/common_phrases.dart';
+import 'package:tmlearn/logic/favorite_cubit.dart';
+
+import '../hive_data/data.dart';
 
 class IconRow extends StatefulWidget {
-  IconRow({Key? key}) : super(key: key);
+  IconRow({Key? key, required this.phrase}) : super(key: key);
+  Phrases phrase;
 
   @override
   State<IconRow> createState() => _IconRowState();
 }
 
 class _IconRowState extends State<IconRow> {
-
   bool isPressed = false;
+
+  @override
+  void initState() {
+    super.initState();
+    isPressed =
+        BlocProvider.of<FavoriteCubit>(context).is_favorite(widget.phrase);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -29,6 +41,12 @@ class _IconRowState extends State<IconRow> {
           child: IconButton(
             onPressed: () {
               setState(() => isPressed = !isPressed);
+              isPressed
+                  ? BlocProvider.of<FavoriteCubit>(context)
+                      .add_favorite(widget.phrase)
+                  : BlocProvider.of<FavoriteCubit>(context)
+                      .delete_favorite(widget.phrase);
+              // BlocProvider.of<FavoriteCubit>(context).get_favorites();
             },
             icon: Icon(Icons.favorite,
                 color: (isPressed) ? const Color(0xFFB62D1B) : primaryColor),

@@ -11,7 +11,10 @@ class DictionaryInfoPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: backgroundColor,
-      appBar: const CustomTransparentAppBar(titleRus: 'Словарь\n', titleTurk: 'Sözlük',),
+      appBar: const CustomTransparentAppBar(
+        titleRus: 'Словарь\n',
+        titleTurk: 'Sözlük',
+      ),
       endDrawer: const NavigationDrawerWidget(),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 17) +
@@ -75,7 +78,8 @@ class DictionaryInfoPage extends StatelessWidget {
                       Spacer(),
                       Padding(
                         padding: EdgeInsets.only(bottom: 35.0),
-                        child: IconRow(),
+                        // child: IconRow(phrase: ,),
+                        child: Text("Has to be corrected"),
                       )
                     ],
                   )),

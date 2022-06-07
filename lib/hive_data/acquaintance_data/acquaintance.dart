@@ -1,10 +1,13 @@
+import 'package:equatable/equatable.dart';
 import 'package:hive/hive.dart';
+import 'package:tmlearn/hive_data/data.dart';
 
 
 @HiveType(typeId: 1)
-class Acquaintance {
+class Acquaintance extends Equatable implements Phrases {
   Acquaintance({required this.nameTurk, required this.nameRus});
 
+  @override
   @HiveField(0)
   String nameRus;
   // late List<String> nameRus = [
@@ -30,6 +33,7 @@ class Acquaintance {
   // "Вы не знакомы?",
   // ];
 
+  @override
   @HiveField(1)
   String nameTurk;
   // late List<String> nameTurk = [
@@ -54,10 +58,36 @@ class Acquaintance {
   //   "Bu meniň dostum/kärdeşim",
   //   "Siz tanyş dälmi?"
   // ];
-  factory Acquaintance.fromJson(Map<String, dynamic> json) {
+  // @override
+  // factory Acquaintance.fromJson(Map<String, dynamic> json) {
+  //   return Acquaintance(
+  //     nameTurk: json["nameTurk"],
+  //     nameRus: json["nameRus"],
+  //   );
+  // }
+  
+  
+  @override
+  Map<String, dynamic> toJson() {
+    return {
+      "nameTurk":nameTurk,
+      "nameRus":nameRus,
+    };
+  }
+
+  static fromJson(Map<String,dynamic> json){
     return Acquaintance(
-      nameTurk: json["nameTurk"],
-      nameRus: json["nameRus"],
+      nameRus:json["nameRus"],
+      nameTurk:json["nameTurk"],
     );
   }
+  @override
+  String toString() {
+    // TODO: implement toString
+    return "$nameRus:$nameTurk";
+  }
+
+  @override
+  // TODO: implement props
+  List<Object?> get props => [nameRus, nameTurk];
 }

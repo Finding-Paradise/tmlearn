@@ -1,8 +1,11 @@
+import 'package:equatable/equatable.dart';
 import 'package:hive/hive.dart';
+
+import '../data.dart';
 
 
 @HiveType(typeId: 8)
-class TimeAndDate {
+class TimeAndDate extends Equatable implements Phrases {
   TimeAndDate({required this.nameRus, required this.nameTurk});
 
   @HiveField(0)
@@ -104,4 +107,20 @@ class TimeAndDate {
       nameRus: json["nameRus"],
     );
   }
+  Map<String, dynamic> toJson() {
+    return {
+      "nameTurk":nameTurk,
+      "nameRus":nameRus,
+    };
+  }
+
+  @override
+  String toString() {
+    // TODO: implement toString
+    return "$nameRus:$nameTurk";
+  }
+
+  @override
+  // TODO: implement props
+  List<Object?> get props => [nameRus, nameTurk];
 }

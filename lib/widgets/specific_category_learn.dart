@@ -162,6 +162,7 @@ class _SpecificCategoryLearnWidgetState
             return const Divider(height: 13.0);
           },
           itemBuilder: (BuildContext context, int index) {
+            print(_items[index]);
             var item = _items[index];
             return Container(
               padding: const EdgeInsets.symmetric(horizontal: 20),
@@ -191,7 +192,9 @@ class _SpecificCategoryLearnWidgetState
                         thickness: 0,
                         color: secondaryColor,
                       ),
-                      IconRow(),
+                      IconRow(
+                        phrase: item,
+                      ),
                     ],
                     mainAxisAlignment: MainAxisAlignment.center,
                   ),

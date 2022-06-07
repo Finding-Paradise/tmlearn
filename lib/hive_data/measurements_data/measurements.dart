@@ -1,8 +1,11 @@
+import 'package:equatable/equatable.dart';
 import 'package:hive/hive.dart';
+
+import '../data.dart';
 
 
 @HiveType(typeId: 5)
-class Measurements {
+class Measurements extends Equatable implements Phrases {
   Measurements({required this.nameRus, required this.nameTurk});
 
   @HiveField(0)
@@ -78,10 +81,32 @@ class Measurements {
   //   "7 metr",
   //   "8 santimetr",
   // ];
-  factory Measurements.fromJson(Map<String, dynamic> json) {
+  // factory Measurements.fromJson(Map<String, dynamic> json) {
+  //   return Measurements(
+  //     nameTurk: json["nameTurk"],
+  //     nameRus: json["nameRus"],
+  //   );
+  // }
+  Map<String, dynamic> toJson() {
+    return {
+      "nameTurk":nameTurk,
+      "nameRus":nameRus,
+    };
+  }
+
+  static fromJson(Map<String,dynamic> json){
     return Measurements(
-      nameTurk: json["nameTurk"],
-      nameRus: json["nameRus"],
+      nameRus:json["nameRus"],
+      nameTurk:json["nameTurk"],
     );
   }
+  @override
+  String toString() {
+    // TODO: implement toString
+    return "$nameRus:$nameTurk";
+  }
+
+  @override
+  // TODO: implement props
+  List<Object?> get props => [nameRus, nameTurk];
 }
