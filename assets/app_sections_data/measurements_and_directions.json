@@ -1,4 +1,57 @@
 {
+
+    "test2": [
+        {
+            "question": "Öňde",
+            "a": "Впереди",
+            "b": "Левый",
+            "c": "Правый",
+            "d": "Вверх",
+            "right": "a"
+        },
+        {
+            "question": "Yzda",
+            "a": "Левый",
+            "b": "Правый",
+            "c": "Вверх",
+            "d": "Позади",
+            "right": "d"
+        },
+        {
+            "question": "Çep",
+            "a": "Левый",
+            "b": "Правый",
+            "c": "Вверх",
+            "d": "Позади",
+            "right": "a"
+        }
+    ],
+    "test1":[
+        {
+            "question":"Впереди",
+            "a":"Öňde, öňünde",
+            "b":"Yzda",
+            "c":"Çep, sol",
+            "d":"Sag",
+            "right":"a"
+        },
+        {
+            "question":"Позади",
+            "a":"Çep, sol",
+            "b":"Sag",
+            "c":"Ýokary",
+            "d":"Yzda",
+            "right":"d"
+        },
+        {
+            "question":"Левый",
+            "a":"Öňde, öňünde",
+            "b":"Yzda",
+            "c":"Çep, sol ",
+            "d":"At",
+            "right":"c"
+        }
+    ],
     "items": [
         {
             "nameRus": "Впереди",

@@ -1,0 +1,367 @@
+{
+    "dictionaryItems": [
+        {
+            "nameRus": "Здравствуйте!",
+            "nameTurk": "Salam aleykum! Aleykum salam!"
+        },
+        {
+            "nameRus": "Доброе утро!",
+            "nameTurk": "Ertiriňiz haýyr!"
+        },
+        {
+            "nameRus": "Добрый день!",
+            "nameTurk": "Gündiziňiz haýyr!"
+        },
+        {
+            "nameRus": "Добрый вечер!",
+            "nameTurk": "Agşamyňyz haýyr!"
+        },
+        {
+            "nameRus": "Спокойной ночи!",
+            "nameTurk": "Gijäňiz rahat bolsun!"
+        },
+        {
+            "nameRus": "Привет!",
+            "nameTurk": "Salam!"
+        },
+        {
+            "nameRus": "Господин...",
+            "nameTurk": "Jenap..."
+        },
+        {
+            "nameRus": "Госпожа...",
+            "nameTurk": "Hanum..."
+        },
+        {
+            "nameRus": "Брат...",
+            "nameTurk": "Dogan..."
+        },
+        {
+            "nameRus": "Сестра...",
+            "nameTurk": "Aýal-dogan, dogan..."
+        },
+        {
+            "nameRus": "Девушка...",
+            "nameTurk": "Gyz..."
+        },
+        {
+            "nameRus": "Вы здесь впервые?",
+            "nameTurk": "Siz bu ýerde birinji gezekmi?"
+        },
+        {
+            "nameRus": "Вам нравится Ашхабад?",
+            "nameTurk": "Aşgabat siziň göwnüňize ýaraýamy?"
+        },
+        {
+            "nameRus": "Да очень",
+            "nameTurk": "Hawa"
+        },
+        {
+            "nameRus": "Это красивый город",
+            "nameTurk": "Bu owadan şäher"
+        },
+        {
+            "nameRus": "Это мой приятель",
+            "nameTurk": "Bu meniň dostum/kärdeşim"
+        },
+        {
+            "nameRus": "Вы не знакомы?",
+            "nameTurk": "Siz tanyş dälmi?"
+        },
+        {
+            "nameRus": "Что?",
+            "nameTurk": "Näme?"
+        },
+        {
+            "nameRus": "Что это?",
+            "nameTurk": "Bu näme?"
+        },
+        {
+            "nameRus": "Что случилось?",
+            "nameTurk": "Näme boldy?"
+        },
+        {
+            "nameRus": "Что это за город?",
+            "nameTurk": "Bu haýsy şäher?"
+        },
+        {
+            "nameRus": "Кто?",
+            "nameTurk": "Kim?"
+        },
+        {
+            "nameRus": "Кто это?",
+            "nameTurk": "Bu kim?"
+        },
+        {
+            "nameRus": "Кто там?",
+            "nameTurk": "Ol ýerde kim bar?"
+        },
+        {
+            "nameRus": "Для кого это?",
+            "nameTurk": "Bu kim üçin?"
+        },
+        {
+            "nameRus": "Чье это?",
+            "nameTurk": "Bu kimiňki?"
+        },
+        {
+            "nameRus": "С кем вы разговариваете?",
+            "nameTurk": "Siz kim bilen gürleşýärsiňiz?"
+        },
+        {
+            "nameRus": "Фамилия",
+            "nameTurk": "Familiýa"
+        },
+        {
+            "nameRus": "Имя",
+            "nameTurk": "At"
+        },
+        {
+            "nameRus": "Дата рождения",
+            "nameTurk": "Dogulan güni"
+        },
+        {
+            "nameRus": "Место рождения",
+            "nameTurk": "Dogulan ýeri"
+        },
+        {
+            "nameRus": "Гражданство",
+            "nameTurk": "Raýatçylyk"
+        },
+        {
+            "nameRus": "Пол",
+            "nameTurk": "Jyns"
+        },
+        {
+            "nameRus": "Женский",
+            "nameTurk": "Aýal jynsy"
+        },
+        {
+            "nameRus": "Мужской",
+            "nameTurk": "Erkek jynsy"
+        },
+        {
+            "nameRus": "Впереди",
+            "nameTurk": "Öňde, öňünde"
+        },
+        {
+            "nameRus": "Позади",
+            "nameTurk": "Yzda"
+        },
+        {
+            "nameRus": "Левый",
+            "nameTurk": "Çep, sol"
+        },
+        {
+            "nameRus": "Правый",
+            "nameTurk": "Sag"
+        },
+        {
+            "nameRus": "Вверх",
+            "nameTurk": "Ýokary"
+        },
+        {
+            "nameRus": "Вниз",
+            "nameTurk": "Aşak"
+        },
+        {
+            "nameRus": "16 килограмм",
+            "nameTurk": "16 kilogram"
+        },
+        {
+            "nameRus": "225 миллиметров",
+            "nameTurk": "225 millimetr"
+        },
+        {
+            "nameRus": "5 тонн",
+            "nameTurk": "5 tonna"
+        },
+        {
+            "nameRus": "7 метров",
+            "nameTurk": "7 metr"
+        },
+        {
+            "nameRus": "8 сантиметров",
+            "nameTurk": "8 santimetr"
+        },
+        {
+            "nameRus": "Месяц",
+            "nameTurk": "Aý"
+        },
+        {
+            "nameRus": "Январь",
+            "nameTurk": "Ýanwar"
+        },
+        {
+            "nameRus": "Февраль",
+            "nameTurk": "Fewral"
+        },
+        {
+            "nameRus": "Март",
+            "nameTurk": "Mart"
+        },
+        {
+            "nameRus": "Апрель",
+            "nameTurk": "Aprel"
+        },
+        {
+            "nameRus": "Май",
+            "nameTurk": "Maý"
+        },
+        {
+            "nameRus": "Июнь",
+            "nameTurk": "Iýun"
+        },
+        {
+            "nameRus": "Июль",
+            "nameTurk": "Iýul"
+        },
+        {
+            "nameRus": "Август",
+            "nameTurk": "Awgust"
+        },
+        {
+            "nameRus": "Сентябрь",
+            "nameTurk": "Sentýabr"
+        },
+        {
+            "nameRus": "Октябрь",
+            "nameTurk": "Oktýabr"
+        },
+        {
+            "nameRus": "Ноябрь",
+            "nameTurk": "Noýabr"
+        },
+        {
+            "nameRus": "Декабрь",
+            "nameTurk": "Dekabr"
+        },
+        {
+            "nameRus": "Год",
+            "nameTurk": "Ýyl"
+        },
+        {
+            "nameRus": "Понедельник",
+            "nameTurk": "Duşenbe"
+        },
+        {
+            "nameRus": "Вторник",
+            "nameTurk": "Sişenbe"
+        },
+        {
+            "nameRus": "Среда",
+            "nameTurk": "Çarşenbe"
+        },
+        {
+            "nameRus": "Четверг",
+            "nameTurk": "Penşenbe"
+        },
+        {
+            "nameRus": "Пятница",
+            "nameTurk": "Anna"
+        },
+        {
+            "nameRus": "Суббота",
+            "nameTurk": "Şenbe"
+        },
+        {
+            "nameRus": "Воскресенье",
+            "nameTurk": "Ýekşenbe"
+        },
+        {
+            "nameRus": "Зима",
+            "nameTurk": "Gyş"
+        },
+        {
+            "nameRus": "Весна",
+            "nameTurk": "Bahar"
+        },
+        {
+            "nameRus": "Лето",
+            "nameTurk": "Tomus"
+        },
+        {
+            "nameRus": "Осень",
+            "nameTurk": "Güýz"
+        },
+        {
+            "nameRus": "Вчера",
+            "nameTurk": "Düýn, öten gün"
+        },
+        {
+            "nameRus": "Сегодня",
+            "nameTurk": "Şu gün"
+        },
+        {
+            "nameRus": "Завтра",
+            "nameTurk": "Ertir"
+        },
+        {
+            "nameRus": "Послезавтра",
+            "nameTurk": "Birigün"
+        },{
+            "nameRus": "Автоматизация",
+            "nameTurk": "Awtomatlaşdyrmak"
+        },
+        {
+            "nameRus": "Абонент",
+            "nameTurk": "Abonent"
+        },
+        {
+            "nameRus": "Абонентская задолженность",
+            "nameTurk": "Abonent karzy"
+        },
+        {
+            "nameRus": "Абонентская плата",
+            "nameTurk": "Abunalyk tölegi"
+        },
+        {
+            "nameRus": "Автоматизация банковских операций",
+            "nameTurk": "Bank amallaryny awtomatlaşdyrmak"
+        },
+        {
+            "nameRus": "База данных",
+            "nameTurk": "Maglumatlar bazasy"
+        },
+        {
+            "nameRus": "Банковский кредит",
+            "nameTurk": "Bank karzy"
+        },
+        {
+            "nameRus": "Баланс",
+            "nameTurk": "Balans"
+        },
+        {
+            "nameRus": "Безбумажные расчеты",
+            "nameTurk": "Kagyzsyz tölegler"
+        },
+        {
+            "nameRus": "Безналичные деньги",
+            "nameTurk": "Nagt däl pul"
+        },
+        {
+            "nameRus": "Безналичные расчеты",
+            "nameTurk": "Nagt däl tölegler"
+        },
+        {
+            "nameRus": "Баланс: актив и пассив баланса",
+            "nameTurk": "Balans: aktiw we jogapkärçilik balansy"
+        },
+        {
+            "nameRus": "Бизнес",
+            "nameTurk": "Işewürlik"
+        },
+        {
+            "nameRus": "Бизнес-план",
+            "nameTurk": "Iş meýilnamasy"
+        },
+        {
+            "nameRus": "Капитализация",
+            "nameTurk": "Kapitalizasiýasy"
+        },
+        {
+            "nameRus": "Капитализация дохода, прибыли",
+            "nameTurk": "Girdejiniň, girdejiniň kapitalizasiýasy"
+        }
+    ]
+}

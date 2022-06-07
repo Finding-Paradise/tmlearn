@@ -1,4 +1,57 @@
 {
+
+    "test2": [
+        {
+            "question": "Familiýa",
+            "a": "Фамилия",
+            "b": "Дата рождения",
+            "c": "Место рождения",
+            "d": "Гражданство",
+            "right": "a"
+        },
+        {
+            "question": "At",
+            "a": "Дата рождения",
+            "b": "Место рождения",
+            "c": "Гражданство",
+            "d": "Имя",
+            "right": "d"
+        },
+        {
+            "question": "Dogulan güni",
+            "a": "Дата рождения",
+            "b": "Фамилия",
+            "c": "Место рождения",
+            "d": "Гражданство",
+            "right": "a"
+        }
+    ],
+    "test1":[
+        {
+            "question":"Фамилия?",
+            "a":"Familiýa",
+            "b":"Raýatçylyk",
+            "c":"Dogulan güni",
+            "d":"At ",
+            "right":"a"
+        },
+        {
+            "question":"Имя",
+            "a":"Familiýa",
+            "b":"Raýatçylyk",
+            "c":"Dogulan güni ",
+            "d":"At",
+            "right":"d"
+        },
+        {
+            "question":"Дата рождения",
+            "a":"Rayatçylyk",
+            "b":"Familiýa",
+            "c":"Dogulan güni ",
+            "d":"At",
+            "right":"c"
+        }
+    ],
     "items": [
         {
             "nameRus": "Фамилия",

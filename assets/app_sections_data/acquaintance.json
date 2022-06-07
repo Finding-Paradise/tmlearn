@@ -1,4 +1,57 @@
 {
+
+    "test2": [
+        {
+            "question": "Men...",
+            "a": "Я...",
+            "b": "Меня зовут...",
+            "c": "Моя фамилия...",
+            "d": "Приятно",
+            "right": "a"
+        },
+        {
+            "question": "Meniň adym...",
+            "a": "Я...",
+            "b": "Меня зовут...",
+            "c": "Моя фамилия...",
+            "d": "Приятно",
+            "right": "b"
+        },
+        {
+            "question": "Meniň familiýam!",
+            "a": "Я...",
+            "b": "Меня зовут...",
+            "c": "Моя фамилия...",
+            "d": "Приятно",
+            "right": "c"
+        }
+    ],
+    "test1":[
+        {
+            "question":"Я…",
+            "a":"Men...",
+            "b":"Hanum...",
+            "c":"Dogan ...",
+            "d":"Aga",
+            "right":"a"
+        },
+        {
+            "question":"Меня зовут…",
+            "a":"Aga",
+            "b":"Jenap..",
+            "c":"Dogan ...",
+            "d":"Meniň adym...",
+            "right":"d"
+        },
+        {
+            "question":"Как вас зовут ?",
+            "a":"Siz tanyş dälmi?",
+            "b":"Siz meni tanamadyňyzmy?",
+            "c":"Siziň adyňyz kim?",
+            "d":"Bu kim?",
+            "right":"c"
+        }
+    ],
     "items": [
         {
             "nameRus": "Я...",

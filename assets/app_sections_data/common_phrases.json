@@ -1,4 +1,57 @@
 {
+
+    "test2": [
+        {
+            "question": "Gündiziňiz haýyr!",
+            "a": "Добрый день!",
+            "b": "Спокойной ночи!",
+            "c": "Привет!",
+            "d": "Рад вас видеть!",
+            "right": "a"
+        },
+        {
+            "question": "Gijäňiz rahat bolsun!",
+            "a": "Привет!",
+            "b": "Рад вас видеть!",
+            "c": "Добрый день!",
+            "d": "Спокойной ночи!",
+            "right": "d"
+        },
+        {
+            "question": "Salam!",
+            "a": "Привет!",
+            "b": "Спокойной ночи!",
+            "c": "Рад вас видеть!",
+            "d": "Добрый день!",
+            "right": "a"
+        }
+    ],
+    "test1":[
+        {
+            "question":"Здравствуйте!",
+            "a":"Salam aleykum! Aleykum salam!",
+            "b":"Hoş geldiňiz!",
+            "c":"Agşamyňyz haýyr!",
+            "d":"Gündiziňiz haýyr!",
+            "right":"a"
+        },
+        {
+            "question":"Доброе утро!",
+            "a":"Sizi gorenime şat!",
+            "b":"Sagboluň, oňat!",
+            "c":"Gijäňiz rahat bolsun!",
+            "d":"Ertiriňiz haýyr! Ertiriňiz haýyrly bolsun!",
+            "right":"d"
+        },
+        {
+            "question":"Добрый день!",
+            "a":"Agşamyňyz haýyr!",
+            "b":"Gündiziňiz haýyr!",
+            "c":"Hoş geldiňiz!",
+            "d":"Hudaýa şükür!",
+            "right":"b"
+        }
+    ],
     "items": [
         {
             "nameRus": "Здравствуйте!",

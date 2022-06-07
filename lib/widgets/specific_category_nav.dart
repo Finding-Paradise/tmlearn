@@ -35,12 +35,14 @@ class SpecificCategoryNavWidget extends StatelessWidget {
       endDrawer: const NavigationDrawerWidget(),
       body: SafeArea(
         child: Column(children: [
-          Text("Here"),
           Row(
             children: [
               SpecificCategoryNavWidgetButtonLearn(
                   buttonIndex: 0, routeToPageIndex: learnPageIndex),
-              SpecificCategoryNavWidgetButtonCards(buttonIndex: 1,learnPageIndex: learnPageIndex,)
+              SpecificCategoryNavWidgetButtonCards(
+                buttonIndex: 1,
+                learnPageIndex: learnPageIndex,
+              )
             ],
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           ),
@@ -95,7 +97,8 @@ class SpecificCategoryNavWidgetButtonLearn
 
 class SpecificCategoryNavWidgetButtonCards
     extends SpecificCategoryNavWidgetFields {
-  SpecificCategoryNavWidgetButtonCards({required this.learnPageIndex, Key? key, required this.buttonIndex})
+  SpecificCategoryNavWidgetButtonCards(
+      {required this.learnPageIndex, Key? key, required this.buttonIndex})
       : super(key: key);
   final int buttonIndex;
   final int learnPageIndex;
@@ -107,7 +110,7 @@ class SpecificCategoryNavWidgetButtonCards
           IconButton(
             onPressed: () {
               Navigator.push(context, MaterialPageRoute(builder: (context) {
-                return SpecificCategoryCardWidget(index:learnPageIndex);
+                return SpecificCategoryCardWidget(index: learnPageIndex);
               }));
             },
             icon: SvgPicture.asset(_navPageIcons[buttonIndex]),

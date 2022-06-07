@@ -1,4 +1,57 @@
 {
+
+    "test2": [
+        {
+            "question": "Awtomatlaşdyrmak",
+            "a": "Автоматизация",
+            "b": "Абонент",
+            "c": "База данных",
+            "d": "Бизнес",
+            "right": "a"
+        },
+        {
+            "question": "Abonent",
+            "a": "Автоматизация",
+            "b": "Абонент",
+            "c": "База данных",
+            "d": "Бизнес",
+            "right": "b"
+        },
+        {
+            "question": "Maglumatlar bazasy",
+            "a": "Автоматизация",
+            "b": "Абонент",
+            "c": "База данных",
+            "d": "Бизнес",
+            "right": "c"
+        }
+    ],
+    "test1":[
+        {
+            "question":"АВТОМАТИЗАЦИЯ",
+            "a":"Awtomatlaşdyrmak",
+            "b":"Abonent",
+            "c":"Maglumatlar bazasy",
+            "d":"Işewürlik",
+            "right":"a"
+        },
+        {
+            "question":"Абонент",
+            "a":"Maglumatlar bazasy",
+            "b":"Işewürlik",
+            "c":"Awtomatlaşdyrmak",
+            "d":"Abonent",
+            "right":"d"
+        },
+        {
+            "question":"База данных",
+            "a":"Maglumatlar bazasy",
+            "b":"Işewürlik",
+            "c":"Awtomatlaşdyrmak",
+            "d":"Abonent",
+            "right":"a"
+        }
+    ],
     "items": [
         {
             "nameRus": "Автоматизация",
