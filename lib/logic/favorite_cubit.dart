@@ -11,7 +11,7 @@ part 'favorite_state.dart';
 
 class FavoriteCubit extends Cubit<FavoriteState> {
   SharedPreferences preferences;
-  FavoriteCubit(this.preferences) : super(FavoriteInitial([]));
+  FavoriteCubit(this.preferences) : super(FavoriteInitial(const []));
 
   get_favorites() {
     List<String> favs7_str = preferences.getStringList('favs7') ?? [];
@@ -21,7 +21,9 @@ class FavoriteCubit extends Cubit<FavoriteState> {
         )
         .toList();
 
-    emit(new_ls.isNotEmpty ? FavoriteLoaded([...new_ls]) : FavoriteEmpty([]));
+    emit(new_ls.isNotEmpty
+        ? FavoriteLoaded([...new_ls])
+        : FavoriteEmpty(const []));
   }
 
   bool is_favorite(Phrases phrase) {
@@ -47,9 +49,9 @@ class FavoriteCubit extends Cubit<FavoriteState> {
     preferences.setStringList('favs7', <String>[
       ...new_ls.map((e) => jsonEncode(e.toJson())),
     ]);
-    emit(FavoriteInitial([]));
+    emit(FavoriteInitial(const []));
     if (new_ls.isEmpty) {
-      emit(FavoriteEmpty([]));
+      emit(FavoriteEmpty(const []));
     } else {
       emit(FavoriteLoaded(new_ls));
     }
