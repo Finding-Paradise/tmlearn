@@ -42,7 +42,10 @@ class FavoritePage extends StatelessWidget {
                       DictionaryCard(
                     name: ph[index].nameRus,
                     cardType: CardType.favorite,
-                    onCardTap: () {},
+                    p: ph[index],
+                    onCardTap: () {
+                      print("tap");
+                    },
                     onIconTap: () {
                       BlocProvider.of<FavoriteCubit>(context)
                           .delete_favorite(ph[index]);

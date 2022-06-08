@@ -1,5 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:like_button/like_button.dart';
+import 'package:tmlearn/hive_data/data.dart';
+import 'package:tmlearn/widgets/navigation_drawer.dart';
+
+import '../pages/dictionary_info_page.dart';
+import 'custom_transparent_app_bar.dart';
 
 enum CardType {
   history,
@@ -11,18 +16,47 @@ class DictionaryCard extends StatelessWidget {
       {Key? key,
       this.name,
       required this.cardType,
+      this.p,
       this.onCardTap,
       this.onIconTap})
       : super(key: key);
 
   final String? name;
+  final Phrases? p;
   final CardType cardType;
   final Function? onCardTap, onIconTap;
+
+  get backgroundColor => null;
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: onCardTap!(),
+      onTap: () {
+        print("Tap");
+
+        if (p != null) {
+          Navigator.push(context, MaterialPageRoute(builder: (context) {
+            return Scaffold(
+              backgroundColor: backgroundColor,
+              endDrawer: const NavigationDrawerWidget(),
+              appBar: const CustomTransparentAppBar(
+                titleRus: 'Избранные\n',
+                titleTurk: 'Halananlar',
+              ),
+              body: Container(
+                // color: backgroundColor,
+                child: Padding(
+                  // padding: const EdgeInsets.all(8.0),
+
+                  padding: const EdgeInsets.symmetric(horizontal: 17) +
+                      const EdgeInsets.only(top: 20, bottom: 32),
+                  child: DictionaryInfoPage(p!),
+                ),
+              ),
+            );
+          }));
+        }
+      },
       child: Container(
         height: 50,
         margin: const EdgeInsets.symmetric(horizontal: 18, vertical: 3),

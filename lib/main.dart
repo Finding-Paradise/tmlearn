@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hive_flutter/hive_flutter.dart';
+import 'package:tmlearn/global_variables.dart';
 import 'package:tmlearn/hive_data/acquaintance_data/acquaintance.dart';
 import 'package:tmlearn/hive_data/common_phrases_data/common_phrases.dart';
 import 'package:tmlearn/hive_data/economic_terms_data/economic_terms.dart';
@@ -47,8 +48,10 @@ class MyApp extends StatelessWidget {
       child: MaterialApp(
         title: 'TmLearn',
         theme: ThemeData(
-            primarySwatch: Colors.deepPurple,
-            primaryColor: Colors.deepPurple[50]),
+          primarySwatch: Colors.deepPurple,
+          primaryColor: Colors.deepPurple[50],
+          scaffoldBackgroundColor: backgroundColor,
+        ),
         home: HomePage(),
         debugShowCheckedModeBanner: false,
       ),
