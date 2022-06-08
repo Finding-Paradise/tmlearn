@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:get/get.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:tmlearn/global_variables.dart';
 import 'package:tmlearn/hive_data/acquaintance_data/acquaintance.dart';
@@ -45,14 +46,15 @@ class MyApp extends StatelessWidget {
           create: (context) => CurrentTestCubit(),
         ),
       ],
-      child: MaterialApp(
+      child: GetMaterialApp(
         title: 'TmLearn',
         theme: ThemeData(
           primarySwatch: Colors.deepPurple,
           primaryColor: Colors.deepPurple[50],
           scaffoldBackgroundColor: backgroundColor,
+          fontFamily: 'Nunito',
         ),
-        home: HomePage(),
+        home: const HomePage(),
         debugShowCheckedModeBanner: false,
       ),
     );

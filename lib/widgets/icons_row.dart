@@ -1,9 +1,6 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:tmlearn/global_variables.dart';
-import 'package:tmlearn/hive_data/common_phrases_data/common_phrases.dart';
 import 'package:tmlearn/logic/favorite_cubit.dart';
 
 import '../hive_data/data.dart';

@@ -8,6 +8,7 @@ import '../data.dart';
 class TimeAndDate extends Equatable implements Phrases {
   TimeAndDate({required this.nameRus, required this.nameTurk});
 
+  @override
   @HiveField(0)
   String nameRus;
   // late List<String> nameRus = [
@@ -55,6 +56,7 @@ class TimeAndDate extends Equatable implements Phrases {
   //   "Мне пора!",
   // ];
 
+  @override
   @HiveField(1)
   String nameTurk;
   // late List<String> nameTurk = [
@@ -107,6 +109,7 @@ class TimeAndDate extends Equatable implements Phrases {
       nameRus: json["nameRus"],
     );
   }
+  @override
   Map<String, dynamic> toJson() {
     return {
       "nameTurk":nameTurk,

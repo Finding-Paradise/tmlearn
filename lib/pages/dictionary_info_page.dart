@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:tmlearn/global_variables.dart';
 import 'package:tmlearn/hive_data/data.dart';
-import 'package:tmlearn/widgets/custom_transparent_app_bar.dart';
 import 'package:tmlearn/widgets/icons_row.dart';
-import 'package:tmlearn/widgets/navigation_drawer.dart';
 
 class DictionaryInfoPage extends StatelessWidget {
   DictionaryInfoPage(this.phrase, {Key? key}) : super(key: key);
@@ -53,32 +51,32 @@ class DictionaryInfoPage extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Padding(
-                  padding: EdgeInsets.only(left: 38),
+                  padding: const EdgeInsets.only(left: 38),
                   child: Text(
                     phrase.nameRus,
-                    style: TextStyle(
+                    style: const TextStyle(
                       color: Colors.white,
                       fontSize: 30,
                     ),
                   ),
                 ),
-                Padding(
+                const Padding(
                   padding: EdgeInsets.symmetric(horizontal: 22),
                   child: Divider(color: Colors.black),
                 ),
                 Padding(
-                  padding: EdgeInsets.only(left: 38, top: 21),
+                  padding: const EdgeInsets.only(left: 38, top: 21),
                   child: Text(
                     phrase.nameTurk,
                     style: TextStyle(
-                      color: Color(0xFFEBC811),
+                      color: primaryColor,
                       fontSize: 30,
                     ),
                   ),
                 ),
-                Spacer(),
+                const Spacer(),
                 Padding(
-                  padding: EdgeInsets.only(bottom: 35.0),
+                  padding: const EdgeInsets.only(bottom: 35.0),
                   child: IconRow(
                     phrase: phrase,
                   ),

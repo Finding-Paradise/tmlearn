@@ -8,6 +8,7 @@ import '../data.dart';
 class Measurements extends Equatable implements Phrases {
   Measurements({required this.nameRus, required this.nameTurk});
 
+  @override
   @HiveField(0)
   String nameRus;
   // late List<String> nameRus = [
@@ -45,6 +46,7 @@ class Measurements extends Equatable implements Phrases {
   //   "8 сантиметров",
   // ];
 
+  @override
   @HiveField(1)
   String nameTurk;
   // late List<String> nameTurk = [
@@ -87,6 +89,7 @@ class Measurements extends Equatable implements Phrases {
   //     nameRus: json["nameRus"],
   //   );
   // }
+  @override
   Map<String, dynamic> toJson() {
     return {
       "nameTurk":nameTurk,

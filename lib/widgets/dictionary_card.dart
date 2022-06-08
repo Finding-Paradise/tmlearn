@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:like_button/like_button.dart';
+import 'package:tmlearn/global_variables.dart';
 import 'package:tmlearn/hive_data/data.dart';
 import 'package:tmlearn/widgets/navigation_drawer.dart';
 
@@ -61,7 +62,7 @@ class DictionaryCard extends StatelessWidget {
         height: 50,
         margin: const EdgeInsets.symmetric(horizontal: 18, vertical: 3),
         decoration: BoxDecoration(
-          color: const Color.fromARGB(255, 71, 58, 99),
+          color: const Color(0xFF473A63),
           borderRadius: BorderRadius.circular(11.39),
         ),
         child: Row(
@@ -87,33 +88,36 @@ class DictionaryCard extends StatelessWidget {
   Widget actionButton(CardType type) {
     switch (type) {
       case CardType.favorite:
-        return LikeButton(
-          isLiked: true,
-          onTap: (bool isLiked) async {
-            onIconTap!();
-            return false;
-          },
-          likeBuilder: (bool isLiked) {
-            return Padding(
-              padding: const EdgeInsets.only(right: 12.0),
-              child: Icon(
+        return Padding(
+          padding: const EdgeInsets.only(right: 8.0),
+          child: LikeButton(
+            isLiked: true,
+            onTap: (bool isLiked) async {
+              onIconTap!();
+              return false;
+            },
+            likeBuilder: (bool isLiked) {
+              return Icon(
                 Icons.favorite_rounded,
-                color: isLiked ? Colors.red : Colors.grey,
+                color: isLiked ? const Color(0xFFB62D1B) : Colors.grey,
                 size: 25,
-              ),
-            );
-          },
+              );
+            },
+          ),
         );
       case CardType.history:
-        return IconButton(
-          padding: EdgeInsets.zero,
-          onPressed: () {
-            onIconTap!();
-          },
-          icon: const Icon(
-            Icons.history,
-            size: 25,
-            color: Color(0xFFEBC811),
+        return Padding(
+          padding: const EdgeInsets.only(right: 8.0),
+          child: IconButton(
+            padding: EdgeInsets.zero,
+            onPressed: () {
+              onIconTap!();
+            },
+            icon: Icon(
+              Icons.history,
+              size: 25,
+              color: primaryColor,
+            ),
           ),
         );
     }

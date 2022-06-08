@@ -8,7 +8,6 @@ import 'package:tmlearn/logic/current_test_cubit.dart';
 import 'package:tmlearn/widgets/custom_transparent_app_bar.dart';
 import 'package:tmlearn/widgets/navigation_drawer.dart';
 
-import '../../hive_data/data.dart';
 import './widgets/option_card.dart';
 
 class DictionaryTestPage extends StatefulWidget {
@@ -33,7 +32,7 @@ class _DictionaryTestPageState extends State<DictionaryTestPage> {
     "assets/app_sections_data/economic_terms.json",
   ];
 
-  var _items = <Map>[];
+  final _items = <Map>[];
 
   Future<void> readJson() async {
     final response = await rootBundle.loadString(routeToPage[widget.index]);
@@ -54,11 +53,11 @@ class _DictionaryTestPageState extends State<DictionaryTestPage> {
 
   int _inCorrectAnswers = 0;
 
-  int _currentIndex = 0;
+  final int _currentIndex = 0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFF191034),
+      backgroundColor: backgroundColor,
       appBar: const CustomTransparentAppBar(
         titleRus: '',
         titleTurk: '',
@@ -96,7 +95,7 @@ class _DictionaryTestPageState extends State<DictionaryTestPage> {
                           const SizedBox(width: 14),
                           Text(
                             "$_correctAnswers",
-                            style: TextStyle(
+                            style: const TextStyle(
                               color: Colors.green,
                               fontSize: 35,
                             ),
@@ -104,7 +103,7 @@ class _DictionaryTestPageState extends State<DictionaryTestPage> {
                           const Spacer(),
                           Text(
                             "$_inCorrectAnswers",
-                            style: TextStyle(
+                            style: const TextStyle(
                               color: Colors.red,
                               fontSize: 35,
                             ),
@@ -148,7 +147,7 @@ class _DictionaryTestPageState extends State<DictionaryTestPage> {
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
                       ),
                     ),
-                    const Divider(height: 50),
+                    const Divider(height: 50, color: Colors.transparent,),
                     Expanded(
                       child: ListView.separated(
                         itemCount: _items[state.index].length - 2,
@@ -156,18 +155,18 @@ class _DictionaryTestPageState extends State<DictionaryTestPage> {
                           // bool ans_correct =
                           //     BlocProvider.of<CurrentTestCubit>(context)
                           //         .answered_correctly;
-                          bool is_Correct = _items[state.index]
+                          bool isCorrect = _items[state.index]
                                   .entries
                                   .toList()[index + 1]
                                   .key ==
                               _items[state.index]["right"];
-                          bool is_answered = context
+                          bool isAnswered = context
                               .read<CurrentTestCubit>()
                               .state
                               .answered_correctly;
-                          print(is_answered);
+                          print(isAnswered);
                           return IgnorePointer(
-                            ignoring: is_answered,
+                            ignoring: isAnswered,
                             child: OptionCard(
                               optionState: OptionState.notChosen,
                               id: index,
@@ -175,7 +174,7 @@ class _DictionaryTestPageState extends State<DictionaryTestPage> {
                                   .entries
                                   .toList()[index + 1]
                                   .value,
-                              isCorrect: is_Correct,
+                              isCorrect: isCorrect,
                               // onTap: (int) {},
                             ),
                           );
@@ -218,7 +217,7 @@ class _DictionaryTestPageState extends State<DictionaryTestPage> {
                           const SizedBox(width: 14),
                           Text(
                             "$_correctAnswers",
-                            style: TextStyle(
+                            style: const TextStyle(
                               color: Colors.green,
                               fontSize: 35,
                             ),
@@ -226,7 +225,7 @@ class _DictionaryTestPageState extends State<DictionaryTestPage> {
                           const Spacer(),
                           Text(
                             "$_inCorrectAnswers",
-                            style: TextStyle(
+                            style: const TextStyle(
                               color: Colors.red,
                               fontSize: 35,
                             ),

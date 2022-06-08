@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:get/get.dart';
 import 'package:tmlearn/global_variables.dart';
 import 'package:tmlearn/logic/current_test_cubit.dart';
 import 'package:tmlearn/pages/categories/acquaintance_category/acquaintance_learn_page.dart';
@@ -50,6 +50,7 @@ class SpecificCategoryNavWidget extends StatelessWidget {
           ),
           const Divider(
             height: 40.0,
+            color: Colors.transparent,
           ),
           Row(
             children: [
@@ -86,9 +87,7 @@ class SpecificCategoryNavWidgetButtonLearn
         children: [
           IconButton(
             onPressed: () {
-              Navigator.push(context, MaterialPageRoute(builder: (context) {
-                return routeToPage[routeToPageIndex];
-              }));
+              Get.to(routeToPage[routeToPageIndex]);
             },
             icon: SvgPicture.asset(_navPageIcons[buttonIndex]),
             iconSize: 172.0,
@@ -117,9 +116,9 @@ class SpecificCategoryNavWidgetButtonCards
         children: [
           IconButton(
             onPressed: () {
-              Navigator.push(context, MaterialPageRoute(builder: (context) {
-                return SpecificCategoryCardWidget(index: learnPageIndex);
-              }));
+              Get.to(SpecificCategoryCardWidget(
+                index: learnPageIndex,
+              ));
             },
             icon: SvgPicture.asset(_navPageIcons[buttonIndex]),
             iconSize: 172.0,
@@ -149,9 +148,7 @@ class SpecificCategoryNavWidgetButtonTest1
           IconButton(
             onPressed: () {
               BlocProvider.of<CurrentTestCubit>(context).initial();
-              Navigator.push(context, MaterialPageRoute(builder: (context) {
-                return DictionaryTestPage(index: index, test_index: 1);
-              }));
+              Get.to(DictionaryTestPage(index: index, test_index: 1));
             },
             icon: SvgPicture.asset(_navPageIcons[buttonIndex]),
             iconSize: 172.0,
@@ -181,9 +178,7 @@ class SpecificCategoryNavWidgetButtonTest2
           IconButton(
             onPressed: () {
               BlocProvider.of<CurrentTestCubit>(context).initial();
-              Navigator.push(context, MaterialPageRoute(builder: (context) {
-                return DictionaryTestPage(index: index, test_index: 2);
-              }));
+              Get.to(DictionaryTestPage(index: index, test_index: 2));
             },
             icon: SvgPicture.asset(_navPageIcons[buttonIndex]),
             iconSize: 172.0,
@@ -209,7 +204,6 @@ class SpecificCategoryNavWidgetFields extends StatelessWidget {
     const TimeAndDateLearnPage(),
     const EconomicTermsLearnPage(),
   ];
-  // final List tempName = [DictionaryTestPage()];
 
   final List<String> _navPageIcons = [
     'assets/icons/specific_category_nav_page_learn_icon.svg',
@@ -252,8 +246,9 @@ class SpecificCategoryNavWidgetText extends StatelessWidget {
     return RichText(
       textAlign: TextAlign.center,
       text: TextSpan(
-        style: GoogleFonts.nunito(
-          textStyle: const TextStyle(fontSize: 25.0),
+        style: const TextStyle(
+          fontFamily: 'Nunito',
+          fontSize: 25.0,
         ),
         children: [
           TextSpan(

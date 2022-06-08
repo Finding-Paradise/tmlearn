@@ -1,27 +1,25 @@
 import 'dart:convert';
-import 'dart:developer';
 
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:tmlearn/hive_data/common_phrases_data/common_phrases.dart';
 import 'package:tmlearn/hive_data/data.dart';
 
 part 'favorite_state.dart';
 
 class FavoriteCubit extends Cubit<FavoriteState> {
   SharedPreferences preferences;
-  FavoriteCubit(this.preferences) : super(FavoriteInitial([]));
+  FavoriteCubit(this.preferences) : super(FavoriteInitial(const []));
 
   get_favorites() {
-    List<String> favs7_str = preferences.getStringList('favs7') ?? [];
-    var new_ls = favs7_str
+    List<String> favs7Str = preferences.getStringList('favs7') ?? [];
+    var newLs = favs7Str
         .map(
           (e) => Phrases.fromJson(jsonDecode(e)),
         )
         .toList();
 
-    emit(new_ls.isNotEmpty ? FavoriteLoaded([...new_ls]) : FavoriteEmpty([]));
+    emit(newLs.isNotEmpty ? FavoriteLoaded([...newLs]) : FavoriteEmpty(const []));
   }
 
   bool is_favorite(Phrases phrase) {
@@ -43,15 +41,15 @@ class FavoriteCubit extends Cubit<FavoriteState> {
 
   delete_favorite(Phrases phrase) {
     state.phrases.removeWhere((element) => element == phrase);
-    List<Phrases> new_ls = List.from(state.phrases);
+    List<Phrases> newLs = List.from(state.phrases);
     preferences.setStringList('favs7', <String>[
-      ...new_ls.map((e) => jsonEncode(e.toJson())),
+      ...newLs.map((e) => jsonEncode(e.toJson())),
     ]);
-    emit(FavoriteInitial([]));
-    if (new_ls.isEmpty) {
-      emit(FavoriteEmpty([]));
+    emit(FavoriteInitial(const []));
+    if (newLs.isEmpty) {
+      emit(FavoriteEmpty(const []));
     } else {
-      emit(FavoriteLoaded(new_ls));
+      emit(FavoriteLoaded(newLs));
     }
   }
 }

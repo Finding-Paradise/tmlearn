@@ -1,11 +1,9 @@
 import 'dart:convert';
-import 'dart:io';
 
 import 'package:flip_card/flip_card.dart';
 import 'package:flip_card/flip_card_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:tcard/tcard.dart';
 import 'package:tmlearn/global_variables.dart';
 import 'package:tmlearn/hive_data/data.dart';
@@ -24,8 +22,8 @@ class SpecificCategoryCardWidget extends StatefulWidget {
 
 class _SpecificCategoryCardWidgetState
     extends State<SpecificCategoryCardWidget> {
-  TCardController _controller = TCardController();
-  FlipCardController _controllerF = FlipCardController();
+  final TCardController _controller = TCardController();
+  final FlipCardController _controllerF = FlipCardController();
   bool is_flipped = false;
 
   bool is_end = false;
@@ -45,7 +43,7 @@ class _SpecificCategoryCardWidgetState
     "assets/app_sections_data/time_and_date.json",
     "assets/app_sections_data/economic_terms.json",
   ];
-  List<Phrases> _items = [];
+  final List<Phrases> _items = [];
   Future<void> readJson() async {
     final response = await rootBundle.loadString(routeToPage[widget.index]);
     var data = await jsonDecode(response);
@@ -93,9 +91,13 @@ class _SpecificCategoryCardWidgetState
           child: Column(
             children: [
               if (is_end)
-                Text(
+                const Text(
                   "End",
-                  style: TextStyle(color: Colors.white, fontSize: 22),
+                  style: TextStyle(
+                    fontFamily: 'Nunito',
+                    color: Colors.white,
+                    fontSize: 22,
+                  ),
                 ),
               SingleChildScrollView(
                 child: Flexible(
@@ -187,7 +189,7 @@ class infoCardWidget extends StatelessWidget {
     return Center(
       child: Container(
         height: 290,
-        padding: EdgeInsets.only(left: 5, right: 5),
+        padding: const EdgeInsets.only(left: 5, right: 5),
         width: double.infinity,
         // height: 280.0,
         child: Card(
@@ -209,16 +211,13 @@ class infoCardWidget extends StatelessWidget {
                         text,
                         textAlign: TextAlign.center,
                         // overflow: TextOverflow.ellipsis,
-                        style: GoogleFonts.nunito(
-                          fontSize: 30.0,
-                          textStyle: TextStyle(color: primaryColor),
-                        ),
+                        style: TextStyle(fontFamily: 'Nunito', fontSize: 30, color: primaryColor),
                       ),
                     ),
                   ),
                 ),
               ),
-              const Divider(height: 20),
+              const Divider(height: 20, color: Colors.transparent,),
               Padding(
                 padding: const EdgeInsets.only(bottom: 10),
                 child: IconButton(

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:get/get.dart';
 import 'package:tmlearn/global_variables.dart';
 import 'package:tmlearn/logic/favorite_cubit.dart';
 import 'package:tmlearn/pages/categories/categories_nav_page.dart';
@@ -10,7 +10,7 @@ import 'package:tmlearn/pages/favorite_page.dart';
 import 'package:tmlearn/pages/history_page.dart';
 
 class HomePage extends StatefulWidget {
-  HomePage({Key? key}) : super(key: key);
+  const HomePage({Key? key}) : super(key: key);
 
   @override
   State<HomePage> createState() => _HomePageState();
@@ -19,7 +19,7 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   final List pagesList = [
     CategoryNavPage(),
-    DictionaryPage(),
+    const DictionaryPage(),
     const FavoritePage(),
     const HistoryPage()
   ];
@@ -60,12 +60,10 @@ class _HomePageState extends State<HomePage> {
           Center(
             child: RichText(
               text: TextSpan(
-                style: GoogleFonts.lato(
-                  textStyle: const TextStyle(
+                style: const TextStyle(
+                    fontFamily: 'Lato',
                     fontSize: 38,
-                    fontWeight: FontWeight.w700,
-                  ),
-                ),
+                    fontWeight: FontWeight.bold),
                 children: [
                   const TextSpan(
                     text: 'Tm',
@@ -99,6 +97,7 @@ class _HomePageState extends State<HomePage> {
             separatorBuilder: (BuildContext context, int index) {
               return const Divider(
                 height: 26.0,
+                color: Colors.transparent,
               );
             },
             itemBuilder: (BuildContext context, int index) {
@@ -106,16 +105,12 @@ class _HomePageState extends State<HomePage> {
                 width: double.infinity,
                 child: TextButton(
                   onPressed: () {
-                    Navigator.push(context, MaterialPageRoute(
-                      builder: (context) {
-                        return pagesList[index];
-                      },
-                    ));
+                    Get.to(pagesList[index]);
                   },
                   child: RichText(
                     textAlign: TextAlign.center,
                     text: TextSpan(
-                      style: GoogleFonts.nunito(fontSize: 25.0),
+                      style: const TextStyle(fontFamily: 'Nunito', fontSize: 25),
                       children: [
                         TextSpan(
                           text: homePageNavButtonsRus[index],

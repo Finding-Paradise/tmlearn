@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:tmlearn/global_variables.dart';
-import 'package:tmlearn/hive_data/common_phrases_data/common_phrases.dart';
 import 'package:tmlearn/logic/favorite_cubit.dart';
 import 'package:tmlearn/widgets/custom_transparent_app_bar.dart';
 import 'package:tmlearn/widgets/navigation_drawer.dart';
@@ -26,7 +25,7 @@ class FavoritePage extends StatelessWidget {
               builder: (context, state) {
                 if (state is FavoriteEmpty) {
                   return const Center(
-                    child: const Text(
+                    child: Text(
                       "Пусто",
                       style: TextStyle(
                         color: Colors.white,

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:tmlearn/global_variables.dart';
 
 class CustomTransparentAppBar extends StatelessWidget
@@ -54,12 +53,10 @@ class CustomTransparentAppBar extends StatelessWidget
             ),
           )
         ],
-        title: RichText(
+        title: (titleTurk!.isEmpty) ? nullNameTurk() : RichText(
           textAlign: TextAlign.center,
           text: TextSpan(
-            style: GoogleFonts.nunito(
-              textStyle: const TextStyle(fontSize: 25.0),
-            ),
+            style: const TextStyle(fontFamily: 'Nunito', fontSize: 25),
             children: [
               TextSpan(
                 text: titleRus ?? '',
@@ -71,6 +68,28 @@ class CustomTransparentAppBar extends StatelessWidget
               ),
             ],
           ),
+        ),
+      ),
+    );
+  }
+
+  Widget nullNameTurk() {
+    return Padding(
+      padding: const EdgeInsets.only(top: 35),
+      child: RichText(
+        textAlign: TextAlign.center,
+        text: TextSpan(
+          style: const TextStyle(fontFamily: 'Nunito', fontSize: 25),
+          children: [
+            TextSpan(
+              text: titleRus ?? '',
+              style: TextStyle(color: primaryColor),
+            ),
+            TextSpan(
+              text: titleTurk ?? '',
+              style: const TextStyle(color: Colors.white),
+            ),
+          ],
         ),
       ),
     );

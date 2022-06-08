@@ -9,7 +9,7 @@ class EconomicTermsPage extends StatelessWidget {
     return const SpecificCategoryNavWidget(
       learnPageIndex: 7,
       categoryTitleRus: 'Экономические термины\n',
-      categoryTitleTurk: 'Ykdysady şertler',
+      categoryTitleTurk: '',
     );
   }
 }

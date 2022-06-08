@@ -1,26 +1,23 @@
 import 'dart:convert';
-import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:tmlearn/global_variables.dart';
 import 'package:tmlearn/hive_data/data.dart';
 import 'package:tmlearn/pages/dictionary_info_page.dart';
-import 'package:tmlearn/widgets/custom_transparent_app_bar.dart';
 import 'package:tmlearn/widgets/navigation_drawer.dart';
 
 class DictionaryPage extends StatefulWidget {
-  DictionaryPage({Key? key}) : super(key: key);
+  const DictionaryPage({Key? key}) : super(key: key);
 
   @override
   State<DictionaryPage> createState() => _DictionaryPageState();
 }
 
 class _DictionaryPageState extends State<DictionaryPage> {
-  var _items = <Phrases>[];
+  final _items = <Phrases>[];
   late TextEditingController controller;
-
+  final _scaffoldKey = GlobalKey<ScaffoldState>();
   Future<void> readJson() async {
     final response = await rootBundle
         .loadString("assets/app_sections_data/dictionary_words.json");
@@ -47,7 +44,9 @@ class _DictionaryPageState extends State<DictionaryPage> {
   Widget build(BuildContext context) {
     print(show_find);
     return Scaffold(
+      key: _scaffoldKey,
       backgroundColor: backgroundColor,
+      endDrawer: const NavigationDrawerWidget(),
       // appBar: const CustomTransparentAppBar(
       //   titleRus: 'Словарь\n',
       //   titleTurk: 'Sözlük',
@@ -86,7 +85,7 @@ class _DictionaryPageState extends State<DictionaryPage> {
               heroTag: 'btn-drawer',
               backgroundColor: Colors.black,
               disabledElevation: 0,
-              onPressed: () => Scaffold.of(context).openEndDrawer(),
+              onPressed: () => _scaffoldKey.currentState?.openEndDrawer(),
               child: CircleAvatar(
                 backgroundColor: Colors.black,
                 child: Padding(
@@ -100,22 +99,13 @@ class _DictionaryPageState extends State<DictionaryPage> {
             ),
           )
         ],
-        title: RichText(
+        title: Text(
+          'Словарь',
           textAlign: TextAlign.center,
-          text: TextSpan(
-            style: GoogleFonts.nunito(
-              textStyle: const TextStyle(fontSize: 25.0),
-            ),
-            children: [
-              TextSpan(
-                text: "Словарь",
-                style: TextStyle(color: primaryColor),
-              ),
-            ],
-          ),
+          style: TextStyle(
+              fontFamily: 'Nunito', fontSize: 25, color: primaryColor),
         ),
       ),
-      endDrawer: const NavigationDrawerWidget(),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 17) +
             const EdgeInsets.only(top: 20, bottom: 32),
@@ -156,11 +146,11 @@ class _DictionaryPageState extends State<DictionaryPage> {
                       });
                     }
                   },
-                  style: TextStyle(
+                  style: const TextStyle(
                     color: Colors.white,
                     fontSize: 19,
                   ),
-                  decoration: InputDecoration(
+                  decoration: const InputDecoration(
                     hintText: "Поиск",
                     hintStyle: TextStyle(
                       color: Colors.grey,
@@ -246,7 +236,7 @@ class _DictionaryPageState extends State<DictionaryPage> {
                                   show_find
                                       ? finding_list[index].nameRus
                                       : _items[index].nameRus,
-                                  style: TextStyle(
+                                  style: const TextStyle(
                                     color: Colors.white,
                                     fontSize: 24,
                                   ),

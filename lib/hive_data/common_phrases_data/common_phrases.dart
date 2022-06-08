@@ -6,6 +6,7 @@ import 'package:tmlearn/hive_data/data.dart';
 class CommonPhrases extends Equatable implements Phrases {
   CommonPhrases({required this.nameRus, required this.nameTurk});
 
+  @override
   @HiveField(0)
   String nameRus;
   // late List<String> nameRus = [
@@ -24,6 +25,7 @@ class CommonPhrases extends Equatable implements Phrases {
   //   "Спасибо, хорошо!",
   // ];
 
+  @override
   @HiveField(1)
   String nameTurk;
   // late List<String> nameTurk = [
@@ -47,6 +49,7 @@ class CommonPhrases extends Equatable implements Phrases {
   //     nameRus: json["nameRus"],
   //   );
   // }
+  @override
   Map<String, dynamic> toJson() {
     return {
       "nameTurk":nameTurk,

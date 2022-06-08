@@ -1,4 +1,3 @@
-import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -47,9 +46,9 @@ class _OptionCardState extends State<OptionCard> {
   bool to_call = true;
   @override
   Widget build(BuildContext context) {
-    bool is_answered =
+    bool isAnswered =
         BlocProvider.of<CurrentTestCubit>(context).state.answered_correctly;
-    if (is_answered) {
+    if (isAnswered) {
       if (widget.isCorrect) {
         setState(() {
           currentOptionState = OptionState.correct;
@@ -85,7 +84,7 @@ class _OptionCardState extends State<OptionCard> {
         },
         child: AnimatedContainer(
           onEnd: () {
-            if (to_call)
+            if (to_call) {
               setState(() {
                 currentOptionState = OptionState.notChosen;
                 // if (is_answered) {
@@ -93,12 +92,13 @@ class _OptionCardState extends State<OptionCard> {
                 // }
                 BlocProvider.of<CurrentTestCubit>(context).non_answered();
               });
+            }
             to_call = !to_call;
 
             // BlocProvider.of<CurrentTestCubit>(context).can_change = true;
           },
           width: double.infinity,
-          duration: Duration(milliseconds: 500),
+          duration: const Duration(milliseconds: 500),
           padding: const EdgeInsets.only(top: 10, bottom: 6),
           decoration: BoxDecoration(
             color: getColorsFromOptionState(currentOptionState),

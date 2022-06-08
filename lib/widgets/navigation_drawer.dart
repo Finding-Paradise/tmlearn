@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:get/get.dart';
 import 'package:tmlearn/global_variables.dart';
 import 'package:tmlearn/pages/categories/categories_nav_page.dart';
 import 'package:tmlearn/pages/dictionary_page.dart';
@@ -36,9 +36,7 @@ class NavigationDrawerWidget extends StatelessWidget {
           TextButton(
             onPressed: () {
               Navigator.pop(context);
-              Navigator.push(context, MaterialPageRoute(builder: (context) {
-                return CategoryNavPage();
-              }));
+              Get.to(CategoryNavPage());
             },
             child: ListTile(
               leading: Icon(
@@ -47,9 +45,10 @@ class NavigationDrawerWidget extends StatelessWidget {
               ),
               title: Text(
                 'Разделы',
-                style: GoogleFonts.nunito(
-                  fontSize: 30.0,
-                  textStyle: TextStyle(color: drawerItemsColor),
+                style: TextStyle(
+                  fontFamily: 'Nunito',
+                  fontSize: 30,
+                  color: drawerItemsColor,
                 ),
               ),
             ),
@@ -57,9 +56,7 @@ class NavigationDrawerWidget extends StatelessWidget {
           TextButton(
             onPressed: () {
               Navigator.pop(context);
-              Navigator.push(context, MaterialPageRoute(builder: (context) {
-                return DictionaryPage();
-              }));
+              Get.to(const DictionaryPage());
             },
             child: ListTile(
               leading: Icon(
@@ -68,9 +65,10 @@ class NavigationDrawerWidget extends StatelessWidget {
               ),
               title: Text(
                 'Словарь',
-                style: GoogleFonts.nunito(
-                  fontSize: 30.0,
-                  textStyle: TextStyle(color: drawerItemsColor),
+                style: TextStyle(
+                  fontFamily: 'Nunito',
+                  fontSize: 30,
+                  color: drawerItemsColor,
                 ),
               ),
             ),
@@ -78,9 +76,7 @@ class NavigationDrawerWidget extends StatelessWidget {
           TextButton(
             onPressed: () {
               Navigator.pop(context);
-              Navigator.push(context, MaterialPageRoute(builder: (context) {
-                return const FavoritePage();
-              }));
+              Get.to(const FavoritePage());
             },
             child: ListTile(
               leading: Icon(
@@ -89,9 +85,10 @@ class NavigationDrawerWidget extends StatelessWidget {
               ),
               title: Text(
                 'Избранное',
-                style: GoogleFonts.nunito(
-                  fontSize: 30.0,
-                  textStyle: TextStyle(color: drawerItemsColor),
+                style: TextStyle(
+                  fontFamily: 'Nunito',
+                  fontSize: 30,
+                  color: drawerItemsColor,
                 ),
               ),
             ),
@@ -99,9 +96,7 @@ class NavigationDrawerWidget extends StatelessWidget {
           TextButton(
             onPressed: () {
               Navigator.pop(context);
-              Navigator.push(context, MaterialPageRoute(builder: (context) {
-                return const HistoryPage();
-              }));
+              Get.to(const HistoryPage());
             },
             child: ListTile(
               leading: Icon(
@@ -110,9 +105,10 @@ class NavigationDrawerWidget extends StatelessWidget {
               ),
               title: Text(
                 'История',
-                style: GoogleFonts.nunito(
-                  fontSize: 30.0,
-                  textStyle: TextStyle(color: drawerItemsColor),
+                style: TextStyle(
+                  fontFamily: 'Nunito',
+                  fontSize: 30,
+                  color: drawerItemsColor,
                 ),
               ),
             ),
@@ -127,11 +123,15 @@ class NavigationDrawerWidget extends StatelessWidget {
               Icons.info,
               color: drawerItemsColor,
             ),
-            label: Text(
-              'Сообщить об ошибке',
-              style: GoogleFonts.nunito(
-                fontSize: 18,
-                textStyle: TextStyle(color: drawerItemsColor),
+            label: Padding(
+              padding: const EdgeInsets.only(right: 6.0),
+              child: Text(
+                'Сообщить об ошибке',
+                style: TextStyle(
+                  fontFamily: 'Nunito',
+                  fontSize: 18,
+                  color: drawerItemsColor,
+                ),
               ),
             ),
           ),
@@ -145,9 +145,10 @@ class NavigationDrawerWidget extends StatelessWidget {
               ),
               label: Text(
                 'Оценить приложение',
-                style: GoogleFonts.nunito(
+                style: TextStyle(
+                  fontFamily: 'Nunito',
                   fontSize: 18,
-                  textStyle: TextStyle(color: drawerItemsColor),
+                  color: drawerItemsColor,
                 ),
               ),
             ),
