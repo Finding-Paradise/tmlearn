@@ -55,7 +55,6 @@ class _DictionaryTestPageState extends State<DictionaryTestPage> {
   int _inCorrectAnswers = 0;
 
   int _currentIndex = 0;
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -72,6 +71,7 @@ class _DictionaryTestPageState extends State<DictionaryTestPage> {
           height: MediaQuery.of(context).size.height,
           child: BlocBuilder<CurrentTestCubit, Test>(
             builder: (context, state) {
+              print(state.index);
               _correctAnswers =
                   BlocProvider.of<CurrentTestCubit>(context).correct_answers;
               _inCorrectAnswers =
@@ -156,17 +156,28 @@ class _DictionaryTestPageState extends State<DictionaryTestPage> {
                           // bool ans_correct =
                           //     BlocProvider.of<CurrentTestCubit>(context)
                           //         .answered_correctly;
-                          bool is_Correct =
-                              _items[state.index].entries.toList()[index + 1].key ==
-                                  _items[state.index]["right"];
-                          return OptionCard(
-                            optionState: OptionState.notChosen,
-
-                            id: index,
-                            text:
-                                _items[state.index].entries.toList()[index + 1].value,
-                            isCorrect: is_Correct,
-                            // onTap: (int) {},
+                          bool is_Correct = _items[state.index]
+                                  .entries
+                                  .toList()[index + 1]
+                                  .key ==
+                              _items[state.index]["right"];
+                          bool is_answered = context
+                              .read<CurrentTestCubit>()
+                              .state
+                              .answered_correctly;
+                          print(is_answered);
+                          return IgnorePointer(
+                            ignoring: is_answered,
+                            child: OptionCard(
+                              optionState: OptionState.notChosen,
+                              id: index,
+                              text: _items[state.index]
+                                  .entries
+                                  .toList()[index + 1]
+                                  .value,
+                              isCorrect: is_Correct,
+                              // onTap: (int) {},
+                            ),
                           );
                         },
                         separatorBuilder: (context, index) =>

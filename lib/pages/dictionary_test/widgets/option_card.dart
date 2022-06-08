@@ -47,40 +47,52 @@ class _OptionCardState extends State<OptionCard> {
   bool to_call = true;
   @override
   Widget build(BuildContext context) {
+    bool is_answered =
+        BlocProvider.of<CurrentTestCubit>(context).state.answered_correctly;
     return GestureDetector(
         onTap: () {
           // setState(() {
           //   print(widget.isCorrect);
-          //   // widget.onTap!(widget.id);
+          if (widget.onTap != null) widget.onTap!(widget.id);
+
+          if (is_answered) {
+            setState(() {
+              // currentOptionState =
+            });
+            return;
+          }
           setState(() {
             currentOptionState =
                 widget.isCorrect ? OptionState.correct : OptionState.wrong;
+
             // if (currentOptionState == OptionState.wrong) {
             //   // BlocProvider.of<CurrentTestCubit>(context).answered_correctly =
             //   //     false;
             //   // BlocProvider.of<CurrentTestCubit>(context).update();
             // }
+
             currentOptionState == OptionState.correct
                 ? BlocProvider.of<CurrentTestCubit>(context).correct_answers +=
                     1
                 : BlocProvider.of<CurrentTestCubit>(context)
                     .incorrect_answers += 1;
+            BlocProvider.of<CurrentTestCubit>(context).answered();
           });
-          // });
         },
         child: AnimatedContainer(
           onEnd: () {
             if (to_call)
               setState(() {
                 currentOptionState = OptionState.notChosen;
-                if (BlocProvider.of<CurrentTestCubit>(context).state.index < 3)
-                  BlocProvider.of<CurrentTestCubit>(context).next_item();
+                BlocProvider.of<CurrentTestCubit>(context).non_answered();
+                BlocProvider.of<CurrentTestCubit>(context).next_item();
               });
-            to_call = false;
+            to_call = !to_call;
+
             // BlocProvider.of<CurrentTestCubit>(context).can_change = true;
           },
           width: double.infinity,
-          duration: const Duration(milliseconds: 500),
+          duration: Duration(milliseconds: 500),
           padding: const EdgeInsets.only(top: 10, bottom: 6),
           decoration: BoxDecoration(
             color: getColorsFromOptionState(currentOptionState),
