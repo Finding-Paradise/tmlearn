@@ -49,18 +49,19 @@ class _OptionCardState extends State<OptionCard> {
   Widget build(BuildContext context) {
     bool is_answered =
         BlocProvider.of<CurrentTestCubit>(context).state.answered_correctly;
+    if (is_answered) {
+      if (widget.isCorrect) {
+        setState(() {
+          currentOptionState = OptionState.correct;
+        });
+      }
+    }
     return GestureDetector(
         onTap: () {
           // setState(() {
           //   print(widget.isCorrect);
           if (widget.onTap != null) widget.onTap!(widget.id);
 
-          if (is_answered) {
-            setState(() {
-              // currentOptionState =
-            });
-            return;
-          }
           setState(() {
             currentOptionState =
                 widget.isCorrect ? OptionState.correct : OptionState.wrong;
@@ -77,6 +78,9 @@ class _OptionCardState extends State<OptionCard> {
                 : BlocProvider.of<CurrentTestCubit>(context)
                     .incorrect_answers += 1;
             BlocProvider.of<CurrentTestCubit>(context).answered();
+            Future.delayed(const Duration(milliseconds: 800), () {
+              BlocProvider.of<CurrentTestCubit>(context).next_item();
+            });
           });
         },
         child: AnimatedContainer(
@@ -84,8 +88,10 @@ class _OptionCardState extends State<OptionCard> {
             if (to_call)
               setState(() {
                 currentOptionState = OptionState.notChosen;
+                // if (is_answered) {
+                //   BlocProvider.of<CurrentTestCubit>(context).next_item();
+                // }
                 BlocProvider.of<CurrentTestCubit>(context).non_answered();
-                BlocProvider.of<CurrentTestCubit>(context).next_item();
               });
             to_call = !to_call;
 

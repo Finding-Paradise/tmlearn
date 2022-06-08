@@ -39,6 +39,8 @@ class _DictionaryPageState extends State<DictionaryPage> {
 
   bool show_find = false;
   List<Phrases> finding_list = [];
+  bool is_inside_view_word = false;
+  late Phrases current_phrase;
 
   @override
   Widget build(BuildContext context) {
@@ -72,8 +74,12 @@ class _DictionaryPageState extends State<DictionaryPage> {
                         finding_list = _items
                             .where(
                               (element) =>
-                                  element.nameRus.toLowerCase().contains(text.toLowerCase()) |
-                                  element.nameTurk.toLowerCase().contains(text.toLowerCase()),
+                                  element.nameRus
+                                      .toLowerCase()
+                                      .contains(text.toLowerCase()) |
+                                  element.nameTurk
+                                      .toLowerCase()
+                                      .contains(text.toLowerCase()),
                             )
                             .toList();
                         show_find = true;
@@ -128,6 +134,9 @@ class _DictionaryPageState extends State<DictionaryPage> {
                         show_find = false;
                       });
                     }
+                    setState(() {
+                      is_inside_view_word = false;
+                    });
                   },
                   child: Icon(
                     Icons.search,
@@ -137,46 +146,59 @@ class _DictionaryPageState extends State<DictionaryPage> {
               ]),
             ),
             const SizedBox(height: 21),
-            Expanded(
-              child: Container(
-                padding: const EdgeInsets.only(top: 7),
-                decoration: BoxDecoration(
-                    color: secondaryColor,
-                    borderRadius: BorderRadius.circular(11.4)),
-                child: ListView.separated(
-                    itemBuilder: (context, index) => Padding(
-                          padding: const EdgeInsets.only(left: 31),
-                          child: Align(
-                            alignment: Alignment.centerLeft,
-                            child: TextButton(
-                              onPressed: () {
-                                Navigator.push(context,
-                                    MaterialPageRoute(builder: (context) {
-                                  return DictionaryInfoPage(show_find
-                                      ? finding_list[index]
-                                      : _items[index]);
-                                }));
-                              },
-                              child: Text(
-                                show_find
-                                    ? finding_list[index].nameRus
-                                    : _items[index].nameRus,
-                                style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 24,
+            // if(is_inside_view_word)DictionaryInfoPage(show_find
+            //                           ? finding_list[index]
+            //                           : _items[index]),
+            if (is_inside_view_word)
+              Expanded(child: DictionaryInfoPage(current_phrase))
+            else
+              Expanded(
+                child: Container(
+                  padding: const EdgeInsets.only(top: 7),
+                  decoration: BoxDecoration(
+                      color: secondaryColor,
+                      borderRadius: BorderRadius.circular(11.4)),
+                  child: ListView.separated(
+                      itemBuilder: (context, index) => Padding(
+                            padding: const EdgeInsets.only(left: 31),
+                            child: Align(
+                              alignment: Alignment.centerLeft,
+                              child: TextButton(
+                                onPressed: () {
+                                  setState(() {
+                                    current_phrase = show_find
+                                        ? finding_list[index]
+                                        : _items[index];
+                                    is_inside_view_word = true;
+                                  });
+                                  // Navigator.push(context,
+                                  //     MaterialPageRoute(builder: (context) {
+                                  //   return DictionaryInfoPage(show_find
+                                  //       ? finding_list[index]
+                                  //       : _items[index]);
+                                  // }));
+                                },
+                                child: Text(
+                                  show_find
+                                      ? finding_list[index].nameRus
+                                      : _items[index].nameRus,
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 24,
+                                  ),
                                 ),
                               ),
                             ),
                           ),
-                        ),
-                    separatorBuilder: (contex, index) => const Padding(
-                        padding: EdgeInsets.symmetric(horizontal: 17),
-                        child: Divider(
-                          color: Colors.black,
-                        )),
-                    itemCount: show_find ? finding_list.length : _items.length),
-              ),
-            )
+                      separatorBuilder: (contex, index) => const Padding(
+                          padding: EdgeInsets.symmetric(horizontal: 17),
+                          child: Divider(
+                            color: Colors.black,
+                          )),
+                      itemCount:
+                          show_find ? finding_list.length : _items.length),
+                ),
+              )
           ],
         ),
       ),
