@@ -85,7 +85,7 @@ class _HomePageState extends State<HomePage> {
             padding: const EdgeInsets.only(top: 25.0),
             child: Text(
               appDescription,
-              style: const TextStyle(color: Colors.white),
+              style: const TextStyle(fontFamily: 'Nunito',fontSize: 20,color: Colors.white),
               textAlign: TextAlign.center,
             ),
           ),

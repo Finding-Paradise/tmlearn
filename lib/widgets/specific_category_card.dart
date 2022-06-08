@@ -104,7 +104,7 @@ class _SpecificCategoryCardWidgetState
         child: Column(
           children: [
             if (is_end)
-              Text(
+              const Text(
                 "End",
                 style: TextStyle(color: Colors.white, fontSize: 22),
               ),
@@ -196,7 +196,7 @@ class infoCardWidget extends StatelessWidget {
     return Center(
       child: Container(
         height: 290,
-        padding: EdgeInsets.only(left: 5, right: 5),
+        padding: const EdgeInsets.only(left: 5, right: 5),
         width: double.infinity,
         // height: 280.0,
         child: Card(
@@ -220,7 +220,7 @@ class infoCardWidget extends StatelessWidget {
                   ),
                 ),
               ),
-              const Divider(height: 20),
+              const Divider(height: 20, color: Colors.transparent,),
               Padding(
                 padding: const EdgeInsets.only(bottom: 10),
                 child: IconButton(
@@ -233,7 +233,7 @@ class infoCardWidget extends StatelessWidget {
                 ),
               ),
             ],
-            mainAxisAlignment: MainAxisAlignment.end,
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           ),
         ),
       ),
