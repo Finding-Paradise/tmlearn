@@ -17,10 +17,8 @@ class Phrases extends Equatable{
 
   @override
   String toString() {
-    // TODO: implement toString
     return "$nameRus:$nameTurk";
   }
   @override
-  // TODO: implement props
   List<Object?> get props => [nameRus,nameTurk];
 }

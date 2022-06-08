@@ -19,7 +19,9 @@ class FavoriteCubit extends Cubit<FavoriteState> {
         )
         .toList();
 
-    emit(newLs.isNotEmpty ? FavoriteLoaded([...newLs]) : FavoriteEmpty(const []));
+    emit(newLs.isNotEmpty
+        ? FavoriteLoaded([...newLs])
+        : FavoriteEmpty(const []));
   }
 
   bool is_favorite(Phrases phrase) {
